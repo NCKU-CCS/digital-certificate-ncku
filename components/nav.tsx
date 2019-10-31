@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const Navbar = styled.nav`
@@ -24,6 +24,9 @@ const Navtitle = styled.span`
   font-size: 42px;
   text-align: center;
   color: #676464;
+  @media (max-width: 1200px) {
+    display: none;
+  }
 `;
 const Navlink = styled.a`
   font-family: EdwardianScriptITC;
@@ -34,19 +37,27 @@ const Navlink = styled.a`
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 1200px) {
+    margin: 0px 0.5rem 0px 0.5rem;
+    padding: 0px 0.5rem 0px 0.5rem;
+  }
 `;
 const Resizable = styled.div`
   margin: 0 auto;
 `;
 
 const links = [
-  { name: '初辦', rel: '/url1' },
-  { name: '補證', rel: '/url2' },
-  { name: '查詢', rel: '/url3' },
+  { name: '初辦', rel: '/' },
+  { name: '補證', rel: '/reissue' },
+  { name: '查詢', rel: '/query' },
 ];
 
 const Nav: React.FC = () => {
-  const [path, setPath] = useState('/url3');
+  const [path, setPath] = useState('');
+  useEffect(() => {
+    setPath(window.location.pathname);
+  }, []);
+
   return (
     <Navbar>
       <Navimg src="/static/edu_icon.png" />
