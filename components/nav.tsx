@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Router from 'next/router';
 import styled from 'styled-components';
 
 const Navbar = styled.nav`
@@ -6,6 +7,7 @@ const Navbar = styled.nav`
   top: 0;
   left: 0;
   right: 0;
+  z-index: 1000;
   width: 100vw;
   height: 99px;
   background-color: #fff;
@@ -66,7 +68,7 @@ const Nav: React.FC = () => {
       {links.map((link, index) => (
         <Navlink
           key={index}
-          onClick={() => setPath(link.rel)}
+          onClick={() => Router.push(link.rel)}
           style={
             path === link.rel
               ? {
