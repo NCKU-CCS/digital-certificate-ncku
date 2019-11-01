@@ -15,18 +15,28 @@ export default class MyDocument extends Document {
           <Main />
           <NextScript />
           <style jsx global>{`
-            html, body {
-              margin; 0 auto;
+            html,
+            body {
+              margin: 0px;
+              font-size: 16px;
               font-weight: normal;
               font-stretch: normal;
               font-style: normal;
+              font-family: SegoeUI;
               letter-spacing: normal;
+              background-color: #f5f5f5;
             }
-            *, *::before, *::after {
+            *,
+            *::before,
+            *::after {
               box-sizing: border-box;
             }
             a {
               text-decoration: none;
+            }
+            a:hover,
+            button:hover {
+              cursor: pointer;
             }
           `}</style>
         </body>
