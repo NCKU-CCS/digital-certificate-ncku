@@ -5,11 +5,13 @@ const Section: React.FC<{}> = (props: PropsWithChildren<{}>) => {
     <section>
       {props.children}
       <style jsx>{`
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        section {
+          width: 100vw;
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
       `}</style>
     </section>
   );

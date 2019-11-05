@@ -17,7 +17,7 @@ export default class MyDocument extends Document {
           <style jsx global>{`
             html,
             body {
-              margin: 0px;
+              margin: 0;
               font-size: 16px;
               font-weight: normal;
               font-stretch: normal;

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Selector from './selector';
 
 const Form: React.FC = () => {
   const alertMessage = '學生資料錯誤，請重新輸入';
@@ -22,13 +21,28 @@ const Form: React.FC = () => {
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        <Selector isEng={eng} langDispatch={setEng} />
+        <div className="selector">
+          <a
+            className={eng ? 'selected' : 'default'}
+            onClick={() => setEng(!eng)}
+          >
+            中文
+          </a>
+          <a
+            className={!eng ? 'selected' : 'default'}
+            onClick={() => setEng(!eng)}
+          >
+            英文
+          </a>
+        </div>
         <div className="alert">{alert ? alertMessage : ''}</div>
       </label>
+
       <label>
         <input onChange={handleChange} type="text" placeholder="學生證號碼" />
         <div style={{ height: '80px', width: '100%' }} />
       </label>
+
       <label>
         <button type="submit">確認 CONFIRM</button>
         <div>
@@ -42,6 +56,7 @@ const Form: React.FC = () => {
           />
         </div>
       </label>
+
       <style jsx>{`
         form {
           width: 100%;
@@ -100,6 +115,23 @@ const Form: React.FC = () => {
           font-family: EdwardianScriptITC;
           font-size: 25px;
           height: 36px;
+        }
+        .selector {
+          font-size: 33px;
+          -webkit-text-stroke: 1px #676464;
+          font-family: SegoeUI;
+          color: #676464;
+          text-align: center;
+          margin-top: 25px;
+        }
+        .selector > a {
+          margin: 0px 15px 0px 15px;
+        }
+        .selected {
+          opacity: 0.35;
+        }
+        .default {
+          opacity: 1;
         }
       `}</style>
     </form>
