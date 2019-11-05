@@ -6,7 +6,7 @@ import Section from '../components/section';
 import Form from '../components/form';
 
 const Index: React.FC = () => (
-  <div>
+  <main>
     <Head>
       <title>Home</title>
     </Head>
@@ -14,7 +14,7 @@ const Index: React.FC = () => (
     <Section>
       <Form />
     </Section>
-  </div>
+  </main>
 );
 
 export default Index;
