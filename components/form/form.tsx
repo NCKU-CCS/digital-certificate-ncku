@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
+import { IndexState, QueryState } from '../../constant';
 
-const Form: React.FC = () => {
+interface IProps {
+  status: QueryState | IndexState;
+  dispatch: React.Dispatch<React.SetStateAction<IndexState | QueryState>>;
+}
+
+const Form: React.FC<IProps> = (props: IProps) => {
   const alertMessage = '學生資料錯誤，請重新輸入';
   const [eng, setEng] = useState(false);
   const [alert, setAlert] = useState(false);
@@ -8,9 +14,37 @@ const Form: React.FC = () => {
 
   const handleSubmit = (event: React.SyntheticEvent) => {
     event.preventDefault();
-    // tslint:disable-next-line
+    // tslint:disable
     console.log(inputText);
-    setAlert(!alert);
+    console.log(props.status);
+    if (
+      props.status === QueryState.INPUT ||
+      props.status === QueryState.SUCCESS ||
+      props.status === QueryState.FAILURE
+    ) {
+      // test trigger API
+      const testReturn = true;
+      const testPayload = false;
+      setTimeout(() => {
+        if (testReturn) {
+          if (testPayload) {
+            props.dispatch(QueryState.SUCCESS);
+          } else {
+            props.dispatch(QueryState.FAILURE);
+          }
+        } else {
+          setAlert(!alert);
+        }
+      }, 1000);
+    } else if (
+      props.status === IndexState.INPUT ||
+      props.status === IndexState.READY ||
+      props.status === IndexState.SUCCESS ||
+      props.status === IndexState.FAILURE
+    ) {
+      // handle data processing
+    }
+    // tslint:enable
   };
 
   const handleChange = (event: React.FormEvent<HTMLInputElement>) => {

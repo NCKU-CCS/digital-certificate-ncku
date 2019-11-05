@@ -1,13 +1,19 @@
 import React from 'react';
 import Form from './form';
+import { IndexState, QueryState } from '../../constant';
 
-const FormSection: React.FC = () => {
+interface IProps {
+  status: QueryState | IndexState;
+  dispatch: React.Dispatch<React.SetStateAction<QueryState | IndexState>>;
+}
+
+const FormSection: React.FC<IProps> = (props: IProps) => {
   return (
     <div className="formdiv">
       <div className="formtitle">
         <span>輸入學生資料</span>
       </div>
-      <Form />
+      <Form status={props.status} dispatch={props.dispatch} />
       <style jsx>{`
         .formdiv {
           width: 600px;
