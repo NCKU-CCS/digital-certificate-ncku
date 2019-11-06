@@ -1,9 +1,20 @@
 import React, { useState } from 'react';
-import { IndexState, QueryState } from '../../constant';
+import { IndexState, QueryState, IStudent, ReissueState } from '../../constant';
+
+const fakedata: IStudent = {
+  name: 'AAA',
+  birth: 'BBB',
+  major: 'CCC',
+  other: 'DDD',
+  apply: 'EEE',
+};
 
 interface IProps {
-  status: QueryState | IndexState;
-  dispatch: React.Dispatch<React.SetStateAction<IndexState | QueryState>>;
+  status: QueryState | IndexState | ReissueState;
+  dispatch: React.Dispatch<
+    React.SetStateAction<IndexState | QueryState | ReissueState>
+  >;
+  setUser?: React.Dispatch<React.SetStateAction<IStudent>>;
 }
 
 const Form: React.FC<IProps> = (props: IProps) => {
@@ -15,34 +26,48 @@ const Form: React.FC<IProps> = (props: IProps) => {
   const handleSubmit = (event: React.SyntheticEvent) => {
     event.preventDefault();
     // tslint:disable
-    console.log(inputText);
-    console.log(props.status);
-    if (
-      props.status === QueryState.INPUT ||
-      props.status === QueryState.SUCCESS ||
-      props.status === QueryState.FAILURE
-    ) {
+    // QueryState handler
+    if (props.status === QueryState.INPUT) {
       // test trigger API
       const testReturn = true;
       const testPayload = false;
-      setTimeout(() => {
-        if (testReturn) {
-          if (testPayload) {
-            props.dispatch(QueryState.SUCCESS);
-          } else {
-            props.dispatch(QueryState.FAILURE);
-          }
+      if (testReturn) {
+        if (testPayload) {
+          props.dispatch(QueryState.SUCCESS);
         } else {
-          setAlert(!alert);
+          props.dispatch(QueryState.FAILURE);
         }
-      }, 1000);
-    } else if (
-      props.status === IndexState.INPUT ||
-      props.status === IndexState.READY ||
-      props.status === IndexState.SUCCESS ||
-      props.status === IndexState.FAILURE
-    ) {
-      // handle data processing
+      } else {
+        setAlert(!alert);
+      }
+    }
+    // IndexState handler
+    else if (props.status === IndexState.INPUT) {
+      if (props.status === IndexState.INPUT) {
+        const testReturn = true;
+        if (testReturn) {
+          props.dispatch(IndexState.READY);
+          props.setUser(fakedata);
+        } else {
+          props.dispatch(IndexState.FAILURE);
+        }
+      } else {
+        props.dispatch(IndexState.FAILURE);
+      }
+    }
+    // ReissueState
+    else if (props.status === ReissueState.INPUT) {
+      if (props.status === ReissueState.INPUT) {
+        const testReturn = true;
+        if (testReturn) {
+          props.dispatch(ReissueState.READY);
+          props.setUser(fakedata);
+        } else {
+          props.dispatch(ReissueState.FAILURE);
+        }
+      } else {
+        props.dispatch(ReissueState.FAILURE);
+      }
     }
     // tslint:enable
   };

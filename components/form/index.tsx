@@ -1,10 +1,14 @@
 import React from 'react';
 import Form from './form';
-import { IndexState, QueryState } from '../../constant';
+import { IndexState, QueryState, ReissueState, IStudent } from '../../constant';
 
 interface IProps {
-  status: QueryState | IndexState;
-  dispatch: React.Dispatch<React.SetStateAction<QueryState | IndexState>>;
+  status: QueryState | IndexState | ReissueState;
+  dispatch: React.Dispatch<
+    React.SetStateAction<QueryState | IndexState | ReissueState>
+  >;
+  user?: IStudent;
+  setUser?: React.Dispatch<React.SetStateAction<IStudent>>;
 }
 
 const FormSection: React.FC<IProps> = (props: IProps) => {
@@ -13,7 +17,11 @@ const FormSection: React.FC<IProps> = (props: IProps) => {
       <div className="formtitle">
         <span>輸入學生資料</span>
       </div>
-      <Form status={props.status} dispatch={props.dispatch} />
+      <Form
+        status={props.status}
+        dispatch={props.dispatch}
+        setUser={props.setUser}
+      />
       <style jsx>{`
         .formdiv {
           width: 600px;
