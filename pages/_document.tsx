@@ -38,6 +38,9 @@ export default class MyDocument extends Document {
             button:hover {
               cursor: pointer;
             }
+            input {
+              outline: none;
+            }
           `}</style>
         </body>
       </html>
