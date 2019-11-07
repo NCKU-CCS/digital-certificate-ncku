@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/index.js"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/reissue.js"],{
 
 /***/ "./components/form/form.tsx":
 /*!**********************************!*\
@@ -5615,21 +5615,21 @@ function concatArrays(originVal, newVal) {
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fnetdb-eb03%2FDesktop%2Fwiaspace%2Fdigital-certificate-ncku%2Fpages%2Findex.tsx!./":
-/*!******************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fnetdb-eb03%2FDesktop%2Fwiaspace%2Fdigital-certificate-ncku%2Fpages%2Findex.tsx ***!
-  \******************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Freissue&absolutePagePath=%2FUsers%2Fnetdb-eb03%2FDesktop%2Fwiaspace%2Fdigital-certificate-ncku%2Fpages%2Freissue.tsx!./":
+/*!***************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Freissue&absolutePagePath=%2FUsers%2Fnetdb-eb03%2FDesktop%2Fwiaspace%2Fdigital-certificate-ncku%2Fpages%2Freissue.tsx ***!
+  \***************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-    (window.__NEXT_P=window.__NEXT_P||[]).push(["/", function() {
-      var mod = __webpack_require__(/*! ./pages/index.tsx */ "./pages/index.tsx")
+    (window.__NEXT_P=window.__NEXT_P||[]).push(["/reissue", function() {
+      var mod = __webpack_require__(/*! ./pages/reissue.tsx */ "./pages/reissue.tsx")
       if(true) {
-        module.hot.accept(/*! ./pages/index.tsx */ "./pages/index.tsx", function() {
-          if(!next.router.components["/"]) return
-          var updatedPage = __webpack_require__(/*! ./pages/index.tsx */ "./pages/index.tsx")
-          next.router.update("/", updatedPage)
+        module.hot.accept(/*! ./pages/reissue.tsx */ "./pages/reissue.tsx", function() {
+          if(!next.router.components["/reissue"]) return
+          var updatedPage = __webpack_require__(/*! ./pages/reissue.tsx */ "./pages/reissue.tsx")
+          next.router.update("/reissue", updatedPage)
         })
       }
       return mod
@@ -14820,10 +14820,10 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./pages/index.tsx":
-/*!*************************!*\
-  !*** ./pages/index.tsx ***!
-  \*************************/
+/***/ "./pages/reissue.tsx":
+/*!***************************!*\
+  !*** ./pages/reissue.tsx ***!
+  \***************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -14839,7 +14839,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_indexReady__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/indexReady */ "./components/indexReady.tsx");
 /* harmony import */ var _components_indexFinal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/indexFinal */ "./components/indexFinal.tsx");
 /* harmony import */ var _constant__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../constant */ "./constant.ts");
-var _jsxFileName = "/Users/netdb-eb03/Desktop/wiaspace/digital-certificate-ncku/pages/index.tsx";
+var _jsxFileName = "/Users/netdb-eb03/Desktop/wiaspace/digital-certificate-ncku/pages/reissue.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -14851,7 +14851,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 var Index = function Index() {
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(_constant__WEBPACK_IMPORTED_MODULE_7__["IndexState"].INPUT),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(_constant__WEBPACK_IMPORTED_MODULE_7__["ReissueState"].INPUT),
       currentState = _useState[0],
       setCurrent = _useState[1];
 
@@ -14889,7 +14889,7 @@ var Index = function Index() {
       lineNumber: 20
     },
     __self: this
-  }, currentState === _constant__WEBPACK_IMPORTED_MODULE_7__["IndexState"].INPUT ? __jsx(_components_form__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, currentState === _constant__WEBPACK_IMPORTED_MODULE_7__["ReissueState"].INPUT ? __jsx(_components_form__WEBPACK_IMPORTED_MODULE_4__["default"], {
     status: currentState,
     dispatch: setCurrent,
     setUser: setUser,
@@ -14898,7 +14898,7 @@ var Index = function Index() {
       lineNumber: 22
     },
     __self: this
-  }) : currentState === _constant__WEBPACK_IMPORTED_MODULE_7__["IndexState"].READY ? __jsx(_components_indexReady__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }) : currentState === _constant__WEBPACK_IMPORTED_MODULE_7__["ReissueState"].READY ? __jsx(_components_indexReady__WEBPACK_IMPORTED_MODULE_5__["default"], {
     status: currentState,
     setCurrent: setCurrent,
     data: user,
@@ -14956,14 +14956,14 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHkAAAB5CAYAAAAd
 
 /***/ }),
 
-/***/ 0:
-/*!**********************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fnetdb-eb03%2FDesktop%2Fwiaspace%2Fdigital-certificate-ncku%2Fpages%2Findex.tsx ***!
-  \**********************************************************************************************************************************************************/
+/***/ 2:
+/*!*******************************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Freissue&absolutePagePath=%2FUsers%2Fnetdb-eb03%2FDesktop%2Fwiaspace%2Fdigital-certificate-ncku%2Fpages%2Freissue.tsx ***!
+  \*******************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fnetdb-eb03%2FDesktop%2Fwiaspace%2Fdigital-certificate-ncku%2Fpages%2Findex.tsx! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fnetdb-eb03%2FDesktop%2Fwiaspace%2Fdigital-certificate-ncku%2Fpages%2Findex.tsx!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Freissue&absolutePagePath=%2FUsers%2Fnetdb-eb03%2FDesktop%2Fwiaspace%2Fdigital-certificate-ncku%2Fpages%2Freissue.tsx! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Freissue&absolutePagePath=%2FUsers%2Fnetdb-eb03%2FDesktop%2Fwiaspace%2Fdigital-certificate-ncku%2Fpages%2Freissue.tsx!./");
 
 
 /***/ }),
@@ -14979,5 +14979,5 @@ module.exports = dll_01f9a3fa864a7b7414d8;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js"]]]);
-//# sourceMappingURL=index.js.map
+},[[2,"static/runtime/webpack.js"]]]);
+//# sourceMappingURL=reissue.js.map
