@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Router from 'next/router';
 import styled from 'styled-components';
+import EduIcon from '../static/edu_icon.png';
 
 const Navbar = styled.nav`
   position: fixed;
@@ -62,7 +63,7 @@ const Nav: React.FC = () => {
 
   return (
     <Navbar>
-      <Navimg src="/static/edu_icon.png" />
+      <Navimg src={EduIcon} />
       <Navtitle>教育部數位證書上傳系統</Navtitle>
       <Resizable />
       {links.map((link, index) => (

@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from './form';
 import { IndexState, QueryState, ReissueState, IStudent } from '../../constant';
+import BgImage from '../../static/laptop-from-above.png';
 
 interface IProps {
   status: QueryState | IndexState | ReissueState;
@@ -14,7 +15,7 @@ interface IProps {
 const FormSection: React.FC<IProps> = (props: IProps) => {
   return (
     <div className="formdiv">
-      <div className="formtitle">
+      <div className="formtitle" style={{ backgroundImage: `url(${BgImage})` }}>
         <span>輸入學生資料</span>
       </div>
       <Form
@@ -32,7 +33,6 @@ const FormSection: React.FC<IProps> = (props: IProps) => {
         .formtitle {
           width: 100%;
           height: 25%;
-          background-image: url('/static/laptop-from-above.png');
           display: flex;
           justify-content: center;
           align-items: center;

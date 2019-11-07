@@ -1,5 +1,6 @@
 import React from 'react';
 import { IndexState, ReissueState, IStudent } from '../constant';
+import SuccessImage from '../static/success.png';
 
 interface IProps {
   data: IStudent;
@@ -9,7 +10,7 @@ interface IProps {
 
 const IndexFinal: React.FC<IProps> = (props: IProps) => (
   <div className="indexfinal">
-    <img src="/static/success.png" />
+    <img src={SuccessImage} />
     <h1>上傳成功</h1>
     <div style={{ height: '10%' }} />
     <span>PDF 已寄送至 kevin868686@gmail.com</span>

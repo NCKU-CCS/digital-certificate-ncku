@@ -1,6 +1,7 @@
 import React from 'react';
 import { QueryState } from '../constant';
-
+import SuccessImage from '../static/success.png';
+import FailureImage from '../static/failure.png';
 interface IProps {
   isSuccess: boolean;
   dispatch: React.Dispatch<React.SetStateAction<QueryState>>;
@@ -8,9 +9,7 @@ interface IProps {
 
 const queryFinal: React.FC<IProps> = (props: IProps) => (
   <div>
-    <img
-      src={props.isSuccess ? '/static/success.png' : '/static/failure.png'}
-    />
+    <img src={props.isSuccess ? SuccessImage : FailureImage} />
     <h1>{props.isSuccess ? '已申請' : '未申請'}</h1>
     <a onClick={() => props.dispatch(QueryState.INPUT)}>返回</a>
     <style jsx>{`
