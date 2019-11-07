@@ -1,5 +1,489 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/reissue.js"],{
 
+/***/ "./components/form/form.tsx":
+/*!**********************************!*\
+  !*** ./components/form/form.tsx ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-jsx/style */ "./node_modules/styled-jsx/style.js");
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _constant__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../constant */ "./constant.ts");
+var _jsxFileName = "/Users/netdb-eb03/Desktop/wiaspace/digital-certificate-ncku/components/form/form.tsx";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+
+var fakedata = {
+  name: 'AAA',
+  birth: 'BBB',
+  major: 'CCC',
+  other: 'DDD',
+  apply: 'EEE'
+};
+
+var Form = function Form(props) {
+  var alertMessage = '學生資料錯誤，請重新輸入';
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
+      eng = _useState[0],
+      setEng = _useState[1];
+
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
+      alert = _useState2[0],
+      setAlert = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(''),
+      inputText = _useState3[0],
+      setInputText = _useState3[1];
+
+  var handleSubmit = function handleSubmit(event) {
+    event.preventDefault(); // tslint:disable
+    // QueryState handler
+
+    if (props.status === _constant__WEBPACK_IMPORTED_MODULE_2__["QueryState"].INPUT) {
+      // test trigger API
+      var testReturn = true;
+      var testPayload = false;
+
+      if (testReturn) {
+        if (testPayload) {
+          props.dispatch(_constant__WEBPACK_IMPORTED_MODULE_2__["QueryState"].SUCCESS);
+        } else {
+          props.dispatch(_constant__WEBPACK_IMPORTED_MODULE_2__["QueryState"].FAILURE);
+        }
+      } else {
+        setAlert(!alert);
+      }
+    } // IndexState handler
+    else if (props.status === _constant__WEBPACK_IMPORTED_MODULE_2__["IndexState"].INPUT) {
+        if (props.status === _constant__WEBPACK_IMPORTED_MODULE_2__["IndexState"].INPUT) {
+          var _testReturn = true;
+
+          if (_testReturn) {
+            props.dispatch(_constant__WEBPACK_IMPORTED_MODULE_2__["IndexState"].READY);
+            props.setUser(fakedata);
+          } else {
+            props.dispatch(_constant__WEBPACK_IMPORTED_MODULE_2__["IndexState"].FAILURE);
+          }
+        } else {
+          props.dispatch(_constant__WEBPACK_IMPORTED_MODULE_2__["IndexState"].FAILURE);
+        }
+      } // ReissueState
+      else if (props.status === _constant__WEBPACK_IMPORTED_MODULE_2__["ReissueState"].INPUT) {
+          if (props.status === _constant__WEBPACK_IMPORTED_MODULE_2__["ReissueState"].INPUT) {
+            var _testReturn2 = true;
+
+            if (_testReturn2) {
+              props.dispatch(_constant__WEBPACK_IMPORTED_MODULE_2__["ReissueState"].READY);
+              props.setUser(fakedata);
+            } else {
+              props.dispatch(_constant__WEBPACK_IMPORTED_MODULE_2__["ReissueState"].FAILURE);
+            }
+          } else {
+            props.dispatch(_constant__WEBPACK_IMPORTED_MODULE_2__["ReissueState"].FAILURE);
+          }
+        } // tslint:enable
+
+  };
+
+  var handleChange = function handleChange(event) {
+    event.preventDefault();
+    setInputText(event.currentTarget.value);
+  };
+
+  return __jsx("form", {
+    onSubmit: handleSubmit,
+    className: "jsx-3522642959",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 85
+    },
+    __self: this
+  }, __jsx("label", {
+    className: "jsx-3522642959",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 89
+    },
+    __self: this
+  }, __jsx("div", {
+    className: "jsx-3522642959" + " " + "selector",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 90
+    },
+    __self: this
+  }, __jsx("a", {
+    onClick: function onClick() {
+      return setEng(!eng);
+    },
+    className: "jsx-3522642959" + " " + ((eng ? 'selected' : 'default') || ""),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 91
+    },
+    __self: this
+  }, "\u4E2D\u6587"), __jsx("a", {
+    onClick: function onClick() {
+      return setEng(!eng);
+    },
+    className: "jsx-3522642959" + " " + ((!eng ? 'selected' : 'default') || ""),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 97
+    },
+    __self: this
+  }, "\u82F1\u6587")), __jsx("div", {
+    className: "jsx-3522642959" + " " + "alert",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 104
+    },
+    __self: this
+  }, alert ? alertMessage : '')), __jsx("label", {
+    className: "jsx-3522642959",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 107
+    },
+    __self: this
+  }, __jsx("input", {
+    onChange: handleChange,
+    type: "text",
+    placeholder: "\u5B78\u751F\u8B49\u865F\u78BC",
+    className: "jsx-3522642959",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 108
+    },
+    __self: this
+  }), __jsx("div", {
+    style: {
+      height: '80px',
+      width: '100%'
+    },
+    className: "jsx-3522642959",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 109
+    },
+    __self: this
+  })), __jsx("label", {
+    className: "jsx-3522642959",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 112
+    },
+    __self: this
+  }, __jsx("button", {
+    type: "submit",
+    className: "jsx-3522642959",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 113
+    },
+    __self: this
+  }, "\u78BA\u8A8D CONFIRM"), __jsx("div", {
+    className: "jsx-3522642959",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 114
+    },
+    __self: this
+  }, __jsx("div", {
+    style: !eng ? {
+      backgroundColor: '#707070'
+    } : {},
+    className: "jsx-3522642959" + " " + "circle",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 115
+    },
+    __self: this
+  }), __jsx("div", {
+    style: eng ? {
+      backgroundColor: '#707070'
+    } : {},
+    className: "jsx-3522642959" + " " + "circle",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 119
+    },
+    __self: this
+  }))), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
+    id: "3522642959",
+    __self: this
+  }, "form.jsx-3522642959{width:100%;height:75%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;padding:20px 0px 20px 0px;border-radius:0px 0px 20px 20px;}label.jsx-3522642959{width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}input.jsx-3522642959{border-top:0px;border-left:0px;border-right:0px;border-bottom:2px solid rgba(186,184,184,0.66);background-color:transparent;width:70%;font-size:25px;line-height:1.2;color:#707070;}input.jsx-3522642959::-webkit-input-placeholder{font-size:25px;color:rgba(186,184,184,0.66);}input.jsx-3522642959::-moz-placeholder{font-size:25px;color:rgba(186,184,184,0.66);}input.jsx-3522642959:-ms-input-placeholder{font-size:25px;color:rgba(186,184,184,0.66);}input.jsx-3522642959::placeholder{font-size:25px;color:rgba(186,184,184,0.66);}button.jsx-3522642959{width:70%;font-size:23px;border-radius:31px;background-color:#4781e6;line-height:1.22;-webkit-letter-spacing:0.05px;-moz-letter-spacing:0.05px;-ms-letter-spacing:0.05px;letter-spacing:0.05px;text-align:center;color:rgba(247,247,247,0.92);padding:8px 0px 8px 0px;border:0px;}.circle.jsx-3522642959{width:15px;height:15px;border-radius:50%;border:1px solid #707070;display:inline-block;margin:20px 12px 20px 12px;}.alert.jsx-3522642959{color:rgba(236,35,35,0.92);font-family:EdwardianScriptITC;font-size:25px;height:36px;}.selector.jsx-3522642959{font-size:33px;-webkit-text-stroke:1px #676464;font-family:SegoeUI;color:#676464;text-align:center;margin-top:25px;}.selector.jsx-3522642959>a.jsx-3522642959{margin:0px 15px 0px 15px;}.selected.jsx-3522642959{opacity:0.35;}.default.jsx-3522642959{opacity:1;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9uZXRkYi1lYjAzL0Rlc2t0b3Avd2lhc3BhY2UvZGlnaXRhbC1jZXJ0aWZpY2F0ZS1uY2t1L2NvbXBvbmVudHMvZm9ybS9mb3JtLnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUE2SGtCLEFBR3NCLEFBVUEsQUFPSSxBQVdBLEFBSUwsQUFZQyxBQVFtQixBQU1mLEFBUVUsQUFHWixBQUdILFVBdkNLLEFBd0NqQixDQXhFYSxBQVVFLEFBa0NELEVBeUJkLEVBcERrQixBQVdnQixBQThCQSxPQXpEbkIsQ0E0Q0ssRUFaQyxBQWlDckIsRUFkaUMsSUFsQ2QsVUE0QlEsR0FqQjNCLEFBSzJCLEdBeUJMLENBeEM4QixVQWtDbkMsUUFOTSxDQWFQLEVBekJHLElBbUJMLFFBT00sSUFsREssQUE0Q3pCLENBbkJ3QixDQVlLLFFBNUJFLENBbEJDLEdBNERkLGVBYmxCLENBY0EsU0ExQ1ksVUFDSyxlQUNDLGdCQUNGLGNBQ2hCLEtBYnFCLE9BeUJELGtCQUNjLEVBbkNiLDJCQW9DSyx3QkFDYixXQUNiLElBNUJ3QiwyQkFUQSxtREFVeEIsMkJBVDRCLDBCQUNNLGdDQUNsQyIsImZpbGUiOiIvVXNlcnMvbmV0ZGItZWIwMy9EZXNrdG9wL3dpYXNwYWNlL2RpZ2l0YWwtY2VydGlmaWNhdGUtbmNrdS9jb21wb25lbnRzL2Zvcm0vZm9ybS50c3giLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QsIHsgdXNlU3RhdGUgfSBmcm9tICdyZWFjdCc7XG5pbXBvcnQgeyBJbmRleFN0YXRlLCBRdWVyeVN0YXRlLCBJU3R1ZGVudCwgUmVpc3N1ZVN0YXRlIH0gZnJvbSAnLi4vLi4vY29uc3RhbnQnO1xuXG5jb25zdCBmYWtlZGF0YTogSVN0dWRlbnQgPSB7XG4gIG5hbWU6ICdBQUEnLFxuICBiaXJ0aDogJ0JCQicsXG4gIG1ham9yOiAnQ0NDJyxcbiAgb3RoZXI6ICdEREQnLFxuICBhcHBseTogJ0VFRScsXG59O1xuXG5pbnRlcmZhY2UgSVByb3BzIHtcbiAgc3RhdHVzOiBRdWVyeVN0YXRlIHwgSW5kZXhTdGF0ZSB8IFJlaXNzdWVTdGF0ZTtcbiAgZGlzcGF0Y2g6IFJlYWN0LkRpc3BhdGNoPFJlYWN0LlNldFN0YXRlQWN0aW9uPEluZGV4U3RhdGUgfCBRdWVyeVN0YXRlIHwgUmVpc3N1ZVN0YXRlPj47XG4gIHNldFVzZXI/OiBSZWFjdC5EaXNwYXRjaDxSZWFjdC5TZXRTdGF0ZUFjdGlvbjxJU3R1ZGVudD4+O1xufVxuXG5jb25zdCBGb3JtOiBSZWFjdC5GQzxJUHJvcHM+ID0gKHByb3BzOiBJUHJvcHMpID0+IHtcbiAgY29uc3QgYWxlcnRNZXNzYWdlID0gJ+WtuOeUn+izh+aWmemMr+iqpO+8jOiri+mHjeaWsOi8uOWFpSc7XG4gIGNvbnN0IFtlbmcsIHNldEVuZ10gPSB1c2VTdGF0ZShmYWxzZSk7XG4gIGNvbnN0IFthbGVydCwgc2V0QWxlcnRdID0gdXNlU3RhdGUoZmFsc2UpO1xuICBjb25zdCBbaW5wdXRUZXh0LCBzZXRJbnB1dFRleHRdID0gdXNlU3RhdGUoJycpO1xuXG4gIGNvbnN0IGhhbmRsZVN1Ym1pdCA9IChldmVudDogUmVhY3QuU3ludGhldGljRXZlbnQpID0+IHtcbiAgICBldmVudC5wcmV2ZW50RGVmYXVsdCgpO1xuICAgIC8vIHRzbGludDpkaXNhYmxlXG4gICAgLy8gUXVlcnlTdGF0ZSBoYW5kbGVyXG4gICAgaWYgKFxuICAgICAgcHJvcHMuc3RhdHVzID09PSBRdWVyeVN0YXRlLklOUFVUXG4gICAgKSB7XG4gICAgICAvLyB0ZXN0IHRyaWdnZXIgQVBJXG4gICAgICBjb25zdCB0ZXN0UmV0dXJuID0gdHJ1ZTtcbiAgICAgIGNvbnN0IHRlc3RQYXlsb2FkID0gZmFsc2U7XG4gICAgICBpZiAodGVzdFJldHVybikge1xuICAgICAgICBpZiAodGVzdFBheWxvYWQpIHtcbiAgICAgICAgICBwcm9wcy5kaXNwYXRjaChRdWVyeVN0YXRlLlNVQ0NFU1MpO1xuICAgICAgICB9IGVsc2Uge1xuICAgICAgICAgIHByb3BzLmRpc3BhdGNoKFF1ZXJ5U3RhdGUuRkFJTFVSRSk7XG4gICAgICAgIH1cbiAgICAgIH0gZWxzZSB7XG4gICAgICAgIHNldEFsZXJ0KCFhbGVydCk7XG4gICAgICB9XG4gICAgfVxuICAgIC8vIEluZGV4U3RhdGUgaGFuZGxlclxuICAgIGVsc2UgaWYgKFxuICAgICAgcHJvcHMuc3RhdHVzID09PSBJbmRleFN0YXRlLklOUFVUXG4gICAgKSB7XG4gICAgICBpZihwcm9wcy5zdGF0dXMgPT09IEluZGV4U3RhdGUuSU5QVVQpIHtcbiAgICAgICAgY29uc3QgdGVzdFJldHVybiA9IHRydWU7XG4gICAgICAgIGlmKHRlc3RSZXR1cm4pIHtcbiAgICAgICAgICBwcm9wcy5kaXNwYXRjaChJbmRleFN0YXRlLlJFQURZKTtcbiAgICAgICAgICBwcm9wcy5zZXRVc2VyKGZha2VkYXRhKTtcbiAgICAgICAgfSBlbHNlIHtcbiAgICAgICAgICBwcm9wcy5kaXNwYXRjaChJbmRleFN0YXRlLkZBSUxVUkUpO1xuICAgICAgICB9XG4gICAgICB9IGVsc2Uge1xuICAgICAgICAgIHByb3BzLmRpc3BhdGNoKEluZGV4U3RhdGUuRkFJTFVSRSk7XG4gICAgICB9XG4gICAgfVxuICAgIC8vIFJlaXNzdWVTdGF0ZVxuICAgIGVsc2UgaWYgKFxuICAgICAgcHJvcHMuc3RhdHVzID09PSBSZWlzc3VlU3RhdGUuSU5QVVRcbiAgICApIHtcbiAgICAgIGlmKHByb3BzLnN0YXR1cyA9PT0gUmVpc3N1ZVN0YXRlLklOUFVUKSB7XG4gICAgICAgIGNvbnN0IHRlc3RSZXR1cm4gPSB0cnVlO1xuICAgICAgICBpZih0ZXN0UmV0dXJuKSB7XG4gICAgICAgICAgcHJvcHMuZGlzcGF0Y2goUmVpc3N1ZVN0YXRlLlJFQURZKTtcbiAgICAgICAgICBwcm9wcy5zZXRVc2VyKGZha2VkYXRhKTtcbiAgICAgICAgfSBlbHNlIHtcbiAgICAgICAgICBwcm9wcy5kaXNwYXRjaChSZWlzc3VlU3RhdGUuRkFJTFVSRSk7XG4gICAgICAgIH1cbiAgICAgIH0gZWxzZSB7XG4gICAgICAgICAgcHJvcHMuZGlzcGF0Y2goUmVpc3N1ZVN0YXRlLkZBSUxVUkUpO1xuICAgICAgfVxuICAgIH1cbiAgICAvLyB0c2xpbnQ6ZW5hYmxlXG4gIH07XG5cbiAgY29uc3QgaGFuZGxlQ2hhbmdlID0gKGV2ZW50OiBSZWFjdC5Gb3JtRXZlbnQ8SFRNTElucHV0RWxlbWVudD4pID0+IHtcbiAgICBldmVudC5wcmV2ZW50RGVmYXVsdCgpO1xuICAgIHNldElucHV0VGV4dChldmVudC5jdXJyZW50VGFyZ2V0LnZhbHVlKTtcbiAgfTtcblxuICByZXR1cm4gKFxuICAgIDxmb3JtXG4gICAgICBvblN1Ym1pdD17aGFuZGxlU3VibWl0fVxuXG4gICAgPlxuICAgICAgPGxhYmVsPlxuICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInNlbGVjdG9yXCI+XG4gICAgICAgICAgPGFcbiAgICAgICAgICAgIGNsYXNzTmFtZT17ZW5nID8gJ3NlbGVjdGVkJyA6ICdkZWZhdWx0J31cbiAgICAgICAgICAgIG9uQ2xpY2s9eygpID0+IHNldEVuZyghZW5nKX1cbiAgICAgICAgICA+XG4gICAgICAgICAgICDkuK3mlodcbiAgICAgICAgICA8L2E+XG4gICAgICAgICAgPGFcbiAgICAgICAgICAgIGNsYXNzTmFtZT17IWVuZyA/ICdzZWxlY3RlZCcgOiAnZGVmYXVsdCd9XG4gICAgICAgICAgICBvbkNsaWNrPXsoKSA9PiBzZXRFbmcoIWVuZyl9XG4gICAgICAgICAgPlxuICAgICAgICAgICAg6Iux5paHXG4gICAgICAgICAgPC9hPlxuICAgICAgICA8L2Rpdj5cbiAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJhbGVydFwiPnthbGVydCA/IGFsZXJ0TWVzc2FnZSA6ICcnfTwvZGl2PlxuICAgICAgPC9sYWJlbD5cblxuICAgICAgPGxhYmVsPlxuICAgICAgICA8aW5wdXQgb25DaGFuZ2U9e2hhbmRsZUNoYW5nZX0gdHlwZT1cInRleHRcIiBwbGFjZWhvbGRlcj1cIuWtuOeUn+itieiZn+eivFwiIC8+XG4gICAgICAgIDxkaXYgc3R5bGU9e3sgaGVpZ2h0OiAnODBweCcsIHdpZHRoOiAnMTAwJScgfX0gLz5cbiAgICAgIDwvbGFiZWw+XG5cbiAgICAgIDxsYWJlbD5cbiAgICAgICAgPGJ1dHRvbiB0eXBlPVwic3VibWl0XCI+56K66KqNIENPTkZJUk08L2J1dHRvbj5cbiAgICAgICAgPGRpdj5cbiAgICAgICAgICA8ZGl2XG4gICAgICAgICAgICBjbGFzc05hbWU9XCJjaXJjbGVcIlxuICAgICAgICAgICAgc3R5bGU9eyFlbmcgPyB7IGJhY2tncm91bmRDb2xvcjogJyM3MDcwNzAnIH0gOiB7fX1cbiAgICAgICAgICAvPlxuICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgIGNsYXNzTmFtZT1cImNpcmNsZVwiXG4gICAgICAgICAgICBzdHlsZT17ZW5nID8geyBiYWNrZ3JvdW5kQ29sb3I6ICcjNzA3MDcwJyB9IDoge319XG4gICAgICAgICAgLz5cbiAgICAgICAgPC9kaXY+XG4gICAgICA8L2xhYmVsPlxuXG4gICAgICA8c3R5bGUganN4PntgXG4gICAgICAgIGZvcm0ge1xuICAgICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICAgIGhlaWdodDogNzUlO1xuICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xuICAgICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgICAgICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgICAgICAgICBwYWRkaW5nOiAyMHB4IDBweCAyMHB4IDBweDtcbiAgICAgICAgICBib3JkZXItcmFkaXVzOiAwcHggMHB4IDIwcHggMjBweDtcbiAgICAgICAgfVxuICAgICAgICBsYWJlbCB7XG4gICAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgICAgIH1cbiAgICAgICAgaW5wdXQge1xuICAgICAgICAgIGJvcmRlci10b3A6IDBweDtcbiAgICAgICAgICBib3JkZXItbGVmdDogMHB4O1xuICAgICAgICAgIGJvcmRlci1yaWdodDogMHB4O1xuICAgICAgICAgIGJvcmRlci1ib3R0b206IDJweCBzb2xpZCByZ2JhKDE4NiwgMTg0LCAxODQsIDAuNjYpO1xuICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50O1xuICAgICAgICAgIHdpZHRoOiA3MCU7XG4gICAgICAgICAgZm9udC1zaXplOiAyNXB4O1xuICAgICAgICAgIGxpbmUtaGVpZ2h0OiAxLjI7XG4gICAgICAgICAgY29sb3I6ICM3MDcwNzA7XG4gICAgICAgIH1cbiAgICAgICAgaW5wdXQ6OnBsYWNlaG9sZGVyIHtcbiAgICAgICAgICBmb250LXNpemU6IDI1cHg7XG4gICAgICAgICAgY29sb3I6IHJnYmEoMTg2LCAxODQsIDE4NCwgMC42Nik7XG4gICAgICAgIH1cbiAgICAgICAgYnV0dG9uIHtcbiAgICAgICAgICB3aWR0aDogNzAlO1xuICAgICAgICAgIGZvbnQtc2l6ZTogMjNweDtcbiAgICAgICAgICBib3JkZXItcmFkaXVzOiAzMXB4O1xuICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6ICM0NzgxZTY7XG4gICAgICAgICAgbGluZS1oZWlnaHQ6IDEuMjI7XG4gICAgICAgICAgbGV0dGVyLXNwYWNpbmc6IDAuMDVweDtcbiAgICAgICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gICAgICAgICAgY29sb3I6IHJnYmEoMjQ3LCAyNDcsIDI0NywgMC45Mik7XG4gICAgICAgICAgcGFkZGluZzogOHB4IDBweCA4cHggMHB4O1xuICAgICAgICAgIGJvcmRlcjogMHB4O1xuICAgICAgICB9XG4gICAgICAgIC5jaXJjbGUge1xuICAgICAgICAgIHdpZHRoOiAxNXB4O1xuICAgICAgICAgIGhlaWdodDogMTVweDtcbiAgICAgICAgICBib3JkZXItcmFkaXVzOiA1MCU7XG4gICAgICAgICAgYm9yZGVyOiAxcHggc29saWQgIzcwNzA3MDtcbiAgICAgICAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gICAgICAgICAgbWFyZ2luOiAyMHB4IDEycHggMjBweCAxMnB4O1xuICAgICAgICB9XG4gICAgICAgIC5hbGVydCB7XG4gICAgICAgICAgY29sb3I6IHJnYmEoMjM2LCAzNSwgMzUsIDAuOTIpO1xuICAgICAgICAgIGZvbnQtZmFtaWx5OiBFZHdhcmRpYW5TY3JpcHRJVEM7XG4gICAgICAgICAgZm9udC1zaXplOiAyNXB4O1xuICAgICAgICAgIGhlaWdodDogMzZweDtcbiAgICAgICAgfVxuICAgICAgICAuc2VsZWN0b3Ige1xuICAgICAgICAgIGZvbnQtc2l6ZTogMzNweDtcbiAgICAgICAgICAtd2Via2l0LXRleHQtc3Ryb2tlOiAxcHggIzY3NjQ2NDtcbiAgICAgICAgICBmb250LWZhbWlseTogU2Vnb2VVSTtcbiAgICAgICAgICBjb2xvcjogIzY3NjQ2NDtcbiAgICAgICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gICAgICAgICAgbWFyZ2luLXRvcDogMjVweDtcbiAgICAgICAgfVxuICAgICAgICAuc2VsZWN0b3IgPiBhIHtcbiAgICAgICAgICBtYXJnaW46IDBweCAxNXB4IDBweCAxNXB4O1xuICAgICAgICB9XG4gICAgICAgIC5zZWxlY3RlZCB7XG4gICAgICAgICAgb3BhY2l0eTogMC4zNTtcbiAgICAgICAgfVxuICAgICAgICAuZGVmYXVsdCB7XG4gICAgICAgICAgb3BhY2l0eTogMTtcbiAgICAgICAgfVxuICAgICAgYH08L3N0eWxlPlxuICAgIDwvZm9ybT5cbiAgKTtcbn07XG5cbmV4cG9ydCBkZWZhdWx0IEZvcm07XG4iXX0= */\n/*@ sourceURL=/Users/netdb-eb03/Desktop/wiaspace/digital-certificate-ncku/components/form/form.tsx */"));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Form);
+
+/***/ }),
+
+/***/ "./components/form/index.tsx":
+/*!***********************************!*\
+  !*** ./components/form/index.tsx ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-jsx/style */ "./node_modules/styled-jsx/style.js");
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./form */ "./components/form/form.tsx");
+var _jsxFileName = "/Users/netdb-eb03/Desktop/wiaspace/digital-certificate-ncku/components/form/index.tsx";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+
+
+var FormSection = function FormSection(props) {
+  return __jsx("div", {
+    className: "jsx-3363871625" + " " + "formdiv",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    },
+    __self: this
+  }, __jsx("div", {
+    className: "jsx-3363871625" + " " + "formtitle",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    },
+    __self: this
+  }, __jsx("span", {
+    className: "jsx-3363871625",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21
+    },
+    __self: this
+  }, "\u8F38\u5165\u5B78\u751F\u8CC7\u6599")), __jsx(_form__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    status: props.status,
+    dispatch: props.dispatch,
+    setUser: props.setUser,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: this
+  }), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
+    id: "3363871625",
+    __self: this
+  }, ".formdiv.jsx-3363871625{width:600px;height:600px;box-shadow:0 3px 6px 0 rgba(0,0,0,0.16);border-radius:20px;}.formtitle.jsx-3363871625{width:100%;height:25%;background-image:url('/static/laptop-from-above.png');display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;border-radius:20px 20px 0px 0px;}span.jsx-3363871625{-webkit-text-stroke:1px #ffffff;font-family:SegoeUI;font-size:45px;color:#ffffff;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9uZXRkYi1lYjAzL0Rlc2t0b3Avd2lhc3BhY2UvZGlnaXRhbC1jZXJ0aWZpY2F0ZS1uY2t1L2NvbXBvbmVudHMvZm9ybS9pbmRleC50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBMkJrQixBQUd1QixBQU1ELEFBU3FCLFdBUnJCLENBTkUsVUFPeUMsR0FOWCxPQWN2QixvQkFDTCxhQWRJLEVBZUwsU0FURCxLQVVmLEdBZkEsa0VBTXlCLG1HQUNKLDZGQUNhLGdDQUNsQyIsImZpbGUiOiIvVXNlcnMvbmV0ZGItZWIwMy9EZXNrdG9wL3dpYXNwYWNlL2RpZ2l0YWwtY2VydGlmaWNhdGUtbmNrdS9jb21wb25lbnRzL2Zvcm0vaW5kZXgudHN4Iiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCBGb3JtIGZyb20gJy4vZm9ybSc7XG5pbXBvcnQge1xuICBJbmRleFN0YXRlLFxuICBRdWVyeVN0YXRlLFxuICBSZWlzc3VlU3RhdGUsXG4gIElTdHVkZW50LFxufSBmcm9tICcuLi8uLi9jb25zdGFudCc7XG5cbmludGVyZmFjZSBJUHJvcHMge1xuICBzdGF0dXM6IFF1ZXJ5U3RhdGUgfCBJbmRleFN0YXRlIHwgUmVpc3N1ZVN0YXRlO1xuICBkaXNwYXRjaDogUmVhY3QuRGlzcGF0Y2g8UmVhY3QuU2V0U3RhdGVBY3Rpb248UXVlcnlTdGF0ZSB8IEluZGV4U3RhdGUgfCBSZWlzc3VlU3RhdGU+PjtcbiAgdXNlcj86IElTdHVkZW50O1xuICBzZXRVc2VyPzogUmVhY3QuRGlzcGF0Y2g8UmVhY3QuU2V0U3RhdGVBY3Rpb248SVN0dWRlbnQ+Pjtcbn1cblxuY29uc3QgRm9ybVNlY3Rpb246IFJlYWN0LkZDPElQcm9wcz4gPSAocHJvcHM6IElQcm9wcykgPT4ge1xuICByZXR1cm4gKFxuICAgIDxkaXYgY2xhc3NOYW1lPVwiZm9ybWRpdlwiPlxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJmb3JtdGl0bGVcIj5cbiAgICAgICAgPHNwYW4+6Ly45YWl5a2455Sf6LOH5paZPC9zcGFuPlxuICAgICAgPC9kaXY+XG4gICAgICA8Rm9ybVxuICAgICAgICBzdGF0dXM9e3Byb3BzLnN0YXR1c31cbiAgICAgICAgZGlzcGF0Y2g9e3Byb3BzLmRpc3BhdGNofVxuICAgICAgICBzZXRVc2VyPXtwcm9wcy5zZXRVc2VyfVxuICAgICAgLz5cbiAgICAgIDxzdHlsZSBqc3g+e2BcbiAgICAgICAgLmZvcm1kaXYge1xuICAgICAgICAgIHdpZHRoOiA2MDBweDtcbiAgICAgICAgICBoZWlnaHQ6IDYwMHB4O1xuICAgICAgICAgIGJveC1zaGFkb3c6IDAgM3B4IDZweCAwIHJnYmEoMCwgMCwgMCwgMC4xNik7XG4gICAgICAgICAgYm9yZGVyLXJhZGl1czogMjBweDtcbiAgICAgICAgfVxuICAgICAgICAuZm9ybXRpdGxlIHtcbiAgICAgICAgICB3aWR0aDogMTAwJTtcbiAgICAgICAgICBoZWlnaHQ6IDI1JTtcbiAgICAgICAgICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoJy9zdGF0aWMvbGFwdG9wLWZyb20tYWJvdmUucG5nJyk7XG4gICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDIwcHggMjBweCAwcHggMHB4O1xuICAgICAgICB9XG4gICAgICAgIHNwYW4ge1xuICAgICAgICAgIC13ZWJraXQtdGV4dC1zdHJva2U6IDFweCAjZmZmZmZmO1xuICAgICAgICAgIGZvbnQtZmFtaWx5OiBTZWdvZVVJO1xuICAgICAgICAgIGZvbnQtc2l6ZTogNDVweDtcbiAgICAgICAgICBjb2xvcjogI2ZmZmZmZjtcbiAgICAgICAgfVxuICAgICAgYH08L3N0eWxlPlxuICAgIDwvZGl2PlxuICApO1xufTtcblxuZXhwb3J0IGRlZmF1bHQgRm9ybVNlY3Rpb247XG4iXX0= */\n/*@ sourceURL=/Users/netdb-eb03/Desktop/wiaspace/digital-certificate-ncku/components/form/index.tsx */"));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (FormSection);
+
+/***/ }),
+
+/***/ "./components/indexFinal.tsx":
+/*!***********************************!*\
+  !*** ./components/indexFinal.tsx ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-jsx/style */ "./node_modules/styled-jsx/style.js");
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _constant__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../constant */ "./constant.ts");
+var _jsxFileName = "/Users/netdb-eb03/Desktop/wiaspace/digital-certificate-ncku/components/indexFinal.tsx";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+
+
+var IndexFinal = function IndexFinal(props) {
+  return __jsx("div", {
+    className: "jsx-3181809254" + " " + "indexfinal",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: this
+  }, __jsx("img", {
+    src: "/static/success.png",
+    className: "jsx-3181809254",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: this
+  }), __jsx("h1", {
+    className: "jsx-3181809254",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: this
+  }, "\u4E0A\u50B3\u6210\u529F"), __jsx("div", {
+    style: {
+      height: '10%'
+    },
+    className: "jsx-3181809254",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: this
+  }), __jsx("span", {
+    className: "jsx-3181809254",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: this
+  }, "PDF \u5DF2\u5BC4\u9001\u81F3 kevin868686@gmail.com"), __jsx("a", {
+    onClick: function onClick() {
+      return props.status === _constant__WEBPACK_IMPORTED_MODULE_2__["IndexState"].SUCCESS ? props.setCurrent(_constant__WEBPACK_IMPORTED_MODULE_2__["IndexState"].INPUT) : props.setCurrent(_constant__WEBPACK_IMPORTED_MODULE_2__["ReissueState"].INPUT);
+    },
+    className: "jsx-3181809254",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: this
+  }, "\u9000\u51FA"), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
+    id: "3181809254",
+    __self: this
+  }, ".indexfinal.jsx-3181809254{width:553px;height:628px;box-shadow:3px 3px 10px 0 rgba(51,188,60,0.29);border:solid 6px #33bc3c;border-radius:40px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;position:relative;}h1.jsx-3181809254{-webkit-text-stroke:0.4px #33bc3c;font-family:EdwardianScriptITC;font-size:45px;color:#33bc3c;margin:26px 0 26px 0;}span.jsx-3181809254{font-family:Calibri;font-size:40px;color:#707070;text-align:center;}a.jsx-3181809254{font-family:SegoeUI;font-size:32px;color:#e72525;text-align:center;border-bottom:2px solid #e72525;position:absolute;bottom:37px;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9uZXRkYi1lYjAzL0Rlc2t0b3Avd2lhc3BhY2UvZGlnaXRhbC1jZXJ0aWZpY2F0ZS1uY2t1L2NvbXBvbmVudHMvaW5kZXhGaW5hbC50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBZ0JnQixBQUdxQixBQVlzQixBQU9kLEFBTUEsWUF4QlAsUUFtQkUsQUFNQSxLQXhCbUMsU0FXbkIsQ0FRakIsQUFNQSxjQUxJLEFBTUEsZ0JBZEgsRUFTakIsQUFNa0MsS0ExQlAsUUFZWCxjQUNPLEdBWkYsRUEwQkQsZ0JBYnBCLENBWmUsQ0EwQkQsWUFDZCw2REExQnlCLG1HQUNKLDZGQUNHLDhFQUNKLGtCQUNwQiIsImZpbGUiOiIvVXNlcnMvbmV0ZGItZWIwMy9EZXNrdG9wL3dpYXNwYWNlL2RpZ2l0YWwtY2VydGlmaWNhdGUtbmNrdS9jb21wb25lbnRzL2luZGV4RmluYWwudHN4Iiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCB7IEluZGV4U3RhdGUsIFJlaXNzdWVTdGF0ZSwgSVN0dWRlbnQgfSBmcm9tICcuLi9jb25zdGFudCc7XG5cbmludGVyZmFjZSBJUHJvcHMge1xuICBkYXRhOiBJU3R1ZGVudDtcbiAgc3RhdHVzOiBJbmRleFN0YXRlfFJlaXNzdWVTdGF0ZTtcbiAgc2V0Q3VycmVudDogUmVhY3QuRGlzcGF0Y2g8UmVhY3QuU2V0U3RhdGVBY3Rpb248SW5kZXhTdGF0ZXxSZWlzc3VlU3RhdGU+Pjtcbn1cblxuY29uc3QgSW5kZXhGaW5hbDogUmVhY3QuRkM8SVByb3BzPiA9IChwcm9wczogSVByb3BzKSA9PiAoXG4gIDxkaXYgY2xhc3NOYW1lPVwiaW5kZXhmaW5hbFwiPlxuICAgIDxpbWcgc3JjPVwiL3N0YXRpYy9zdWNjZXNzLnBuZ1wiIC8+XG4gICAgPGgxPuS4iuWCs+aIkOWKnzwvaDE+XG4gICAgPGRpdiBzdHlsZT17e2hlaWdodDonMTAlJ319Lz5cbiAgICA8c3Bhbj5QREYg5bey5a+E6YCB6IezIGtldmluODY4Njg2QGdtYWlsLmNvbTwvc3Bhbj5cbiAgICA8YSBvbkNsaWNrPXsoKSA9PiAocHJvcHMuc3RhdHVzPT09SW5kZXhTdGF0ZS5TVUNDRVNTKSA/IHByb3BzLnNldEN1cnJlbnQoSW5kZXhTdGF0ZS5JTlBVVCkgOiBwcm9wcy5zZXRDdXJyZW50KFJlaXNzdWVTdGF0ZS5JTlBVVCl9PumAgOWHujwvYT5cbiAgICA8c3R5bGUganN4PntgXG4gICAgICAuaW5kZXhmaW5hbCB7XG4gICAgICAgIHdpZHRoOiA1NTNweDtcbiAgICAgICAgaGVpZ2h0OiA2MjhweDtcbiAgICAgICAgYm94LXNoYWRvdzogM3B4IDNweCAxMHB4IDAgcmdiYSg1MSwgMTg4LCA2MCwgMC4yOSk7XG4gICAgICAgIGJvcmRlcjogc29saWQgNnB4ICMzM2JjM2M7XG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDQwcHg7XG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICB9XG4gICAgICBoMSB7XG4gICAgICAgIC13ZWJraXQtdGV4dC1zdHJva2U6IDAuNHB4ICMzM2JjM2M7XG4gICAgICAgIGZvbnQtZmFtaWx5OiBFZHdhcmRpYW5TY3JpcHRJVEM7XG4gICAgICAgIGZvbnQtc2l6ZTogNDVweDtcbiAgICAgICAgY29sb3I6ICMzM2JjM2M7XG4gICAgICAgIG1hcmdpbjogMjZweCAwIDI2cHggMDtcbiAgICAgIH1cbiAgICAgIHNwYW4ge1xuICAgICAgICBmb250LWZhbWlseTogQ2FsaWJyaTtcbiAgICAgICAgZm9udC1zaXplOiA0MHB4O1xuICAgICAgICBjb2xvcjogIzcwNzA3MDtcbiAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgICAgfVxuICAgICAgYSB7XG4gICAgICAgIGZvbnQtZmFtaWx5OiBTZWdvZVVJO1xuICAgICAgICBmb250LXNpemU6IDMycHg7XG4gICAgICAgIGNvbG9yOiAjZTcyNTI1O1xuICAgICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gICAgICAgIGJvcmRlci1ib3R0b206IDJweCBzb2xpZCAjZTcyNTI1O1xuICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgICAgIGJvdHRvbTogMzdweDtcbiAgICAgIH1cbiAgICBgfTwvc3R5bGU+XG4gIDwvZGl2PlxuKTtcblxuZXhwb3J0IGRlZmF1bHQgSW5kZXhGaW5hbDtcbiJdfQ== */\n/*@ sourceURL=/Users/netdb-eb03/Desktop/wiaspace/digital-certificate-ncku/components/indexFinal.tsx */"));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (IndexFinal);
+
+/***/ }),
+
+/***/ "./components/indexReady.tsx":
+/*!***********************************!*\
+  !*** ./components/indexReady.tsx ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-jsx/style */ "./node_modules/styled-jsx/style.js");
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _constant__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../constant */ "./constant.ts");
+var _jsxFileName = "/Users/netdb-eb03/Desktop/wiaspace/digital-certificate-ncku/components/indexReady.tsx";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+
+
+var IndexReady = function IndexReady(props) {
+  return __jsx("div", {
+    className: "jsx-1248946869" + " " + "indexready",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: this
+  }, __jsx("h1", {
+    className: "jsx-1248946869",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: this
+  }, "\u8CC7\u6599\u78BA\u8A8D"), __jsx("span", {
+    className: "jsx-1248946869",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: this
+  }, "\u5B78\u751F\u59D3\u540D\uFF1A", props.data.name), __jsx("span", {
+    className: "jsx-1248946869",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: this
+  }, "\u51FA\u751F\u65E5\u671F\uFF1A", props.data.birth), __jsx("span", {
+    className: "jsx-1248946869",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: this
+  }, "\u7562\u696D\u7CFB\u6240\uFF1A", props.data.major), __jsx("span", {
+    className: "jsx-1248946869",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: this
+  }, "\u5176\u4ED6\u8CC7\u8A0A\uFF1A", props.data.other), __jsx("span", {
+    className: "jsx-1248946869",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    },
+    __self: this
+  }, "\u7533\u8ACB\u8B49\u66F8\uFF1A", props.data.apply), __jsx("div", {
+    className: "jsx-1248946869" + " " + "indexbutton",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    },
+    __self: this
+  }, __jsx("button", {
+    onClick: function onClick() {
+      return props.status === _constant__WEBPACK_IMPORTED_MODULE_2__["IndexState"].READY ? props.setCurrent(_constant__WEBPACK_IMPORTED_MODULE_2__["IndexState"].INPUT) : props.setCurrent(_constant__WEBPACK_IMPORTED_MODULE_2__["ReissueState"].INPUT);
+    },
+    className: "jsx-1248946869",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    },
+    __self: this
+  }, "\u91CD\u65B0\u8F38\u5165"), __jsx("div", {
+    style: {
+      width: '10%'
+    },
+    className: "jsx-1248946869",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26
+    },
+    __self: this
+  }), __jsx("button", {
+    onClick: function onClick() {
+      return props.status === _constant__WEBPACK_IMPORTED_MODULE_2__["IndexState"].READY ? props.setCurrent(_constant__WEBPACK_IMPORTED_MODULE_2__["IndexState"].SUCCESS) : props.setCurrent(_constant__WEBPACK_IMPORTED_MODULE_2__["ReissueState"].SUCCESS);
+    },
+    className: "jsx-1248946869",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27
+    },
+    __self: this
+  }, "\u78BA\u5B9A\u9001\u51FA")), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
+    id: "1248946869",
+    __self: this
+  }, ".indexready.jsx-1248946869{width:800px;height:580px;border-radius:20px;border:solid 6px rgba(112,112,112,0.16);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;position:relative;color:#707070;}.indexbutton.jsx-1248946869{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:space-around;-webkit-box-align:space-around;-ms-flex-align:space-around;align-items:space-around;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;position:absolute;bottom:20px;width:80%;}h1.jsx-1248946869{-webkit-text-stroke:1px #707070;font-size:48px;text-align:center;margin:28px 0 0 0;}span.jsx-1248946869{font-size:40px;text-align:left;width:90%;margin:19px 0px 0px 0px;}button.jsx-1248946869{font-size:32px;color:#ffffff;border-radius:40px;background-color:rgba(71,125,230,0.97);padding:5px 40px 5px 40px;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9uZXRkYi1lYjAzL0Rlc2t0b3Avd2lhc3BhY2UvZGlnaXRhbC1jZXJ0aWZpY2F0ZS1uY2t1L2NvbXBvbmVudHMvaW5kZXhSZWFkeS50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBZ0NnQixBQUdxQixBQVlDLEFBU21CLEFBTWpCLEFBTUEsWUFoQ0YsR0EyQkcsQUFNRixVQWhDSyxJQWlDQSxFQU5ULENBUEssU0FRUyxHQTNCbUIsR0FvQnpCLENBYXdCLGlCQVp4QixBQU9wQixTQWxCeUIsU0FZekIsQ0FyQmUsR0FpQ2EsMEJBQzVCLDZDQWpDNkIsZUFTRiwwRkFSTiwyQkFTQSxrRUFSRyxHQVNKLGtCQUNOLFlBQ0YsVUFDWixtQ0FYb0Isa0JBQ0osY0FDaEIiLCJmaWxlIjoiL1VzZXJzL25ldGRiLWViMDMvRGVza3RvcC93aWFzcGFjZS9kaWdpdGFsLWNlcnRpZmljYXRlLW5ja3UvY29tcG9uZW50cy9pbmRleFJlYWR5LnRzeCIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCc7XG5pbXBvcnQgeyBJbmRleFN0YXRlLCBSZWlzc3VlU3RhdGUsIElTdHVkZW50IH0gZnJvbSAnLi4vY29uc3RhbnQnO1xuXG5pbnRlcmZhY2UgSVByb3BzIHtcbiAgZGF0YTogSVN0dWRlbnQ7XG4gIHN0YXR1czogSW5kZXhTdGF0ZSB8IFJlaXNzdWVTdGF0ZTtcbiAgc2V0Q3VycmVudDogUmVhY3QuRGlzcGF0Y2g8UmVhY3QuU2V0U3RhdGVBY3Rpb248SW5kZXhTdGF0ZXxSZWlzc3VlU3RhdGU+Pjtcbn1cblxuY29uc3QgSW5kZXhSZWFkeTogUmVhY3QuRkM8SVByb3BzPiA9IChwcm9wczogSVByb3BzKSA9PiAoXG4gIDxkaXYgY2xhc3NOYW1lPVwiaW5kZXhyZWFkeVwiPlxuICAgIDxoMT7os4fmlpnnorroqo08L2gxPlxuICAgIDxzcGFuPuWtuOeUn+Wnk+WQje+8mntwcm9wcy5kYXRhLm5hbWV9PC9zcGFuPlxuICAgIDxzcGFuPuWHuueUn+aXpeacn++8mntwcm9wcy5kYXRhLmJpcnRofTwvc3Bhbj5cbiAgICA8c3Bhbj7nlaLmpa3ns7vmiYDvvJp7cHJvcHMuZGF0YS5tYWpvcn08L3NwYW4+XG4gICAgPHNwYW4+5YW25LuW6LOH6KiK77yae3Byb3BzLmRhdGEub3RoZXJ9PC9zcGFuPlxuICAgIDxzcGFuPueUs+iri+itieabuO+8mntwcm9wcy5kYXRhLmFwcGx5fTwvc3Bhbj5cbiAgICA8ZGl2IGNsYXNzTmFtZT1cImluZGV4YnV0dG9uXCI+XG4gICAgICA8YnV0dG9uXG4gICAgICAgIG9uQ2xpY2s9e1xuICAgICAgICAgICgpID0+IChwcm9wcy5zdGF0dXM9PT1JbmRleFN0YXRlLlJFQURZKSA/IHByb3BzLnNldEN1cnJlbnQoSW5kZXhTdGF0ZS5JTlBVVCkgOiBwcm9wcy5zZXRDdXJyZW50KFJlaXNzdWVTdGF0ZS5JTlBVVClcbiAgICAgICAgfVxuICAgICAgPlxuICAgICAgICDph43mlrDovLjlhaVcbiAgICAgIDwvYnV0dG9uPlxuICAgICAgPGRpdiBzdHlsZT17e3dpZHRoOiAnMTAlJ319Lz5cbiAgICAgIDxidXR0b24gb25DbGljaz17XG4gICAgICAgICgpID0+IChwcm9wcy5zdGF0dXM9PT1JbmRleFN0YXRlLlJFQURZKSA/IHByb3BzLnNldEN1cnJlbnQoSW5kZXhTdGF0ZS5TVUNDRVNTKTogcHJvcHMuc2V0Q3VycmVudChSZWlzc3VlU3RhdGUuU1VDQ0VTUyl9XG4gICAgICA+XG4gICAgICAgIOeiuuWumumAgeWHulxuICAgICAgPC9idXR0b24+XG4gICAgPC9kaXY+XG4gICAgPHN0eWxlIGpzeD57YFxuICAgICAgLmluZGV4cmVhZHkge1xuICAgICAgICB3aWR0aDogODAwcHg7XG4gICAgICAgIGhlaWdodDogNTgwcHg7XG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XG4gICAgICAgIGJvcmRlcjogc29saWQgNnB4IHJnYmEoMTEyLCAxMTIsIDExMiwgMC4xNik7XG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgIGp1c3RpZnktY29udGVudDogZmxleC1zdGFydDtcbiAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICAgICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgICAgICBjb2xvcjogIzcwNzA3MDtcbiAgICAgIH1cbiAgICAgIC5pbmRleGJ1dHRvbiB7XG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgICAgICBhbGlnbi1pdGVtczogc3BhY2UtYXJvdW5kO1xuICAgICAgICBmbGV4LWRpcmVjdGlvbjogcm93O1xuICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgICAgIGJvdHRvbTogMjBweDtcbiAgICAgICAgd2lkdGg6IDgwJTtcbiAgICAgIH1cbiAgICAgIGgxIHtcbiAgICAgICAgLXdlYmtpdC10ZXh0LXN0cm9rZTogMXB4ICM3MDcwNzA7XG4gICAgICAgIGZvbnQtc2l6ZTogNDhweDtcbiAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgICAgICBtYXJnaW46IDI4cHggMCAwIDA7XG4gICAgICB9XG4gICAgICBzcGFuIHtcbiAgICAgICAgZm9udC1zaXplOiA0MHB4O1xuICAgICAgICB0ZXh0LWFsaWduOiBsZWZ0O1xuICAgICAgICB3aWR0aDogOTAlO1xuICAgICAgICBtYXJnaW46IDE5cHggMHB4IDBweCAwcHg7XG4gICAgICB9XG4gICAgICBidXR0b24ge1xuICAgICAgICBmb250LXNpemU6IDMycHg7XG4gICAgICAgIGNvbG9yOiAjZmZmZmZmO1xuICAgICAgICBib3JkZXItcmFkaXVzOiA0MHB4O1xuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDcxLCAxMjUsIDIzMCwgMC45Nyk7XG4gICAgICAgIHBhZGRpbmc6IDVweCA0MHB4IDVweCA0MHB4O1xuICAgICAgfVxuICAgIGB9PC9zdHlsZT5cbiAgPC9kaXY+XG4pO1xuXG5leHBvcnQgZGVmYXVsdCBJbmRleFJlYWR5O1xuIl19 */\n/*@ sourceURL=/Users/netdb-eb03/Desktop/wiaspace/digital-certificate-ncku/components/indexReady.tsx */"));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (IndexReady);
+
+/***/ }),
+
 /***/ "./components/nav.tsx":
 /*!****************************!*\
   !*** ./components/nav.tsx ***!
@@ -14,7 +498,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-var _jsxFileName = "/Users/tse/Code/NCKU/digital-certificate-ncku/components/nav.tsx";
+var _jsxFileName = "/Users/netdb-eb03/Desktop/wiaspace/digital-certificate-ncku/components/nav.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -106,6 +590,82 @@ var Nav = function Nav() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Nav);
+
+/***/ }),
+
+/***/ "./components/section.tsx":
+/*!********************************!*\
+  !*** ./components/section.tsx ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-jsx/style */ "./node_modules/styled-jsx/style.js");
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/Users/netdb-eb03/Desktop/wiaspace/digital-certificate-ncku/components/section.tsx";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+
+var Section = function Section(props) {
+  return __jsx("section", {
+    className: "jsx-3113991904",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5
+    },
+    __self: this
+  }, props.children, __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
+    id: "3113991904",
+    __self: this
+  }, "section.jsx-3113991904{width:100vw;height:100vh;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9uZXRkYi1lYjAzL0Rlc2t0b3Avd2lhc3BhY2UvZGlnaXRhbC1jZXJ0aWZpY2F0ZS1uY2t1L2NvbXBvbmVudHMvc2VjdGlvbi50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBTWtCLEFBR3VCLFlBQ0MsYUFDQSwwRUFDVSxtR0FDSiw2RkFDckIiLCJmaWxlIjoiL1VzZXJzL25ldGRiLWViMDMvRGVza3RvcC93aWFzcGFjZS9kaWdpdGFsLWNlcnRpZmljYXRlLW5ja3UvY29tcG9uZW50cy9zZWN0aW9uLnRzeCIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCwgeyBQcm9wc1dpdGhDaGlsZHJlbiB9IGZyb20gJ3JlYWN0JztcblxuY29uc3QgU2VjdGlvbjogUmVhY3QuRkM8e30+ID0gKHByb3BzOiBQcm9wc1dpdGhDaGlsZHJlbjx7fT4pID0+IHtcbiAgcmV0dXJuIChcbiAgICA8c2VjdGlvbj5cbiAgICAgIHtwcm9wcy5jaGlsZHJlbn1cbiAgICAgIDxzdHlsZSBqc3g+e2BcbiAgICAgICAgc2VjdGlvbiB7XG4gICAgICAgICAgd2lkdGg6IDEwMHZ3O1xuICAgICAgICAgIGhlaWdodDogMTAwdmg7XG4gICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAgICB9XG4gICAgICBgfTwvc3R5bGU+XG4gICAgPC9zZWN0aW9uPlxuICApO1xufTtcblxuZXhwb3J0IGRlZmF1bHQgU2VjdGlvbjtcbiJdfQ== */\n/*@ sourceURL=/Users/netdb-eb03/Desktop/wiaspace/digital-certificate-ncku/components/section.tsx */"));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Section);
+
+/***/ }),
+
+/***/ "./constant.ts":
+/*!*********************!*\
+  !*** ./constant.ts ***!
+  \*********************/
+/*! exports provided: IndexState, QueryState, ReissueState */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IndexState", function() { return IndexState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QueryState", function() { return QueryState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReissueState", function() { return ReissueState; });
+var IndexState;
+
+(function (IndexState) {
+  IndexState[IndexState["INPUT"] = 0] = "INPUT";
+  IndexState[IndexState["READY"] = 1] = "READY";
+  IndexState[IndexState["SUCCESS"] = 2] = "SUCCESS";
+  IndexState[IndexState["FAILURE"] = 3] = "FAILURE";
+})(IndexState || (IndexState = {}));
+
+var QueryState;
+
+(function (QueryState) {
+  QueryState[QueryState["INPUT"] = 10] = "INPUT";
+  QueryState[QueryState["SUCCESS"] = 11] = "SUCCESS";
+  QueryState[QueryState["FAILURE"] = 12] = "FAILURE";
+})(QueryState || (QueryState = {}));
+
+var ReissueState;
+
+(function (ReissueState) {
+  ReissueState[ReissueState["INPUT"] = 20] = "INPUT";
+  ReissueState[ReissueState["READY"] = 21] = "READY";
+  ReissueState[ReissueState["SUCCESS"] = 22] = "SUCCESS";
+  ReissueState[ReissueState["FAILURE"] = 23] = "FAILURE";
+})(ReissueState || (ReissueState = {}));
 
 /***/ }),
 
@@ -5043,10 +5603,10 @@ function concatArrays(originVal, newVal) {
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Freissue&absolutePagePath=%2FUsers%2Ftse%2FCode%2FNCKU%2Fdigital-certificate-ncku%2Fpages%2Freissue.tsx!./":
-/*!*************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Freissue&absolutePagePath=%2FUsers%2Ftse%2FCode%2FNCKU%2Fdigital-certificate-ncku%2Fpages%2Freissue.tsx ***!
-  \*************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Freissue&absolutePagePath=%2FUsers%2Fnetdb-eb03%2FDesktop%2Fwiaspace%2Fdigital-certificate-ncku%2Fpages%2Freissue.tsx!./":
+/*!***************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Freissue&absolutePagePath=%2FUsers%2Fnetdb-eb03%2FDesktop%2Fwiaspace%2Fdigital-certificate-ncku%2Fpages%2Freissue.tsx ***!
+  \***************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9789,6 +10349,35 @@ try {
 
 /***/ }),
 
+/***/ "./node_modules/string-hash/index.js":
+/*!*******************************************!*\
+  !*** ./node_modules/string-hash/index.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+function hash(str) {
+  var hash = 5381,
+      i    = str.length;
+
+  while(i) {
+    hash = (hash * 33) ^ str.charCodeAt(--i);
+  }
+
+  /* JavaScript does bitwise operations (like XOR, above) on 32-bit signed
+   * integers. Since we want the results to be always positive, convert the
+   * signed int to an unsigned by doing an unsigned bitshift. */
+  return hash >>> 0;
+}
+
+module.exports = hash;
+
+
+/***/ }),
+
 /***/ "./node_modules/styled-components/dist/styled-components.browser.esm.js":
 /*!******************************************************************************!*\
   !*** ./node_modules/styled-components/dist/styled-components.browser.esm.js ***!
@@ -12594,6 +13183,725 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/styled-jsx/dist/lib/stylesheet.js":
+/*!********************************************************!*\
+  !*** ./node_modules/styled-jsx/dist/lib/stylesheet.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+/*
+Based on Glamor's sheet
+https://github.com/threepointone/glamor/blob/667b480d31b3721a905021b26e1290ce92ca2879/src/sheet.js
+*/
+var isProd = process.env && "development" === 'production';
+
+var isString = function isString(o) {
+  return Object.prototype.toString.call(o) === '[object String]';
+};
+
+var StyleSheet =
+/*#__PURE__*/
+function () {
+  function StyleSheet() {
+    var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+        _ref$name = _ref.name,
+        name = _ref$name === void 0 ? 'stylesheet' : _ref$name,
+        _ref$optimizeForSpeed = _ref.optimizeForSpeed,
+        optimizeForSpeed = _ref$optimizeForSpeed === void 0 ? isProd : _ref$optimizeForSpeed,
+        _ref$isBrowser = _ref.isBrowser,
+        isBrowser = _ref$isBrowser === void 0 ? typeof window !== 'undefined' : _ref$isBrowser;
+
+    _classCallCheck(this, StyleSheet);
+
+    invariant(isString(name), '`name` must be a string');
+    this._name = name;
+    this._deletedRulePlaceholder = "#".concat(name, "-deleted-rule____{}");
+    invariant(typeof optimizeForSpeed === 'boolean', '`optimizeForSpeed` must be a boolean');
+    this._optimizeForSpeed = optimizeForSpeed;
+    this._isBrowser = isBrowser;
+    this._serverSheet = undefined;
+    this._tags = [];
+    this._injected = false;
+    this._rulesCount = 0;
+    var node = this._isBrowser && document.querySelector('meta[property="csp-nonce"]');
+    this._nonce = node ? node.getAttribute('content') : null;
+  }
+
+  _createClass(StyleSheet, [{
+    key: "setOptimizeForSpeed",
+    value: function setOptimizeForSpeed(bool) {
+      invariant(typeof bool === 'boolean', '`setOptimizeForSpeed` accepts a boolean');
+      invariant(this._rulesCount === 0, 'optimizeForSpeed cannot be when rules have already been inserted');
+      this.flush();
+      this._optimizeForSpeed = bool;
+      this.inject();
+    }
+  }, {
+    key: "isOptimizeForSpeed",
+    value: function isOptimizeForSpeed() {
+      return this._optimizeForSpeed;
+    }
+  }, {
+    key: "inject",
+    value: function inject() {
+      var _this = this;
+
+      invariant(!this._injected, 'sheet already injected');
+      this._injected = true;
+
+      if (this._isBrowser && this._optimizeForSpeed) {
+        this._tags[0] = this.makeStyleTag(this._name);
+        this._optimizeForSpeed = 'insertRule' in this.getSheet();
+
+        if (!this._optimizeForSpeed) {
+          if (!isProd) {
+            console.warn('StyleSheet: optimizeForSpeed mode not supported falling back to standard mode.');
+          }
+
+          this.flush();
+          this._injected = true;
+        }
+
+        return;
+      }
+
+      this._serverSheet = {
+        cssRules: [],
+        insertRule: function insertRule(rule, index) {
+          if (typeof index === 'number') {
+            _this._serverSheet.cssRules[index] = {
+              cssText: rule
+            };
+          } else {
+            _this._serverSheet.cssRules.push({
+              cssText: rule
+            });
+          }
+
+          return index;
+        },
+        deleteRule: function deleteRule(index) {
+          _this._serverSheet.cssRules[index] = null;
+        }
+      };
+    }
+  }, {
+    key: "getSheetForTag",
+    value: function getSheetForTag(tag) {
+      if (tag.sheet) {
+        return tag.sheet;
+      } // this weirdness brought to you by firefox
+
+
+      for (var i = 0; i < document.styleSheets.length; i++) {
+        if (document.styleSheets[i].ownerNode === tag) {
+          return document.styleSheets[i];
+        }
+      }
+    }
+  }, {
+    key: "getSheet",
+    value: function getSheet() {
+      return this.getSheetForTag(this._tags[this._tags.length - 1]);
+    }
+  }, {
+    key: "insertRule",
+    value: function insertRule(rule, index) {
+      invariant(isString(rule), '`insertRule` accepts only strings');
+
+      if (!this._isBrowser) {
+        if (typeof index !== 'number') {
+          index = this._serverSheet.cssRules.length;
+        }
+
+        this._serverSheet.insertRule(rule, index);
+
+        return this._rulesCount++;
+      }
+
+      if (this._optimizeForSpeed) {
+        var sheet = this.getSheet();
+
+        if (typeof index !== 'number') {
+          index = sheet.cssRules.length;
+        } // this weirdness for perf, and chrome's weird bug
+        // https://stackoverflow.com/questions/20007992/chrome-suddenly-stopped-accepting-insertrule
+
+
+        try {
+          sheet.insertRule(rule, index);
+        } catch (error) {
+          if (!isProd) {
+            console.warn("StyleSheet: illegal rule: \n\n".concat(rule, "\n\nSee https://stackoverflow.com/q/20007992 for more info"));
+          }
+
+          return -1;
+        }
+      } else {
+        var insertionPoint = this._tags[index];
+
+        this._tags.push(this.makeStyleTag(this._name, rule, insertionPoint));
+      }
+
+      return this._rulesCount++;
+    }
+  }, {
+    key: "replaceRule",
+    value: function replaceRule(index, rule) {
+      if (this._optimizeForSpeed || !this._isBrowser) {
+        var sheet = this._isBrowser ? this.getSheet() : this._serverSheet;
+
+        if (!rule.trim()) {
+          rule = this._deletedRulePlaceholder;
+        }
+
+        if (!sheet.cssRules[index]) {
+          // @TBD Should we throw an error?
+          return index;
+        }
+
+        sheet.deleteRule(index);
+
+        try {
+          sheet.insertRule(rule, index);
+        } catch (error) {
+          if (!isProd) {
+            console.warn("StyleSheet: illegal rule: \n\n".concat(rule, "\n\nSee https://stackoverflow.com/q/20007992 for more info"));
+          } // In order to preserve the indices we insert a deleteRulePlaceholder
+
+
+          sheet.insertRule(this._deletedRulePlaceholder, index);
+        }
+      } else {
+        var tag = this._tags[index];
+        invariant(tag, "old rule at index `".concat(index, "` not found"));
+        tag.textContent = rule;
+      }
+
+      return index;
+    }
+  }, {
+    key: "deleteRule",
+    value: function deleteRule(index) {
+      if (!this._isBrowser) {
+        this._serverSheet.deleteRule(index);
+
+        return;
+      }
+
+      if (this._optimizeForSpeed) {
+        this.replaceRule(index, '');
+      } else {
+        var tag = this._tags[index];
+        invariant(tag, "rule at index `".concat(index, "` not found"));
+        tag.parentNode.removeChild(tag);
+        this._tags[index] = null;
+      }
+    }
+  }, {
+    key: "flush",
+    value: function flush() {
+      this._injected = false;
+      this._rulesCount = 0;
+
+      if (this._isBrowser) {
+        this._tags.forEach(function (tag) {
+          return tag && tag.parentNode.removeChild(tag);
+        });
+
+        this._tags = [];
+      } else {
+        // simpler on server
+        this._serverSheet.cssRules = [];
+      }
+    }
+  }, {
+    key: "cssRules",
+    value: function cssRules() {
+      var _this2 = this;
+
+      if (!this._isBrowser) {
+        return this._serverSheet.cssRules;
+      }
+
+      return this._tags.reduce(function (rules, tag) {
+        if (tag) {
+          rules = rules.concat(_this2.getSheetForTag(tag).cssRules.map(function (rule) {
+            return rule.cssText === _this2._deletedRulePlaceholder ? null : rule;
+          }));
+        } else {
+          rules.push(null);
+        }
+
+        return rules;
+      }, []);
+    }
+  }, {
+    key: "makeStyleTag",
+    value: function makeStyleTag(name, cssString, relativeToTag) {
+      if (cssString) {
+        invariant(isString(cssString), 'makeStyleTag acceps only strings as second parameter');
+      }
+
+      var tag = document.createElement('style');
+      if (this._nonce) tag.setAttribute('nonce', this._nonce);
+      tag.type = 'text/css';
+      tag.setAttribute("data-".concat(name), '');
+
+      if (cssString) {
+        tag.appendChild(document.createTextNode(cssString));
+      }
+
+      var head = document.head || document.getElementsByTagName('head')[0];
+
+      if (relativeToTag) {
+        head.insertBefore(tag, relativeToTag);
+      } else {
+        head.appendChild(tag);
+      }
+
+      return tag;
+    }
+  }, {
+    key: "length",
+    get: function get() {
+      return this._rulesCount;
+    }
+  }]);
+
+  return StyleSheet;
+}();
+
+exports.default = StyleSheet;
+
+function invariant(condition, message) {
+  if (!condition) {
+    throw new Error("StyleSheet: ".concat(message, "."));
+  }
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../process/browser.js */ "./node_modules/process/browser.js")))
+
+/***/ }),
+
+/***/ "./node_modules/styled-jsx/dist/style.js":
+/*!***********************************************!*\
+  !*** ./node_modules/styled-jsx/dist/style.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.flush = flush;
+exports.default = void 0;
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _stylesheetRegistry = _interopRequireDefault(__webpack_require__(/*! ./stylesheet-registry */ "./node_modules/styled-jsx/dist/stylesheet-registry.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var styleSheetRegistry = new _stylesheetRegistry.default();
+
+var JSXStyle =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(JSXStyle, _Component);
+
+  function JSXStyle(props) {
+    var _this;
+
+    _classCallCheck(this, JSXStyle);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(JSXStyle).call(this, props));
+    _this.prevProps = {};
+    return _this;
+  }
+
+  _createClass(JSXStyle, [{
+    key: "shouldComponentUpdate",
+    // probably faster than PureComponent (shallowEqual)
+    value: function shouldComponentUpdate(otherProps) {
+      return this.props.id !== otherProps.id || // We do this check because `dynamic` is an array of strings or undefined.
+      // These are the computed values for dynamic styles.
+      String(this.props.dynamic) !== String(otherProps.dynamic);
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      styleSheetRegistry.remove(this.props);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      // This is a workaround to make the side effect async safe in the "render" phase.
+      // See https://github.com/zeit/styled-jsx/pull/484
+      if (this.shouldComponentUpdate(this.prevProps)) {
+        // Updates
+        if (this.prevProps.id) {
+          styleSheetRegistry.remove(this.prevProps);
+        }
+
+        styleSheetRegistry.add(this.props);
+        this.prevProps = this.props;
+      }
+
+      return null;
+    }
+  }], [{
+    key: "dynamic",
+    value: function dynamic(info) {
+      return info.map(function (tagInfo) {
+        var baseId = tagInfo[0];
+        var props = tagInfo[1];
+        return styleSheetRegistry.computeId(baseId, props);
+      }).join(' ');
+    }
+  }]);
+
+  return JSXStyle;
+}(_react.Component);
+
+exports.default = JSXStyle;
+
+function flush() {
+  var cssRules = styleSheetRegistry.cssRules();
+  styleSheetRegistry.flush();
+  return cssRules;
+}
+
+/***/ }),
+
+/***/ "./node_modules/styled-jsx/dist/stylesheet-registry.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/styled-jsx/dist/stylesheet-registry.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _stringHash = _interopRequireDefault(__webpack_require__(/*! string-hash */ "./node_modules/string-hash/index.js"));
+
+var _stylesheet = _interopRequireDefault(__webpack_require__(/*! ./lib/stylesheet */ "./node_modules/styled-jsx/dist/lib/stylesheet.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var sanitize = function sanitize(rule) {
+  return rule.replace(/\/style/gi, '\\/style');
+};
+
+var StyleSheetRegistry =
+/*#__PURE__*/
+function () {
+  function StyleSheetRegistry() {
+    var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+        _ref$styleSheet = _ref.styleSheet,
+        styleSheet = _ref$styleSheet === void 0 ? null : _ref$styleSheet,
+        _ref$optimizeForSpeed = _ref.optimizeForSpeed,
+        optimizeForSpeed = _ref$optimizeForSpeed === void 0 ? false : _ref$optimizeForSpeed,
+        _ref$isBrowser = _ref.isBrowser,
+        isBrowser = _ref$isBrowser === void 0 ? typeof window !== 'undefined' : _ref$isBrowser;
+
+    _classCallCheck(this, StyleSheetRegistry);
+
+    this._sheet = styleSheet || new _stylesheet.default({
+      name: 'styled-jsx',
+      optimizeForSpeed: optimizeForSpeed
+    });
+
+    this._sheet.inject();
+
+    if (styleSheet && typeof optimizeForSpeed === 'boolean') {
+      this._sheet.setOptimizeForSpeed(optimizeForSpeed);
+
+      this._optimizeForSpeed = this._sheet.isOptimizeForSpeed();
+    }
+
+    this._isBrowser = isBrowser;
+    this._fromServer = undefined;
+    this._indices = {};
+    this._instancesCounts = {};
+    this.computeId = this.createComputeId();
+    this.computeSelector = this.createComputeSelector();
+  }
+
+  _createClass(StyleSheetRegistry, [{
+    key: "add",
+    value: function add(props) {
+      var _this = this;
+
+      if (undefined === this._optimizeForSpeed) {
+        this._optimizeForSpeed = Array.isArray(props.children);
+
+        this._sheet.setOptimizeForSpeed(this._optimizeForSpeed);
+
+        this._optimizeForSpeed = this._sheet.isOptimizeForSpeed();
+      }
+
+      if (this._isBrowser && !this._fromServer) {
+        this._fromServer = this.selectFromServer();
+        this._instancesCounts = Object.keys(this._fromServer).reduce(function (acc, tagName) {
+          acc[tagName] = 0;
+          return acc;
+        }, {});
+      }
+
+      var _this$getIdAndRules = this.getIdAndRules(props),
+          styleId = _this$getIdAndRules.styleId,
+          rules = _this$getIdAndRules.rules; // Deduping: just increase the instances count.
+
+
+      if (styleId in this._instancesCounts) {
+        this._instancesCounts[styleId] += 1;
+        return;
+      }
+
+      var indices = rules.map(function (rule) {
+        return _this._sheet.insertRule(rule);
+      }) // Filter out invalid rules
+      .filter(function (index) {
+        return index !== -1;
+      });
+      this._indices[styleId] = indices;
+      this._instancesCounts[styleId] = 1;
+    }
+  }, {
+    key: "remove",
+    value: function remove(props) {
+      var _this2 = this;
+
+      var _this$getIdAndRules2 = this.getIdAndRules(props),
+          styleId = _this$getIdAndRules2.styleId;
+
+      invariant(styleId in this._instancesCounts, "styleId: `".concat(styleId, "` not found"));
+      this._instancesCounts[styleId] -= 1;
+
+      if (this._instancesCounts[styleId] < 1) {
+        var tagFromServer = this._fromServer && this._fromServer[styleId];
+
+        if (tagFromServer) {
+          tagFromServer.parentNode.removeChild(tagFromServer);
+          delete this._fromServer[styleId];
+        } else {
+          this._indices[styleId].forEach(function (index) {
+            return _this2._sheet.deleteRule(index);
+          });
+
+          delete this._indices[styleId];
+        }
+
+        delete this._instancesCounts[styleId];
+      }
+    }
+  }, {
+    key: "update",
+    value: function update(props, nextProps) {
+      this.add(nextProps);
+      this.remove(props);
+    }
+  }, {
+    key: "flush",
+    value: function flush() {
+      this._sheet.flush();
+
+      this._sheet.inject();
+
+      this._fromServer = undefined;
+      this._indices = {};
+      this._instancesCounts = {};
+      this.computeId = this.createComputeId();
+      this.computeSelector = this.createComputeSelector();
+    }
+  }, {
+    key: "cssRules",
+    value: function cssRules() {
+      var _this3 = this;
+
+      var fromServer = this._fromServer ? Object.keys(this._fromServer).map(function (styleId) {
+        return [styleId, _this3._fromServer[styleId]];
+      }) : [];
+
+      var cssRules = this._sheet.cssRules();
+
+      return fromServer.concat(Object.keys(this._indices).map(function (styleId) {
+        return [styleId, _this3._indices[styleId].map(function (index) {
+          return cssRules[index].cssText;
+        }).join(_this3._optimizeForSpeed ? '' : '\n')];
+      }) // filter out empty rules
+      .filter(function (rule) {
+        return Boolean(rule[1]);
+      }));
+    }
+    /**
+     * createComputeId
+     *
+     * Creates a function to compute and memoize a jsx id from a basedId and optionally props.
+     */
+
+  }, {
+    key: "createComputeId",
+    value: function createComputeId() {
+      var cache = {};
+      return function (baseId, props) {
+        if (!props) {
+          return "jsx-".concat(baseId);
+        }
+
+        var propsToString = String(props);
+        var key = baseId + propsToString; // return `jsx-${hashString(`${baseId}-${propsToString}`)}`
+
+        if (!cache[key]) {
+          cache[key] = "jsx-".concat((0, _stringHash.default)("".concat(baseId, "-").concat(propsToString)));
+        }
+
+        return cache[key];
+      };
+    }
+    /**
+     * createComputeSelector
+     *
+     * Creates a function to compute and memoize dynamic selectors.
+     */
+
+  }, {
+    key: "createComputeSelector",
+    value: function createComputeSelector() {
+      var selectoPlaceholderRegexp = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : /__jsx-style-dynamic-selector/g;
+      var cache = {};
+      return function (id, css) {
+        // Sanitize SSR-ed CSS.
+        // Client side code doesn't need to be sanitized since we use
+        // document.createTextNode (dev) and the CSSOM api sheet.insertRule (prod).
+        if (!this._isBrowser) {
+          css = sanitize(css);
+        }
+
+        var idcss = id + css;
+
+        if (!cache[idcss]) {
+          cache[idcss] = css.replace(selectoPlaceholderRegexp, id);
+        }
+
+        return cache[idcss];
+      };
+    }
+  }, {
+    key: "getIdAndRules",
+    value: function getIdAndRules(props) {
+      var _this4 = this;
+
+      var css = props.children,
+          dynamic = props.dynamic,
+          id = props.id;
+
+      if (dynamic) {
+        var styleId = this.computeId(id, dynamic);
+        return {
+          styleId: styleId,
+          rules: Array.isArray(css) ? css.map(function (rule) {
+            return _this4.computeSelector(styleId, rule);
+          }) : [this.computeSelector(styleId, css)]
+        };
+      }
+
+      return {
+        styleId: this.computeId(id),
+        rules: Array.isArray(css) ? css : [css]
+      };
+    }
+    /**
+     * selectFromServer
+     *
+     * Collects style tags from the document with id __jsx-XXX
+     */
+
+  }, {
+    key: "selectFromServer",
+    value: function selectFromServer() {
+      var elements = Array.prototype.slice.call(document.querySelectorAll('[id^="__jsx-"]'));
+      return elements.reduce(function (acc, element) {
+        var id = element.id.slice(2);
+        acc[id] = element;
+        return acc;
+      }, {});
+    }
+  }]);
+
+  return StyleSheetRegistry;
+}();
+
+exports.default = StyleSheetRegistry;
+
+function invariant(condition, message) {
+  if (!condition) {
+    throw new Error("StyleSheetRegistry: ".concat(message, "."));
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/styled-jsx/style.js":
+/*!******************************************!*\
+  !*** ./node_modules/styled-jsx/style.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! ./dist/style */ "./node_modules/styled-jsx/dist/style.js")
+
+
+/***/ }),
+
 /***/ "./node_modules/stylis-rule-sheet/index.js":
 /*!*************************************************!*\
   !*** ./node_modules/stylis-rule-sheet/index.js ***!
@@ -13514,70 +14822,103 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/head */ "./node_modules/next/dist/next-server/lib/head.js");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_nav__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/nav */ "./components/nav.tsx");
-var _jsxFileName = "/Users/tse/Code/NCKU/digital-certificate-ncku/pages/reissue.tsx";
+/* harmony import */ var _components_section__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/section */ "./components/section.tsx");
+/* harmony import */ var _components_form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/form */ "./components/form/index.tsx");
+/* harmony import */ var _components_indexReady__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/indexReady */ "./components/indexReady.tsx");
+/* harmony import */ var _components_indexFinal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/indexFinal */ "./components/indexFinal.tsx");
+/* harmony import */ var _constant__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../constant */ "./constant.ts");
+var _jsxFileName = "/Users/netdb-eb03/Desktop/wiaspace/digital-certificate-ncku/pages/reissue.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
 
-var Reissue = function Reissue() {
+
+
+
+
+
+var Index = function Index() {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(_constant__WEBPACK_IMPORTED_MODULE_7__["ReissueState"].INPUT),
+      currentState = _useState[0],
+      setCurrent = _useState[1];
+
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(),
+      user = _useState2[0],
+      setUser = _useState2[1];
+
   return __jsx("main", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 15
     },
     __self: this
   }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 16
     },
     __self: this
   }, __jsx("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 17
     },
     __self: this
-  }, "Reissue")), __jsx(_components_nav__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, "Home")), __jsx(_components_nav__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 19
     },
     __self: this
-  }), __jsx("div", {
-    style: {
-      height: '50vh',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center'
-    },
+  }), __jsx(_components_section__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 20
     },
     __self: this
-  }, __jsx("p", {
+  }, currentState === _constant__WEBPACK_IMPORTED_MODULE_7__["ReissueState"].INPUT ? __jsx(_components_form__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    status: currentState,
+    dispatch: setCurrent,
+    setUser: setUser,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 23
     },
     __self: this
-  }, "\u7DB2\u7AD9\u5EFA\u7F6E\u4E2D....")));
+  }) : currentState === _constant__WEBPACK_IMPORTED_MODULE_7__["ReissueState"].READY ? __jsx(_components_indexReady__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    status: currentState,
+    setCurrent: setCurrent,
+    data: user,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 30
+    },
+    __self: this
+  }) : __jsx(_components_indexFinal__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    status: currentState,
+    setCurrent: setCurrent,
+    data: user,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36
+    },
+    __self: this
+  })));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Reissue);
+/* harmony default export */ __webpack_exports__["default"] = (Index);
 
 /***/ }),
 
 /***/ 2:
-/*!*****************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Freissue&absolutePagePath=%2FUsers%2Ftse%2FCode%2FNCKU%2Fdigital-certificate-ncku%2Fpages%2Freissue.tsx ***!
-  \*****************************************************************************************************************************************************/
+/*!*******************************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Freissue&absolutePagePath=%2FUsers%2Fnetdb-eb03%2FDesktop%2Fwiaspace%2Fdigital-certificate-ncku%2Fpages%2Freissue.tsx ***!
+  \*******************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Freissue&absolutePagePath=%2FUsers%2Ftse%2FCode%2FNCKU%2Fdigital-certificate-ncku%2Fpages%2Freissue.tsx! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Freissue&absolutePagePath=%2FUsers%2Ftse%2FCode%2FNCKU%2Fdigital-certificate-ncku%2Fpages%2Freissue.tsx!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Freissue&absolutePagePath=%2FUsers%2Fnetdb-eb03%2FDesktop%2Fwiaspace%2Fdigital-certificate-ncku%2Fpages%2Freissue.tsx! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Freissue&absolutePagePath=%2FUsers%2Fnetdb-eb03%2FDesktop%2Fwiaspace%2Fdigital-certificate-ncku%2Fpages%2Freissue.tsx!./");
 
 
 /***/ }),
