@@ -58,7 +58,7 @@ const links = [
 const Nav: React.FC = () => {
   const [path, setPath] = useState('');
   useEffect(() => {
-    setPath(window.location.pathname);
+    setPath(Router.pathname);
   }, []);
 
   return (

@@ -13,7 +13,7 @@ const Query: React.FC = () => {
   return (
     <main>
       <Head>
-        <title>Home</title>
+        <title>補證</title>
       </Head>
 
       <Nav />

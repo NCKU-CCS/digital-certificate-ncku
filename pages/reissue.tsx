@@ -4,8 +4,8 @@ import Head from 'next/head';
 import Nav from '../components/nav';
 import Section from '../components/section';
 import Form from '../components/form';
-import IndexReady from '../components/indexReady';
-import IndexFinal from '../components/indexFinal';
+import IndexReady from '../components/indexAndIssueReady';
+import IndexFinal from '../components/indexAndIssueFinal';
 import { ReissueState, IStudent } from '../constant';
 
 const Index: React.FC = () => {
@@ -14,7 +14,7 @@ const Index: React.FC = () => {
   return (
     <main>
       <Head>
-        <title>Home</title>
+        <title>查詢</title>
       </Head>
       <Nav />
       <Section>
