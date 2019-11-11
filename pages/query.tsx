@@ -20,7 +20,15 @@ const Query: React.FC = () => {
 
       <Section>
         {currentState === QueryState.INPUT ? (
-          <Form status={currentState} dispatch={setCurrent} />
+          <Form
+            onSuccess={applied => {
+              if (applied) {
+                setCurrent(QueryState.SUCCESS);
+              } else {
+                setCurrent(QueryState.FAILURE);
+              }
+            }}
+          />
         ) : (
           <QueryFinal
             isSuccess={currentState === QueryState.SUCCESS}

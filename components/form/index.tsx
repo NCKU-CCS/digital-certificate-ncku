@@ -4,25 +4,16 @@ import { IndexState, QueryState, ReissueState, IStudent } from '../../constant';
 import BgImage from '../../static/laptop-from-above.png';
 
 interface IProps {
-  status: QueryState | IndexState | ReissueState;
-  dispatch: React.Dispatch<
-    React.SetStateAction<QueryState | IndexState | ReissueState>
-  >;
-  user?: IStudent;
-  setUser?: React.Dispatch<React.SetStateAction<IStudent>>;
+  onSuccess: (user: IStudent | boolean) => void;
 }
 
-const FormSection: React.FC<IProps> = (props: IProps) => {
+const FormSection: React.FC<IProps> = ({ onSuccess }: IProps) => {
   return (
     <div className="formdiv">
       <div className="formtitle" style={{ backgroundImage: `url(${BgImage})` }}>
         <span>輸入學生資料</span>
       </div>
-      <Form
-        status={props.status}
-        dispatch={props.dispatch}
-        setUser={props.setUser}
-      />
+      <Form onSuccess={onSuccess} />
       <style jsx>{`
         .formdiv {
           width: 600px;

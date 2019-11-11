@@ -19,7 +19,16 @@ const Index: React.FC = () => {
       <Nav />
       <Section>
         {currentState === ReissueState.INPUT ? (
-          <Form status={currentState} dispatch={setCurrent} setUser={setUser} />
+          <Form
+            onSuccess={student => {
+              if (student && typeof student !== 'boolean') {
+                setUser(student);
+                setCurrent(ReissueState.SUCCESS);
+              } else {
+                setCurrent(ReissueState.FAILURE);
+              }
+            }}
+          />
         ) : currentState === ReissueState.READY ? (
           <IndexReady
             status={currentState}

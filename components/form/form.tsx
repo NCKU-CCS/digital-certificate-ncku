@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { IndexState, QueryState, IStudent, ReissueState } from '../../constant';
 import { cardToStudentID, queryApi } from '../../utils';
+import { useRouter } from 'next/router';
 
 const fakedata: IStudent = {
   name: 'AAA',
@@ -11,64 +12,41 @@ const fakedata: IStudent = {
 };
 
 interface IProps {
-  status: QueryState | IndexState | ReissueState;
-  dispatch: React.Dispatch<
-    React.SetStateAction<IndexState | QueryState | ReissueState>
-  >;
-  setUser?: React.Dispatch<React.SetStateAction<IStudent>>;
+  onSuccess: (user: IStudent | boolean) => void;
 }
 
 const Form: React.FC<IProps> = (props: IProps) => {
   const alertMessage = '學生資料錯誤，請重新輸入';
   const [eng, setEng] = useState(false);
-  const [alert, setAlert] = useState(false);
+  const [isAlert, setIsAlert] = useState(false);
   const [inputText, setInputText] = useState('');
+
+  const { pathname } = useRouter();
 
   const handleSubmit = async (event: React.SyntheticEvent) => {
     event.preventDefault();
-    // tslint:disable
-    // QueryState handler
-    if (props.status === QueryState.INPUT) {
-      const sourceID = await cardToStudentID(inputText);
-      queryApi(sourceID).then(d => {
-        if (d.applied) {
-          props.dispatch(QueryState.SUCCESS);
-        } else if (!d.applied && d.error_msg === '') {
-          props.dispatch(QueryState.FAILURE);
+    if (pathname === '/query') {
+      try {
+        const sourceID = await cardToStudentID(inputText);
+        const d = await queryApi(sourceID);
+        if (d.error_msg) {
+          setIsAlert(true);
         } else {
-          setAlert(!alert);
+          props.onSuccess(d.applied);
         }
-      });
-    }
-    // IndexState handler
-    else if (props.status === IndexState.INPUT) {
-      if (props.status === IndexState.INPUT) {
-        const testReturn = true;
-        if (testReturn) {
-          props.dispatch(IndexState.READY);
-          props.setUser(fakedata);
-        } else {
-          props.dispatch(IndexState.FAILURE);
-        }
-      } else {
-        props.dispatch(IndexState.FAILURE);
+      } catch (err) {
+        alert(err);
+      }
+    } else {
+      // handle index/reissue api
+
+      try {
+        // trigger different api
+        props.onSuccess(fakedata);
+      } catch (err) {
+        alert(err);
       }
     }
-    // ReissueState
-    else if (props.status === ReissueState.INPUT) {
-      if (props.status === ReissueState.INPUT) {
-        const testReturn = true;
-        if (testReturn) {
-          props.dispatch(ReissueState.READY);
-          props.setUser(fakedata);
-        } else {
-          props.dispatch(ReissueState.FAILURE);
-        }
-      } else {
-        props.dispatch(ReissueState.FAILURE);
-      }
-    }
-    // tslint:enable
   };
 
   const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
@@ -93,7 +71,7 @@ const Form: React.FC<IProps> = (props: IProps) => {
             英文
           </a>
         </div>
-        <div className="alert">{alert ? alertMessage : ''}</div>
+        <div className="alert">{isAlert ? alertMessage : ''}</div>
       </label>
 
       <label>
