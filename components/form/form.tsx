@@ -81,17 +81,17 @@ const Form: React.FC<IProps> = (props: IProps) => {
 
       <label>
         <button type="submit">確認 CONFIRM</button>
-        <div>
-          <div
-            className="circle"
-            style={!eng ? { backgroundColor: '#707070' } : {}}
-          />
-          <div
-            className="circle"
-            style={eng ? { backgroundColor: '#707070' } : {}}
-          />
-        </div>
       </label>
+      <div>
+        <div
+          className="circle"
+          style={!eng ? { backgroundColor: '#707070' } : {}}
+        />
+        <div
+          className="circle"
+          style={eng ? { backgroundColor: '#707070' } : {}}
+        />
+      </div>
 
       <style jsx>{`
         form {
