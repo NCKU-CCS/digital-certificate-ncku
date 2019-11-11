@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { IndexState, QueryState, IStudent, ReissueState } from '../../constant';
+import { cardToStudentID, queryApi } from '../../utils';
 
 const fakedata: IStudent = {
   name: 'AAA',
@@ -23,23 +24,21 @@ const Form: React.FC<IProps> = (props: IProps) => {
   const [alert, setAlert] = useState(false);
   const [inputText, setInputText] = useState('');
 
-  const handleSubmit = (event: React.SyntheticEvent) => {
+  const handleSubmit = async (event: React.SyntheticEvent) => {
     event.preventDefault();
     // tslint:disable
     // QueryState handler
     if (props.status === QueryState.INPUT) {
-      // test trigger API
-      const testReturn = true;
-      const testPayload = false;
-      if (testReturn) {
-        if (testPayload) {
+      const sourceID = await cardToStudentID(inputText);
+      queryApi(sourceID).then(d => {
+        if (d.applied) {
           props.dispatch(QueryState.SUCCESS);
-        } else {
+        } else if (!d.applied && d.error_msg === '') {
           props.dispatch(QueryState.FAILURE);
+        } else {
+          setAlert(!alert);
         }
-      } else {
-        setAlert(!alert);
-      }
+      });
     }
     // IndexState handler
     else if (props.status === IndexState.INPUT) {
