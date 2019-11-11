@@ -6,30 +6,30 @@ import Section from '../components/section';
 import Form from '../components/form';
 import IndexReady from '../components/indexAndIssueReady';
 import IndexFinal from '../components/indexAndIssueFinal';
-import { IndexState, IStudent } from '../constant';
+import { ReissueState, IStudent } from '../constant';
 
 const Index: React.FC = () => {
-  const [currentState, setCurrent] = useState<IndexState>(IndexState.INPUT);
+  const [currentState, setCurrent] = useState<ReissueState>(ReissueState.INPUT);
   const [user, setUser] = useState<IStudent>();
   return (
     <main>
       <Head>
-        <title>初辦</title>
+        <title>查詢</title>
       </Head>
       <Nav />
       <Section>
-        {currentState === IndexState.INPUT ? (
+        {currentState === ReissueState.INPUT ? (
           <Form
             onSuccess={student => {
               if (student && typeof student !== 'boolean') {
                 setUser(student);
-                setCurrent(IndexState.SUCCESS);
+                setCurrent(ReissueState.SUCCESS);
               } else {
-                setCurrent(IndexState.FAILURE);
+                setCurrent(ReissueState.FAILURE);
               }
             }}
           />
-        ) : currentState === IndexState.READY ? (
+        ) : currentState === ReissueState.READY ? (
           <IndexReady
             status={currentState}
             setCurrent={setCurrent}
