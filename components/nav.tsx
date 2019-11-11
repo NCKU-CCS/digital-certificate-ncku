@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Router from 'next/router';
+import Router, { useRouter } from 'next/router';
 import styled from 'styled-components';
 import EduIcon from '../static/edu_icon.png';
 
@@ -56,11 +56,7 @@ const links = [
 ];
 
 const Nav: React.FC = () => {
-  const [path, setPath] = useState('');
-  useEffect(() => {
-    setPath(Router.pathname);
-  }, []);
-
+  const { pathname } = useRouter();
   return (
     <Navbar>
       <Navimg src={EduIcon} />
@@ -71,7 +67,7 @@ const Nav: React.FC = () => {
           key={index}
           onClick={() => Router.push(link.rel)}
           style={
-            path === link.rel
+            pathname === link.rel
               ? {
                   color: '#6a63c8',
                   borderBottom: '6px solid #6a63c8',
