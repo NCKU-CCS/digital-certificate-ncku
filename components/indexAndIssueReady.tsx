@@ -10,11 +10,11 @@ interface IProps {
 const IndexReady: React.FC<IProps> = (props: IProps) => (
   <div className="indexready">
     <h1>資料確認</h1>
-    <span>學生姓名：{props.data.name}</span>
-    <span>出生日期：{props.data.birth}</span>
-    <span>畢業系所：{props.data.major}</span>
-    <span>其他資訊：{props.data.other}</span>
-    <span>申請證書：{props.data.apply}</span>
+    <span>學生姓名：{props.data.chinese_name}</span>
+    <span>出生日期：{props.data.birth_date}</span>
+    <span>畢業系所：{props.data.graduate_univ + props.data.graduate_dept}</span>
+    <span>其他資訊：{props.data.minor_d_major}</span>
+    <span>申請證書：{'中文證書 / 初辦'}</span>
     <div className="indexbutton">
       <button
         onClick={() =>
@@ -39,14 +39,12 @@ const IndexReady: React.FC<IProps> = (props: IProps) => (
     <style jsx>{`
       .indexready {
         width: 800px;
-        height: 580px;
         border-radius: 20px;
         border: solid 6px rgba(112, 112, 112, 0.16);
         display: flex;
         justify-content: flex-start;
         align-items: center;
         flex-direction: column;
-        position: relative;
         color: #707070;
       }
       .indexbutton {
@@ -54,8 +52,7 @@ const IndexReady: React.FC<IProps> = (props: IProps) => (
         justify-content: center;
         align-items: space-around;
         flex-direction: row;
-        position: absolute;
-        bottom: 20px;
+        margin: 20px 0 20px 0;
         width: 80%;
       }
       h1 {
