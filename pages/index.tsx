@@ -23,7 +23,7 @@ const Index: React.FC = () => {
             onSuccess={student => {
               if (student && typeof student !== 'boolean') {
                 setUser(student);
-                setCurrent(IndexState.SUCCESS);
+                setCurrent(IndexState.READY);
               } else {
                 setCurrent(IndexState.FAILURE);
               }
