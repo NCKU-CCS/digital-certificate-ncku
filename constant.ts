@@ -17,9 +17,22 @@ export enum ReissueState {
 }
 
 export interface IStudent {
-  name: string;
-  birth: string;
-  major: string;
-  other: string;
-  apply: string;
+  cert_num: string;
+  chinese_name: string;
+  english_name: string;
+  birth_date: string;
+  identify_id: string;
+  student_id: string;
+  email: string;
+  graduate_date: string;
+  graduate_univ: string;
+  graduate_colg: string;
+  graduate_dept: string;
+  degree: string;
+  minor_d_major: string;
+  e_graduate_univ: string;
+  e_graduate_colg: string;
+  e_graduate_dept: string;
+  e_degree: string;
+  e_cert_num: string;
 }
