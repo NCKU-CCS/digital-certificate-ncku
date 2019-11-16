@@ -1,15 +1,7 @@
 import React, { useState } from 'react';
 import { IndexState, QueryState, IStudent, ReissueState } from '../../constant';
-import { cardToStudentID, queryApi } from '../../utils';
+import { cardToStudentID, queryApi, gradinfoApi } from '../../utils';
 import { useRouter } from 'next/router';
-
-const fakedata: IStudent = {
-  name: 'AAA',
-  birth: 'BBB',
-  major: 'CCC',
-  other: 'DDD',
-  apply: 'EEE',
-};
 
 interface IProps {
   onSuccess: (user: IStudent | boolean) => void;
@@ -38,11 +30,13 @@ const Form: React.FC<IProps> = (props: IProps) => {
         alert(err);
       }
     } else {
-      // handle index/reissue api
-
       try {
-        // trigger different api
-        props.onSuccess(fakedata);
+        const d = await gradinfoApi(inputText);
+        if (!!d) {
+          props.onSuccess(d);
+        } else {
+          setIsAlert(true);
+        }
       } catch (err) {
         alert(err);
       }
