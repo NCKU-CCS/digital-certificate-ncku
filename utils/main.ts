@@ -41,7 +41,7 @@ const reissueApi = async (studentID: string) => {
   return data;
 };
 
-export const cardToStudentID = async (cardID: string) => {
+const cardToStudentID = async (cardID: string) => {
   const re = /[A-Z]{1}[0-9]{8}/i;
   let studentID: string = cardID;
 
@@ -57,8 +57,7 @@ export const cardToStudentID = async (cardID: string) => {
   return studentID;
 };
 
-export { queryApi, issueApi, reissueApi, gradinfoApi, cardToStudentID };
-export function getRelativePath(path: string): string {
+function getRelativePath(path: string): string {
   if (runtimeEnv.GITHUB) {
     const valid = /[^\/].*/g.exec(path);
     return valid
@@ -67,3 +66,12 @@ export function getRelativePath(path: string): string {
   }
   return path;
 }
+
+export {
+  queryApi,
+  issueApi,
+  reissueApi,
+  gradinfoApi,
+  cardToStudentID,
+  getRelativePath,
+};
