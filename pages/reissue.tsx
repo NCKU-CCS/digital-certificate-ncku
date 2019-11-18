@@ -4,13 +4,15 @@ import Head from 'next/head';
 import Nav from '../components/nav';
 import Section from '../components/section';
 import Form from '../components/form';
-import IndexReady from '../components/indexAndIssueReady';
-import IndexFinal from '../components/indexAndIssueFinal';
+import IssueReady from '../components/indexAndIssueReady';
+import IssueFinal from '../components/indexAndIssueFinal';
 import { ReissueState, IStudent } from '../constant';
 
 const Index: React.FC = () => {
   const [currentState, setCurrent] = useState<ReissueState>(ReissueState.INPUT);
   const [user, setUser] = useState<IStudent>();
+  const [eng, setEng] = useState(false);
+
   return (
     <main>
       <Head>
@@ -23,20 +25,23 @@ const Index: React.FC = () => {
             onSuccess={student => {
               if (student && typeof student !== 'boolean') {
                 setUser(student);
-                setCurrent(ReissueState.SUCCESS);
+                setCurrent(ReissueState.READY);
               } else {
                 setCurrent(ReissueState.FAILURE);
               }
             }}
+            english={eng}
+            setEnglish={() => setEng(!eng)}
           />
         ) : currentState === ReissueState.READY ? (
-          <IndexReady
+          <IssueReady
             status={currentState}
             setCurrent={setCurrent}
             data={user}
+            english={eng}
           />
         ) : (
-          <IndexFinal
+          <IssueFinal
             status={currentState}
             setCurrent={setCurrent}
             data={user}

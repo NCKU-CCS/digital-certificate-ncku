@@ -13,7 +13,10 @@ const IndexFinal: React.FC<IProps> = (props: IProps) => (
     <img src={SuccessImage} />
     <h1>上傳成功</h1>
     <div style={{ height: '10%' }} />
-    <span>PDF 已寄送至 kevin868686@gmail.com</span>
+    <span>
+      PDF 已寄送至 <br />
+      {props.data.email}
+    </span>
     <a
       onClick={() =>
         props.status === IndexState.SUCCESS
