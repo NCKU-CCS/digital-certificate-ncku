@@ -5,11 +5,12 @@ import { useRouter } from 'next/router';
 
 interface IProps {
   onSuccess: (user: IStudent | boolean) => void;
+  english: boolean;
+  setEnglish: () => void;
 }
 
 const Form: React.FC<IProps> = (props: IProps) => {
   const alertMessage = '學生資料錯誤，請重新輸入';
-  const [eng, setEng] = useState(false);
   const [isAlert, setIsAlert] = useState(false);
   const [inputText, setInputText] = useState('');
 
@@ -19,9 +20,9 @@ const Form: React.FC<IProps> = (props: IProps) => {
     event.preventDefault();
     if (pathname === '/query') {
       try {
-        const sourceID = await cardToStudentID(inputText);
-        const d = await queryApi(sourceID);
-        if (d.error_msg) {
+        const d = await queryApi(inputText);
+        if (d.error_msg !== '') {
+          alert('查無資料！學號或是身份證錯誤，請重新確認');
           setIsAlert(true);
         } else {
           props.onSuccess(d.applied);
@@ -53,14 +54,14 @@ const Form: React.FC<IProps> = (props: IProps) => {
       <label>
         <div className="selector">
           <a
-            className={eng ? 'selected' : 'default'}
-            onClick={() => setEng(!eng)}
+            className={props.english ? 'selected' : 'default'}
+            onClick={() => props.setEnglish()}
           >
             中文
           </a>
           <a
-            className={!eng ? 'selected' : 'default'}
-            onClick={() => setEng(!eng)}
+            className={!props.english ? 'selected' : 'default'}
+            onClick={() => props.setEnglish()}
           >
             英文
           </a>
@@ -79,11 +80,11 @@ const Form: React.FC<IProps> = (props: IProps) => {
       <div>
         <div
           className="circle"
-          style={!eng ? { backgroundColor: '#707070' } : {}}
+          style={!props.english ? { backgroundColor: '#707070' } : {}}
         />
         <div
           className="circle"
-          style={eng ? { backgroundColor: '#707070' } : {}}
+          style={props.english ? { backgroundColor: '#707070' } : {}}
         />
       </div>
 

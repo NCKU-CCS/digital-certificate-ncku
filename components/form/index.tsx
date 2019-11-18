@@ -5,15 +5,21 @@ import BgImage from '../../static/laptop-from-above.png';
 
 interface IProps {
   onSuccess: (user: IStudent | boolean) => void;
+  english: boolean;
+  setEnglish: () => void;
 }
 
-const FormSection: React.FC<IProps> = ({ onSuccess }: IProps) => {
+const FormSection: React.FC<IProps> = (props: IProps) => {
   return (
     <div className="formdiv">
       <div className="formtitle" style={{ backgroundImage: `url(${BgImage})` }}>
         <span>輸入學生資料</span>
       </div>
-      <Form onSuccess={onSuccess} />
+      <Form
+        onSuccess={props.onSuccess}
+        english={props.english}
+        setEnglish={props.setEnglish}
+      />
       <style jsx>{`
         .formdiv {
           width: 600px;
