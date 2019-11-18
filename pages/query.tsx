@@ -10,6 +10,8 @@ import { QueryState } from '../constant';
 const Query: React.FC = () => {
   // enum type in global
   const [currentState, setCurrent] = useState<QueryState>(QueryState.INPUT);
+  const [eng, setEng] = useState(false);
+
   return (
     <main>
       <Head>
@@ -28,6 +30,8 @@ const Query: React.FC = () => {
                 setCurrent(QueryState.FAILURE);
               }
             }}
+            english={eng}
+            setEnglish={() => setEng(!eng)}
           />
         ) : (
           <QueryFinal

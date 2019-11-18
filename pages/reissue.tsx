@@ -11,6 +11,8 @@ import { ReissueState, IStudent } from '../constant';
 const Index: React.FC = () => {
   const [currentState, setCurrent] = useState<ReissueState>(ReissueState.INPUT);
   const [user, setUser] = useState<IStudent>();
+  const [eng, setEng] = useState(false);
+
   return (
     <main>
       <Head>
@@ -28,12 +30,15 @@ const Index: React.FC = () => {
                 setCurrent(ReissueState.FAILURE);
               }
             }}
+            english={eng}
+            setEnglish={() => setEng(!eng)}
           />
         ) : currentState === ReissueState.READY ? (
           <IssueReady
             status={currentState}
             setCurrent={setCurrent}
             data={user}
+            english={eng}
           />
         ) : (
           <IssueFinal
