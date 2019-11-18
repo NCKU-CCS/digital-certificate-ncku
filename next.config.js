@@ -1,12 +1,14 @@
 const Dotenv = require('dotenv-webpack');
 const withImages = require('next-images');
-const PROJ_NAME = 'digital-certificate-ncku';
-const GITHUB = process.env.DEPLOY_ENV === 'github';
 
 require('dotenv').config();
 
+const { publicRuntimeConfig } = require('./next.runtimeConfig');
+
 module.exports = withImages({
-  assetPrefix: GITHUB ? `/${PROJ_NAME}/` : '',
+  assetPrefix: publicRuntimeConfig.GITHUB
+    ? `/${publicRuntimeConfig.PROJ_NAME}/`
+    : '',
   exportPathMap: function() {
     return {
       '/': { page: '/' },
@@ -23,4 +25,5 @@ module.exports = withImages({
     ];
     return config;
   },
+  publicRuntimeConfig,
 });

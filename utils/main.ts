@@ -1,4 +1,5 @@
 import { mainInstance, nckuInstance } from './config';
+import runtimeEnv from '../runtimeEnv';
 
 const queryApi = async (studentID: string) => {
   const data = await mainInstance
@@ -40,7 +41,7 @@ const reissueApi = async (studentID: string) => {
   return data;
 };
 
-const cardToStudentID = async (cardID: string) => {
+export const cardToStudentID = async (cardID: string) => {
   const re = /[A-Z]{1}[0-9]{8}/i;
   let studentID: string = cardID;
 
@@ -57,3 +58,12 @@ const cardToStudentID = async (cardID: string) => {
 };
 
 export { queryApi, issueApi, reissueApi, gradinfoApi, cardToStudentID };
+export function getRelativePath(path: string): string {
+  if (runtimeEnv.GITHUB) {
+    const valid = /[^\/].*/g.exec(path);
+    return valid
+      ? `/${runtimeEnv.PROJ_NAME}/${valid[0]}`
+      : `/${runtimeEnv.PROJ_NAME}/`;
+  }
+  return path;
+}

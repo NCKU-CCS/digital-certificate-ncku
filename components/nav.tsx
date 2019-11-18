@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import Router, { useRouter } from 'next/router';
+import React from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import EduIcon from '../static/edu_icon.png';
+import { getRelativePath } from '../utils/main';
 
 const Navbar = styled.nav`
   position: fixed;
@@ -63,21 +65,21 @@ const Nav: React.FC = () => {
       <Navtitle>教育部數位證書上傳系統</Navtitle>
       <Resizable />
       {links.map((link, index) => (
-        <Navlink
-          key={index}
-          onClick={() => Router.push(link.rel)}
-          style={
-            pathname === link.rel
-              ? {
-                  color: '#6a63c8',
-                  borderBottom: '6px solid #6a63c8',
-                  borderTop: '6px solid transparent',
-                }
-              : { color: '#676464' }
-          }
-        >
-          {link.name}
-        </Navlink>
+        <Link key={index} href={link.rel} as={getRelativePath(link.rel)}>
+          <Navlink
+            style={
+              pathname === link.rel
+                ? {
+                    color: '#6a63c8',
+                    borderBottom: '6px solid #6a63c8',
+                    borderTop: '6px solid transparent',
+                  }
+                : { color: '#676464' }
+            }
+          >
+            {link.name}
+          </Navlink>
+        </Link>
       ))}
     </Navbar>
   );
