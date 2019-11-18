@@ -17,7 +17,7 @@ const gradinfoApi = async (studentID: string) => {
     })
     .then(resp => resp.data)
     .catch(() => null);
-  return data.cert_num ? data : null;
+  return data.student_id ? data : null;
 };
 
 const issueApi = async (studentID: string) => {
