@@ -57,6 +57,11 @@ const links = [
   { name: '查詢', rel: '/query' },
 ];
 
+/**
+ * @function Nav()
+ * @param props null
+ * @brief navbar component for every page
+ */
 const Nav: React.FC = () => {
   const { pathname } = useRouter();
   return (

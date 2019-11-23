@@ -9,6 +9,11 @@ interface IProps {
   setEnglish: () => void;
 }
 
+/**
+ * @function FormSection()
+ * @param {IProps} props {onSuccess, english, setEnglish}
+ * @brief component for containing Form.tsx
+ */
 const FormSection: React.FC<IProps> = (props: IProps) => {
   return (
     <div className="formdiv">

@@ -18,7 +18,9 @@ const Index: React.FC = () => {
       <Head>
         <title>初辦</title>
       </Head>
+
       <Nav />
+
       <Section>
         {currentState === IndexState.INPUT ? (
           <Form

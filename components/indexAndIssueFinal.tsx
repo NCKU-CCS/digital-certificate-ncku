@@ -8,6 +8,11 @@ interface IProps {
   setCurrent: React.Dispatch<React.SetStateAction<IndexState | ReissueState>>;
 }
 
+/**
+ * @function IndexReady()
+ * @param {IProps} props {data, status, setCurrent}
+ * @brief component of "final" state for '/index' and '/reissue'
+ */
 const IndexFinal: React.FC<IProps> = (props: IProps) => (
   <div className="indexfinal">
     <img src={SuccessImage} />

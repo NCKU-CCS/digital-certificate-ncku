@@ -9,6 +9,11 @@ interface IProps {
   setEnglish: () => void;
 }
 
+/**
+ * @function Form()
+ * @param {IProps} props {onSuccess, english,setEnglish}
+ * @brief component for "form" element and event
+ */
 const Form: React.FC<IProps> = (props: IProps) => {
   const alertMessage = '學生資料錯誤，請重新輸入';
   const [isAlert, setIsAlert] = useState(false);

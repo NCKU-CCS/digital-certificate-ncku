@@ -2,11 +2,17 @@ import React from 'react';
 import { QueryState } from '../constant';
 import SuccessImage from '../static/success.png';
 import FailureImage from '../static/failure.png';
+
 interface IProps {
   isSuccess: boolean;
   dispatch: React.Dispatch<React.SetStateAction<QueryState>>;
 }
 
+/**
+ * @function queryFinal()
+ * @param {IProps} props {isSuccess, dispatch}
+ * @brief component of "final" state for '/query' page
+ */
 const queryFinal: React.FC<IProps> = (props: IProps) => (
   <div>
     <img src={props.isSuccess ? SuccessImage : FailureImage} />

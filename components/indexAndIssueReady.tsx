@@ -9,6 +9,11 @@ interface IProps {
   english: boolean;
 }
 
+/**
+ * @function IndexReady()
+ * @param {IProps} props {data, status, setCurrent, english}
+ * @brief component of "ready" state for '/index' and '/reissue'
+ */
 const IndexReady: React.FC<IProps> = (props: IProps) => {
   const handleOnClick = async (event: React.SyntheticEvent) => {
     event.preventDefault();

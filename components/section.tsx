@@ -1,5 +1,10 @@
 import React, { PropsWithChildren } from 'react';
 
+/**
+ * @function Section()
+ * @param {PropsWithChildren<{}>} props {}
+ * @brief component for contain children
+ */
 const Section: React.FC<{}> = (props: PropsWithChildren<{}>) => {
   return (
     <section>
