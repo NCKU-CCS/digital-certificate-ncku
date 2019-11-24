@@ -2,7 +2,11 @@
 
 Digital certificate web for School.
 
-### Environment
+#### pre-requirement
+
+[yarn](https://yarnpkg.com/lang/en/)
+
+#### Environment
 
 Language: [typescript 3.6](https://www.typescriptlang.org/)
 Framework: [next.js](https://nextjs.org/)
@@ -32,6 +36,9 @@ $ yarn export
 ```
 
 ### Deploy to github public pages
+
+**If you want to deploy to github public pages**
+You can use following command, and go to repo's public page
 
 ```
 $ yarn deploy:github
