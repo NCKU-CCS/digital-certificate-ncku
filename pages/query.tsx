@@ -15,7 +15,7 @@ const Query: React.FC = () => {
   return (
     <main>
       <Head>
-        <title>補證</title>
+        <title>教育部數位證書上傳系統 - 查詢</title>
       </Head>
 
       <Nav />

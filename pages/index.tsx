@@ -16,7 +16,7 @@ const Index: React.FC = () => {
   return (
     <main>
       <Head>
-        <title>初辦</title>
+        <title>教育部數位證書上傳系統 - 初辦</title>
       </Head>
 
       <Nav />
