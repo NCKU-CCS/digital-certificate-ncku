@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "lint": "tslint -c tslint.json -p tsconfig.json",
     "export": "next build && next export",
     "deploy:github": "NODE_ENV=production DEPLOY_ENV=github yarn export && touch out/.nojekyll && gh-pages -t -d out"
   },
