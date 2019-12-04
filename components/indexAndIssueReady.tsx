@@ -19,7 +19,7 @@ const IndexReady: React.FC<IProps> = (props: IProps) => {
     event.preventDefault();
     if (props.status === IndexState.READY) {
       try {
-        const d = await issueApi(props.data.student_id);
+        const d = await issueApi(props.data.student_id, props.english);
         if (d.applied) {
           props.setCurrent(IndexState.SUCCESS);
         } else {
@@ -31,7 +31,7 @@ const IndexReady: React.FC<IProps> = (props: IProps) => {
       }
     } else {
       try {
-        const d = await reissueApi(props.data.student_id);
+        const d = await reissueApi(props.data.student_id, props.english);
         if (d.applied) {
           props.setCurrent(ReissueState.SUCCESS);
         } else {

@@ -54,7 +54,7 @@ const Resizable = styled.div`
 const links = [
   { name: '初辦', rel: '/' },
   { name: '補證', rel: '/reissue' },
-  { name: '查詢', rel: '/query' },
+  { name: '查詢/更名', rel: '/query' },
 ];
 
 /**

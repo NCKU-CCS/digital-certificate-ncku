@@ -8,11 +8,15 @@ import runtimeEnv from '../runtimeEnv';
  * Get from MAIN_HOST/query
  * @function queryApi()
  * @param {string} studentID
+ * @param {boolean} isEng
  */
-const queryApi = async (studentID: string) => {
+const queryApi = async (studentID: string, isEng: boolean) => {
   const data = await mainInstance
     .get('/students/query/', {
-      params: { ID: studentID },
+      params: {
+        ID: studentID,
+        type: isEng ? 'English' : 'Chinese',
+      },
     })
     .then(resp => resp.data)
     .catch(() => null);
@@ -44,11 +48,15 @@ const gradinfoApi = async (studentID: string) => {
  * Get from MAIN_HOST/students/issue/
  * @function issueApi()
  * @param {string} studentID
+ * @param {boolean} isEng
  */
-const issueApi = async (studentID: string) => {
+const issueApi = async (studentID: string, isEng: boolean) => {
   const data = await mainInstance
     .get('/students/issue/', {
-      params: { ID: studentID },
+      params: {
+        ID: studentID,
+        type: isEng ? 'English' : 'Chinese',
+      },
     })
     .then(resp => resp.data)
     .catch(() => null);
@@ -62,11 +70,37 @@ const issueApi = async (studentID: string) => {
  * Get from MAIN_HOST/students/reissue/
  * @function reissueApi()
  * @param {string} studentID
+ * @param {boolean} isEng
  */
-const reissueApi = async (studentID: string) => {
+const reissueApi = async (studentID: string, isEng: boolean) => {
   const data = await mainInstance
     .get('/students/reissue/', {
-      params: { ID: studentID },
+      params: {
+        ID: studentID,
+        type: isEng ? 'English' : 'Chinese',
+      },
+    })
+    .then(resp => resp.data)
+    .catch(() => null);
+  return data;
+};
+
+/**
+ * @global
+ *  @host MAIN_HOST
+ *  @method POST
+ * Get from MAIN_HOST/students/reissue/
+ * @function renameApi()
+ * @param {string} studentID
+ * @param {string} name
+ */
+const renameApi = async (studentID: string, newName: string) => {
+  const data = await mainInstance
+    .post('/students/rename/', {
+      param: {
+        ID: studentID,
+        name: newName,
+      },
     })
     .then(resp => resp.data)
     .catch(() => null);
@@ -118,6 +152,7 @@ export {
   issueApi,
   reissueApi,
   gradinfoApi,
+  renameApi,
   cardToStudentID,
   getRelativePath,
 };

@@ -5,19 +5,34 @@ import FailureImage from '../static/failure.png';
 
 interface IProps {
   isSuccess: boolean;
-  dispatch: React.Dispatch<React.SetStateAction<QueryState>>;
+  onUpdate: (update: QueryState) => void;
 }
 
 /**
  * @function queryFinal()
- * @param {IProps} props {isSuccess, dispatch}
+ * @param {IProps} props {isSuccess, onUpdate}
  * @brief component of "final" state for '/query' page
  */
 const queryFinal: React.FC<IProps> = (props: IProps) => (
   <div>
     <img src={props.isSuccess ? SuccessImage : FailureImage} />
     <h1>{props.isSuccess ? '已申請' : '未申請'}</h1>
-    <a onClick={() => props.dispatch(QueryState.INPUT)}>返回</a>
+    <a
+      onClick={() => props.onUpdate(QueryState.INPUT)}
+      style={props.isSuccess ? { left: '78px' } : {}}
+    >
+      返回
+    </a>
+    {props.isSuccess ? (
+      <a
+        onClick={() => props.onUpdate(QueryState.RENAME)}
+        style={{ right: '71px' }}
+      >
+        修改姓名
+      </a>
+    ) : (
+      <></>
+    )}
     <style jsx>{`
       div {
         width: 455px;

@@ -8,6 +8,7 @@ export enum QueryState {
   INPUT = 10,
   SUCCESS = 11,
   FAILURE = 12,
+  RENAME = 13,
 }
 export enum ReissueState {
   INPUT = 20,

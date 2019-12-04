@@ -25,7 +25,7 @@ const Form: React.FC<IProps> = (props: IProps) => {
     event.preventDefault();
     if (pathname === '/query') {
       try {
-        const d = await queryApi(inputText);
+        const d = await queryApi(inputText, props.english);
         if (d.error_msg !== '') {
           alert('查無資料！學號或是身份證錯誤，請重新確認');
           setIsAlert(true);
