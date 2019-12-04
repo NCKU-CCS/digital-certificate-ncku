@@ -1,99 +1,100 @@
 import React, { useState } from 'react';
-import { IndexState, QueryState, IStudent, ReissueState } from '../../constant';
-import { cardToStudentID, queryApi, gradinfoApi } from '../../utils';
-import { useRouter } from 'next/router';
+import BgImage from '../static/laptop-from-above.png';
+import { IStudent } from '../constant';
+import { gradinfoApi } from '../utils';
 
 interface IProps {
-  onSuccess: (user: IStudent | boolean) => void;
-  english: boolean;
-  setEnglish: () => void;
+  isEnglish: boolean;
+  changeEnglish: () => void;
+  onSuccess: (data: IStudent) => void;
 }
 
-/**
- * @function Form()
- * @param {IProps} props {onSuccess, english,setEnglish}
- * @brief component for "form" element and event
- */
-const Form: React.FC<IProps> = (props: IProps) => {
+export default ((props: IProps) => {
   const alertMessage = '學生資料錯誤，請重新輸入';
-  const [isAlert, setIsAlert] = useState(false);
-  const [inputText, setInputText] = useState('');
-
-  const { pathname } = useRouter();
+  const [isAlert, setAlert] = useState(false);
+  const [userInput, setInput] = useState('');
 
   const handleSubmit = async (event: React.SyntheticEvent) => {
     event.preventDefault();
-    if (pathname === '/query') {
-      try {
-        const d = await queryApi(inputText, props.english);
-        if (d.error_msg !== '') {
-          alert('查無資料！學號或是身份證錯誤，請重新確認');
-          setIsAlert(true);
-        } else {
-          props.onSuccess(d.applied);
-        }
-      } catch (err) {
-        alert(err);
-      }
+    const data = await gradinfoApi(userInput);
+    if (data) {
+      props.onSuccess(data);
     } else {
-      try {
-        const d = await gradinfoApi(inputText);
-        if (!!d) {
-          props.onSuccess(d);
-        } else {
-          setIsAlert(true);
-        }
-      } catch (err) {
-        alert(err);
-      }
+      setAlert(true);
     }
   };
-
   const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
     event.preventDefault();
-    setInputText(event.currentTarget.value);
+    setInput(event.currentTarget.value);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        <div className="selector">
-          <a
-            className={props.english ? 'selected' : 'default'}
-            onClick={() => props.setEnglish()}
-          >
-            中文
-          </a>
-          <a
-            className={!props.english ? 'selected' : 'default'}
-            onClick={() => props.setEnglish()}
-          >
-            英文
-          </a>
-        </div>
-        <div className="alert">{isAlert ? alertMessage : ''}</div>
-      </label>
-
-      <label>
-        <input onChange={handleChange} type="text" placeholder="學生證號碼" />
-        <div style={{ height: '80px', width: '100%' }} />
-      </label>
-
-      <label>
-        <button type="submit">確認 CONFIRM</button>
-      </label>
-      <div>
-        <div
-          className="circle"
-          style={!props.english ? { backgroundColor: '#707070' } : {}}
-        />
-        <div
-          className="circle"
-          style={props.english ? { backgroundColor: '#707070' } : {}}
-        />
+    <div className="formContain">
+      <div className="formTitle" style={{ backgroundImage: `url(${BgImage})` }}>
+        <span>輸入學生資料</span>
       </div>
 
+      <form onSubmit={handleSubmit}>
+        <label>
+          <div className="selector">
+            <a
+              className={props.isEnglish ? 'selected' : 'default'}
+              onClick={() => props.changeEnglish()}
+            >
+              中文
+            </a>
+            <a
+              className={!props.isEnglish ? 'selected' : 'default'}
+              onClick={() => props.changeEnglish()}
+            >
+              英文
+            </a>
+          </div>
+          <div className="alert">{isAlert ? alertMessage : ''}</div>
+        </label>
+
+        <label>
+          <input type="text" placeholder="學生證號碼" onChange={handleChange} />
+          <div style={{ height: '80px', width: '100%' }} />
+        </label>
+
+        <label>
+          <button type="submit">確認 CONFIRM</button>
+        </label>
+
+        <div>
+          <div
+            className="circle"
+            style={!props.isEnglish ? { backgroundColor: '#707070' } : {}}
+          />
+          <div
+            className="circle"
+            style={props.isEnglish ? { backgroundColor: '#707070' } : {}}
+          />
+        </div>
+      </form>
+
       <style jsx>{`
+        .formContain {
+          width: 600px;
+          height: 600px;
+          box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+          border-radius: 20px;
+        }
+        .formTitle {
+          width: 100%;
+          height: 25%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 20px 20px 0px 0px;
+        }
+        span {
+          -webkit-text-stroke: 1px #ffffff;
+          font-family: SegoeUI;
+          font-size: 45px;
+          color: #ffffff;
+        }
         form {
           width: 100%;
           height: 75%;
@@ -170,8 +171,6 @@ const Form: React.FC<IProps> = (props: IProps) => {
           opacity: 1;
         }
       `}</style>
-    </form>
+    </div>
   );
-};
-
-export default Form;
+}) as React.FC<IProps>;

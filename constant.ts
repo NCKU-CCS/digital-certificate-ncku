@@ -6,8 +6,7 @@ export enum IndexState {
 }
 export enum QueryState {
   INPUT = 10,
-  SUCCESS = 11,
-  FAILURE = 12,
+  FINAL = 11,
   RENAME = 13,
 }
 export enum ReissueState {
@@ -36,4 +35,11 @@ export interface IStudent {
   e_graduate_dept: string;
   e_degree: string;
   e_cert_num: string;
+}
+
+export interface IResp {
+  applied: boolean;
+  error_msg: string;
+  email?: string;
+  URL?: string;
 }

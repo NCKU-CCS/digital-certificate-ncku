@@ -1,5 +1,6 @@
 import { mainInstance, nckuInstance } from './config';
 import runtimeEnv from '../runtimeEnv';
+import { IStudent, IResp } from '../constant';
 
 /**
  * @global
@@ -31,9 +32,9 @@ const queryApi = async (studentID: string, isEng: boolean) => {
  * @function gradinfoApi()
  * @param {string} studentID
  */
-const gradinfoApi = async (studentID: string) => {
+const gradinfoApi = async (studentID: string): Promise<IStudent> => {
   const data = await mainInstance
-    .get('/students/gradinfo/', {
+    .get<IStudent>('/students/gradinfo/', {
       params: { ID: studentID },
     })
     .then(resp => resp.data)
@@ -52,7 +53,7 @@ const gradinfoApi = async (studentID: string) => {
  */
 const issueApi = async (studentID: string, isEng: boolean) => {
   const data = await mainInstance
-    .get('/students/issue/', {
+    .get<IResp>('/students/issue/', {
       params: {
         ID: studentID,
         type: isEng ? 'English' : 'Chinese',
@@ -74,7 +75,7 @@ const issueApi = async (studentID: string, isEng: boolean) => {
  */
 const reissueApi = async (studentID: string, isEng: boolean) => {
   const data = await mainInstance
-    .get('/students/reissue/', {
+    .get<IResp>('/students/reissue/', {
       params: {
         ID: studentID,
         type: isEng ? 'English' : 'Chinese',
