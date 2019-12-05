@@ -1,52 +1,47 @@
 import React from 'react';
-import { IndexState, ReissueState, IStudent } from '../constant';
+import {
+  IStudent,
+  IResp,
+  IndexState,
+  QueryState,
+  ReissueState,
+} from '../constant';
 import { issueApi, reissueApi } from '../utils';
 
 interface IProps {
+  current: IndexState | ReissueState;
   data: IStudent;
-  status: IndexState | ReissueState;
-  setCurrent: React.Dispatch<React.SetStateAction<IndexState | ReissueState>>;
-  english: boolean;
+  isEnglish: boolean;
+  changeCurrent: (update: any) => void;
 }
 
-/**
- * @function IndexReady()
- * @param {IProps} props {data, status, setCurrent, english}
- * @brief component of "ready" state for '/index' and '/reissue'
- */
-const IndexReady: React.FC<IProps> = (props: IProps) => {
-  const handleOnClick = async (event: React.SyntheticEvent) => {
+export default ((props: IProps) => {
+  const handleClick = async (event: React.SyntheticEvent) => {
     event.preventDefault();
-    if (props.status === IndexState.READY) {
-      try {
-        const d = await issueApi(props.data.student_id);
-        if (d.applied) {
-          props.setCurrent(IndexState.SUCCESS);
-        } else {
-          alert('已發證！如需重新發放，請點選「補證頁面」進行補證');
-          props.setCurrent(IndexState.INPUT);
-        }
-      } catch (err) {
-        props.setCurrent(IndexState.INPUT);
+    if (props.current === IndexState.READY) {
+      const data: IResp = await issueApi(
+        props.data.student_id,
+        props.isEnglish,
+      );
+      if (data.applied) {
+        props.changeCurrent(IndexState.SUCCESS);
+      } else {
+        alert(data.error_msg);
+        props.changeCurrent(IndexState.INPUT);
       }
     } else {
-      try {
-        const d = await reissueApi(props.data.student_id);
-        if (d.applied) {
-          props.setCurrent(ReissueState.SUCCESS);
-        } else {
-          alert('尚未發證，不能補證');
-          props.setCurrent(ReissueState.INPUT);
-        }
-      } catch (err) {
-        alert(err);
-        props.setCurrent(ReissueState.INPUT);
+      const data = await reissueApi(props.data.student_id, props.isEnglish);
+      if (data.applied) {
+        props.changeCurrent(ReissueState.SUCCESS);
+      } else {
+        alert(data.error_msg);
+        props.changeCurrent(ReissueState.INPUT);
       }
     }
   };
 
   return (
-    <div className="indexready">
+    <div className="ready">
       <h1>資料確認</h1>
       <span>學生姓名：{props.data.chinese_name}</span>
       <span>出生日期：{props.data.birth_date}</span>
@@ -56,25 +51,27 @@ const IndexReady: React.FC<IProps> = (props: IProps) => {
       <span>其他資訊：{props.data.minor_d_major}</span>
       <span>
         申請證書：
-        {`${props.english ? '英文' : '中文'}證書 / ${
-          props.status === IndexState.READY ? '初辦' : '補證'
+        {`${props.isEnglish ? '英文' : '中文'}證書 / ${
+          props.current === IndexState.READY ? '初辦' : '補證'
         }`}
       </span>
-      <div className="indexbutton">
+      <div className="buttonlist">
         <button
           onClick={() =>
-            props.status === IndexState.READY
-              ? props.setCurrent(IndexState.INPUT)
-              : props.setCurrent(ReissueState.INPUT)
+            props.changeCurrent(
+              props.current === IndexState.READY
+                ? IndexState.INPUT
+                : ReissueState.INPUT,
+            )
           }
         >
           重新輸入
         </button>
         <div style={{ width: '10%' }} />
-        <button onClick={handleOnClick}>確定送出</button>
+        <button onClick={handleClick}>確定送出</button>
       </div>
       <style jsx>{`
-        .indexready {
+        .ready {
           width: 800px;
           border-radius: 20px;
           border: solid 6px rgba(112, 112, 112, 0.16);
@@ -84,7 +81,7 @@ const IndexReady: React.FC<IProps> = (props: IProps) => {
           flex-direction: column;
           color: #707070;
         }
-        .indexbutton {
+        .buttonlist {
           display: flex;
           justify-content: center;
           align-items: space-around;
@@ -107,6 +104,7 @@ const IndexReady: React.FC<IProps> = (props: IProps) => {
         button {
           font-size: 32px;
           color: #ffffff;
+          border: 0px;
           border-radius: 40px;
           background-color: rgba(71, 125, 230, 0.97);
           padding: 5px 40px 5px 40px;
@@ -114,6 +112,4 @@ const IndexReady: React.FC<IProps> = (props: IProps) => {
       `}</style>
     </div>
   );
-};
-
-export default IndexReady;
+}) as React.FC<IProps>;

@@ -1,17 +1,51 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
-
-import Nav from '../components/nav';
 import Section from '../components/section';
+import Nav from '../components/nav';
 import Form from '../components/form';
-import IndexReady from '../components/indexAndIssueReady';
-import IndexFinal from '../components/indexAndIssueFinal';
+import Ready from '../components/ready';
+import Final from '../components/final';
 import { IndexState, IStudent } from '../constant';
 
-const Index: React.FC = () => {
-  const [currentState, setCurrent] = useState<IndexState>(IndexState.INPUT);
-  const [user, setUser] = useState<IStudent>();
-  const [eng, setEng] = useState(false);
+export default (() => {
+  const [current, setCurrent] = useState<IndexState>(IndexState.INPUT);
+  const [isEnglish, setEnglish] = useState(false);
+  const [userInfo, setUser] = useState<IStudent>(null);
+
+  const changeEnglish = () => setEnglish(!isEnglish);
+  const changeCurrent = (update: IndexState) => setCurrent(update);
+  const handleSuccess = (data: IStudent) => {
+    setUser(data);
+    setCurrent(IndexState.READY);
+  };
+  const renderBody = () => {
+    if (current === IndexState.INPUT) {
+      return (
+        <Form
+          isEnglish={isEnglish}
+          changeEnglish={changeEnglish}
+          onSuccess={handleSuccess}
+        />
+      );
+    } else if (current === IndexState.READY) {
+      return (
+        <Ready
+          current={current}
+          data={userInfo}
+          isEnglish={isEnglish}
+          changeCurrent={changeCurrent}
+        />
+      );
+    } else {
+      return (
+        <Final
+          data={userInfo}
+          current={current}
+          changeCurrent={changeCurrent}
+        />
+      );
+    }
+  };
 
   return (
     <main>
@@ -19,39 +53,10 @@ const Index: React.FC = () => {
         <title>教育部數位證書上傳系統 - 初辦</title>
       </Head>
 
-      <Nav />
-
       <Section>
-        {currentState === IndexState.INPUT ? (
-          <Form
-            onSuccess={student => {
-              if (student && typeof student !== 'boolean') {
-                setUser(student);
-                setCurrent(IndexState.READY);
-              } else {
-                setCurrent(IndexState.FAILURE);
-              }
-            }}
-            english={eng}
-            setEnglish={() => setEng(!eng)}
-          />
-        ) : currentState === IndexState.READY ? (
-          <IndexReady
-            status={currentState}
-            setCurrent={setCurrent}
-            data={user}
-            english={eng}
-          />
-        ) : (
-          <IndexFinal
-            status={currentState}
-            setCurrent={setCurrent}
-            data={user}
-          />
-        )}
+        <Nav />
+        {renderBody()}
       </Section>
     </main>
   );
-};
-
-export default Index;
+}) as React.FC;

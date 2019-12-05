@@ -4,16 +4,11 @@ import SuccessImage from '../static/success.png';
 
 interface IProps {
   data: IStudent;
-  status: IndexState | ReissueState;
-  setCurrent: React.Dispatch<React.SetStateAction<IndexState | ReissueState>>;
+  current: IndexState | ReissueState;
+  changeCurrent: (update: any) => void;
 }
 
-/**
- * @function IndexReady()
- * @param {IProps} props {data, status, setCurrent}
- * @brief component of "final" state for '/index' and '/reissue'
- */
-const IndexFinal: React.FC<IProps> = (props: IProps) => (
+export default ((props: IProps) => (
   <div className="indexfinal">
     <img src={SuccessImage} />
     <h1>上傳成功</h1>
@@ -24,9 +19,9 @@ const IndexFinal: React.FC<IProps> = (props: IProps) => (
     </span>
     <a
       onClick={() =>
-        props.status === IndexState.SUCCESS
-          ? props.setCurrent(IndexState.INPUT)
-          : props.setCurrent(ReissueState.INPUT)
+        props.current === IndexState.SUCCESS
+          ? props.changeCurrent(IndexState.INPUT)
+          : props.changeCurrent(ReissueState.INPUT)
       }
     >
       退出
@@ -68,6 +63,4 @@ const IndexFinal: React.FC<IProps> = (props: IProps) => (
       }
     `}</style>
   </div>
-);
-
-export default IndexFinal;
+)) as React.FC<IProps>;
