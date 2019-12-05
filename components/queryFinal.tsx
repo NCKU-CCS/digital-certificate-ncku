@@ -11,7 +11,7 @@ interface IProps {
 }
 
 export default ((props: IProps) => {
-  const [isSuccess, setSuccess] = useState(false);
+  const [isSuccess, setSuccess] = useState<boolean>(null);
 
   useEffect(() => {
     (async () => {
@@ -24,7 +24,7 @@ export default ((props: IProps) => {
   }, []);
 
   return (
-    <div>
+    <div style={{ display: `${isSuccess === true ? 'flex' : 'none'}` }}>
       <img src={isSuccess ? SuccessImage : FailureImage} />
       <h1>{isSuccess ? '已申請' : '未申請'}</h1>
       <a onClick={() => props.changeCurrent(QueryState.INPUT)}>返回</a>
