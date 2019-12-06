@@ -7,6 +7,7 @@ export enum IndexState {
 export enum QueryState {
   INPUT = 10,
   FINAL = 11,
+  END = 12,
   RENAME = 13,
 }
 export enum ReissueState {
@@ -42,4 +43,5 @@ export interface IResp {
   error_msg: string;
   email?: string;
   URL?: string;
+  rename?: string;
 }

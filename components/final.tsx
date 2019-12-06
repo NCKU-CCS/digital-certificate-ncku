@@ -1,19 +1,20 @@
 import React from 'react';
-import { IndexState, ReissueState, IStudent } from '../constant';
+import { IndexState, ReissueState, QueryState, IStudent } from '../constant';
 import SuccessImage from '../static/success.png';
 
 interface IProps {
   data: IStudent;
-  current: IndexState | ReissueState;
-  changeCurrent: (update: any) => void;
+  current: IndexState | ReissueState | QueryState;
+  changeCurrent: (update: IndexState | ReissueState | QueryState) => void;
 }
 
 export default ((props: IProps) => (
   <div className="indexfinal">
     <img src={SuccessImage} />
-    <h1>上傳成功</h1>
+    <h1>{props.current === QueryState.END ? '改名成功' : '上傳成功'}</h1>
     <div style={{ height: '10%' }} />
     <span>
+      {props.current === QueryState.END ? '改名後' : ''}
       PDF 已寄送至 <br />
       {props.data.email}
     </span>
@@ -21,7 +22,9 @@ export default ((props: IProps) => (
       onClick={() =>
         props.current === IndexState.SUCCESS
           ? props.changeCurrent(IndexState.INPUT)
-          : props.changeCurrent(ReissueState.INPUT)
+          : props.current === ReissueState.SUCCESS
+          ? props.changeCurrent(ReissueState.INPUT)
+          : props.changeCurrent(QueryState.INPUT)
       }
     >
       退出

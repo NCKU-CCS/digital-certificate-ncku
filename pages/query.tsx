@@ -4,6 +4,8 @@ import Section from '../components/section';
 import Nav from '../components/nav';
 import Form from '../components/form';
 import QueryFinal from '../components/queryFinal';
+import QueryRename from '../components/queryRename';
+import Final from '../components/final';
 import { QueryState, IStudent } from '../constant';
 
 export default (() => {
@@ -27,7 +29,15 @@ export default (() => {
         />
       );
     } else if (current === QueryState.RENAME) {
-      return <div />;
+      return <QueryRename data={userInfo} changeCurrent={changeCurrent} />;
+    } else if (current === QueryState.END) {
+      return (
+        <Final
+          data={userInfo}
+          current={current}
+          changeCurrent={changeCurrent}
+        />
+      );
     } else {
       return (
         <QueryFinal

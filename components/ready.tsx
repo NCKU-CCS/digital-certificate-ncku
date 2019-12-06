@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  IStudent,
-  IResp,
-  IndexState,
-  QueryState,
-  ReissueState,
-} from '../constant';
+import { IStudent, IResp, IndexState, ReissueState } from '../constant';
 import { issueApi, reissueApi } from '../utils';
 
 interface IProps {
@@ -23,18 +17,21 @@ export default ((props: IProps) => {
         props.data.student_id,
         props.isEnglish,
       );
-      if (data.applied) {
+      if (null !== data && data.applied) {
         props.changeCurrent(IndexState.SUCCESS);
       } else {
-        alert(data.error_msg);
+        alert(null !== data ? 'Cannot get data' : data.error_msg);
         props.changeCurrent(IndexState.INPUT);
       }
     } else {
-      const data = await reissueApi(props.data.student_id, props.isEnglish);
-      if (data.applied) {
+      const data: IResp = await reissueApi(
+        props.data.student_id,
+        props.isEnglish,
+      );
+      if (null !== data && data.applied) {
         props.changeCurrent(ReissueState.SUCCESS);
       } else {
-        alert(data.error_msg);
+        alert(null !== data ? 'Cannot get data' : data.error_msg);
         props.changeCurrent(ReissueState.INPUT);
       }
     }

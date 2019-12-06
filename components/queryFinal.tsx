@@ -7,7 +7,7 @@ import { queryApi } from '../utils';
 interface IProps {
   data: IStudent;
   isEnglish: boolean;
-  changeCurrent: (update: any) => void;
+  changeCurrent: (update: QueryState) => void;
 }
 
 export default ((props: IProps) => {
@@ -19,7 +19,7 @@ export default ((props: IProps) => {
         props.data.student_id,
         props.isEnglish,
       );
-      setSuccess(data.applied);
+      setSuccess(data ? data.applied : false);
     })();
   }, []);
 
@@ -27,7 +27,18 @@ export default ((props: IProps) => {
     <div style={{ display: `${isSuccess === true ? 'flex' : 'none'}` }}>
       <img src={isSuccess ? SuccessImage : FailureImage} />
       <h1>{isSuccess ? '已申請' : '未申請'}</h1>
-      <a onClick={() => props.changeCurrent(QueryState.INPUT)}>返回</a>
+      <a
+        onClick={() => props.changeCurrent(QueryState.INPUT)}
+        style={{ left: '78px' }}
+      >
+        返回
+      </a>
+      <a
+        onClick={() => props.changeCurrent(QueryState.RENAME)}
+        style={{ right: '71px' }}
+      >
+        修改姓名
+      </a>
       <style jsx>{`
         div {
           width: 455px;
