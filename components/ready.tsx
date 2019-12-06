@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  IStudent,
-  IResp,
-  IndexState,
-  QueryState,
-  ReissueState,
-} from '../constant';
+import { IStudent, IResp, IndexState, ReissueState } from '../constant';
 import { issueApi, reissueApi } from '../utils';
 
 interface IProps {
@@ -30,7 +24,10 @@ export default ((props: IProps) => {
         props.changeCurrent(IndexState.INPUT);
       }
     } else {
-      const data = await reissueApi(props.data.student_id, props.isEnglish);
+      const data: IResp = await reissueApi(
+        props.data.student_id,
+        props.isEnglish,
+      );
       if (data.applied) {
         props.changeCurrent(ReissueState.SUCCESS);
       } else {
