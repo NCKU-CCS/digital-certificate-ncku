@@ -24,7 +24,7 @@ export default ((props: IProps) => {
   }, []);
 
   return (
-    <div style={{ display: `${isSuccess === true ? 'flex' : 'none'}` }}>
+    <div style={{ display: `${isSuccess !== null ? 'flex' : 'none'}` }}>
       <img src={isSuccess ? SuccessImage : FailureImage} />
       <h1>{isSuccess ? '已申請' : '未申請'}</h1>
       <a
