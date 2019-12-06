@@ -108,8 +108,8 @@ const renameApi = async (
   newName: string,
 ): Promise<IResp> => {
   const data = await mainInstance
-    .post('/students/rename/', {
-      param: {
+    .get('/students/rename/', {
+      params: {
         ID: studentID,
         name: newName,
       },
