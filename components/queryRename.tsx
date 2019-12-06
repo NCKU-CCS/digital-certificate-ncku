@@ -18,8 +18,8 @@ export default ((props: IProps) => {
   const handleSubmit = async (event: React.SyntheticEvent) => {
     event.preventDefault();
     const data: IResp = await renameApi(props.data.student_id, newName);
-    if (data.applied) {
-      props.changeCurrent(QueryState.FINAL);
+    if (null !== data && data.applied) {
+      props.changeCurrent(QueryState.END);
     } else {
       alert(data.error_msg);
       props.changeCurrent(QueryState.INPUT);
@@ -46,7 +46,10 @@ export default ((props: IProps) => {
         <button style={{ marginRight: '60px' }} type="submit">
           <span>確認 CONFIRM</span>
         </button>
-        <button onClick={() => props.changeCurrent(QueryState.INPUT)}>
+        <button
+          onClick={() => props.changeCurrent(QueryState.INPUT)}
+          type="button"
+        >
           <span>返回</span>
         </button>
       </div>

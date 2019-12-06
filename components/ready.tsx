@@ -17,10 +17,10 @@ export default ((props: IProps) => {
         props.data.student_id,
         props.isEnglish,
       );
-      if (data.applied) {
+      if (null !== data && data.applied) {
         props.changeCurrent(IndexState.SUCCESS);
       } else {
-        alert(data.error_msg);
+        alert(null !== data ? 'Cannot get data' : data.error_msg);
         props.changeCurrent(IndexState.INPUT);
       }
     } else {
@@ -28,10 +28,10 @@ export default ((props: IProps) => {
         props.data.student_id,
         props.isEnglish,
       );
-      if (data.applied) {
+      if (null !== data && data.applied) {
         props.changeCurrent(ReissueState.SUCCESS);
       } else {
-        alert(data.error_msg);
+        alert(null !== data ? 'Cannot get data' : data.error_msg);
         props.changeCurrent(ReissueState.INPUT);
       }
     }

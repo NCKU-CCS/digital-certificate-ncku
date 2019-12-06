@@ -19,7 +19,7 @@ export default ((props: IProps) => {
         props.data.student_id,
         props.isEnglish,
       );
-      setSuccess(data.applied);
+      setSuccess(data ? data.applied : false);
     })();
   }, []);
 
