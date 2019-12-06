@@ -29,16 +29,20 @@ export default ((props: IProps) => {
       <h1>{isSuccess ? '已申請' : '未申請'}</h1>
       <a
         onClick={() => props.changeCurrent(QueryState.INPUT)}
-        style={{ left: '78px' }}
+        style={isSuccess ? { left: '78px' } : {}}
       >
         返回
       </a>
-      <a
-        onClick={() => props.changeCurrent(QueryState.RENAME)}
-        style={{ right: '71px' }}
-      >
-        修改姓名
-      </a>
+      {isSuccess ? (
+        <a
+          onClick={() => props.changeCurrent(QueryState.RENAME)}
+          style={{ right: '71px' }}
+        >
+          修改姓名
+        </a>
+      ) : (
+        <></>
+      )}
       <style jsx>{`
         div {
           width: 455px;

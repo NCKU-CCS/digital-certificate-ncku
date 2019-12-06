@@ -20,7 +20,7 @@ export default ((props: IProps) => {
       if (null !== data && data.applied) {
         props.changeCurrent(IndexState.SUCCESS);
       } else {
-        alert(null !== data ? 'Cannot get data' : data.error_msg);
+        alert(null !== data ? data.error_msg : 'Cannot get data');
         props.changeCurrent(IndexState.INPUT);
       }
     } else {
@@ -31,7 +31,7 @@ export default ((props: IProps) => {
       if (null !== data && data.applied) {
         props.changeCurrent(ReissueState.SUCCESS);
       } else {
-        alert(null !== data ? 'Cannot get data' : data.error_msg);
+        alert(null !== data ? data.error_msg : 'Cannot get data');
         props.changeCurrent(ReissueState.INPUT);
       }
     }

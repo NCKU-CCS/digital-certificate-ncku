@@ -38,7 +38,7 @@ export default ((props: IProps) => {
       <input
         type="text"
         id="input-english"
-        placeholder="英文 - 此欄位佔不開放"
+        placeholder="英文 - 此欄位暫不開放"
         disabled
       />
 
