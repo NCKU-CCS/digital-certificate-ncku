@@ -10,8 +10,9 @@ import { IStudent, IResp } from '../constant';
  * @function queryApi()
  * @param {string} studentID
  * @param {boolean} isEng
+ * @returns {Promise<IResp>}
  */
-const queryApi = async (studentID: string, isEng: boolean) => {
+const queryApi = async (studentID: string, isEng: boolean): Promise<IResp> => {
   const data = await mainInstance
     .get('/students/query/', {
       params: {
@@ -31,6 +32,7 @@ const queryApi = async (studentID: string, isEng: boolean) => {
  * Get from MAIN_HOST/students/gradinfo/
  * @function gradinfoApi()
  * @param {string} studentID
+ * @returns {Promise<IStudent>}
  */
 const gradinfoApi = async (studentID: string): Promise<IStudent> => {
   const data = await mainInstance
@@ -50,8 +52,9 @@ const gradinfoApi = async (studentID: string): Promise<IStudent> => {
  * @function issueApi()
  * @param {string} studentID
  * @param {boolean} isEng
+ * @returns {Promise<IResp>}
  */
-const issueApi = async (studentID: string, isEng: boolean) => {
+const issueApi = async (studentID: string, isEng: boolean): Promise<IResp> => {
   const data = await mainInstance
     .get<IResp>('/students/issue/', {
       params: {
@@ -72,8 +75,12 @@ const issueApi = async (studentID: string, isEng: boolean) => {
  * @function reissueApi()
  * @param {string} studentID
  * @param {boolean} isEng
+ * @returns {Promise<IResp>}
  */
-const reissueApi = async (studentID: string, isEng: boolean) => {
+const reissueApi = async (
+  studentID: string,
+  isEng: boolean,
+): Promise<IResp> => {
   const data = await mainInstance
     .get<IResp>('/students/reissue/', {
       params: {
@@ -94,8 +101,12 @@ const reissueApi = async (studentID: string, isEng: boolean) => {
  * @function renameApi()
  * @param {string} studentID
  * @param {string} name
+ * @returns {Promise<IResp>}
  */
-const renameApi = async (studentID: string, newName: string) => {
+const renameApi = async (
+  studentID: string,
+  newName: string,
+): Promise<IResp> => {
   const data = await mainInstance
     .post('/students/rename/', {
       param: {
