@@ -1,0 +1,44 @@
+---
+kind: pipeline
+name: default
+
+steps:
+  - name: lint Drone YAML
+    image: sdesbure/yamllint:latest
+    commands:
+      - yamllint .drone.yml
+
+  - name: lint Typescript
+    image: node:10
+    commands:
+      - yarn install --prod=false
+      - yarn run lint
+
+  - name: export static
+    image: node:10
+    commands:
+      - yarn install --prod=false
+      - NODE_ENV=production DEPLOY_ENV=github yarn export && touch out/.nojekyll
+    when:
+      branch:
+        - master
+
+  - name: deploy to github page
+    image: plugins/gh-pages
+    settings:
+      username:
+        from_secret: github_user
+      password:
+        from_secret: github_pawd
+      ssh_key:
+        from_secret: github_sshkey
+      pages_directory: out/
+    environment:
+      MAIN_HOST:
+        from_secret: mainhost
+    when:
+      branch:
+        - master
+      event:
+        exclude:
+          - pull_request
