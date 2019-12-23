@@ -550,14 +550,14 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement;
     className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_2___default.a.dynamic([["704729834", [isSuccess ? 'rgba(51, 188, 60, 0.29)' : 'rgba(221, 36, 36, 0.45)', isSuccess ? '#33bc3c' : '#dd2424', isSuccess ? '#33bc3c' : '#dd2424']]]),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 37
     },
     __self: this
   }, "\u4FEE\u6539\u59D3\u540D") : __jsx(react__WEBPACK_IMPORTED_MODULE_3___default.a.Fragment, null), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_2___default.a, {
     id: "704729834",
     dynamic: [isSuccess ? 'rgba(51, 188, 60, 0.29)' : 'rgba(221, 36, 36, 0.45)', isSuccess ? '#33bc3c' : '#dd2424', isSuccess ? '#33bc3c' : '#dd2424'],
     __self: this
-  }, "div.__jsx-style-dynamic-selector{width:455px;height:510px;box-shadow:3px 3px 10px 0 ".concat(isSuccess ? 'rgba(51, 188, 60, 0.29)' : 'rgba(221, 36, 36, 0.45)', ";border:solid 6px ").concat(isSuccess ? '#33bc3c' : '#dd2424', ";border-radius:40px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;position:relative;}h1.__jsx-style-dynamic-selector{-webkit-text-stroke:0.4px #33bc3c;font-family:EdwardianScriptITC;font-size:45px;color:").concat(isSuccess ? '#33bc3c' : '#dd2424', ";}a.__jsx-style-dynamic-selector{font-family:EdwardianScriptITC;font-size:35px;color:#676464;border-bottom:2px solid #676464;position:absolute;bottom:36px;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2xlZXdlaS9EZXNrdG9wL2RpZ2l0YWwtY2VydGlmaWNhdGUtbmNrdS9jb21wb25lbnRzL3F1ZXJ5RmluYWwudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQStDa0IsQUFHdUIsQUFhc0IsQUFNSCxZQWxCbEIsYUFFaUIsTUFpQmYsR0FOZ0IsWUFPakIsY0FDa0IsS0FQakIsZUFYK0IsQUFZWCxZQU9qQixrQkFDTixLQVBkLE9BUUEsSUFwQnFCLG1CQUNOLDBFQUNVLG1HQUNKLDZGQUNHLDhFQUNKLGtCQUNwQiIsImZpbGUiOiIvaG9tZS9sZWV3ZWkvRGVza3RvcC9kaWdpdGFsLWNlcnRpZmljYXRlLW5ja3UvY29tcG9uZW50cy9xdWVyeUZpbmFsLnRzeCIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCwgeyB1c2VTdGF0ZSwgdXNlRWZmZWN0IH0gZnJvbSAncmVhY3QnO1xuaW1wb3J0IHsgUXVlcnlTdGF0ZSwgSVN0dWRlbnQsIElSZXNwIH0gZnJvbSAnLi4vY29uc3RhbnQnO1xuaW1wb3J0IFN1Y2Nlc3NJbWFnZSBmcm9tICcuLi9zdGF0aWMvc3VjY2Vzcy5wbmcnO1xuaW1wb3J0IEZhaWx1cmVJbWFnZSBmcm9tICcuLi9zdGF0aWMvZmFpbHVyZS5wbmcnO1xuaW1wb3J0IHsgcXVlcnlBcGkgfSBmcm9tICcuLi91dGlscyc7XG5cbmludGVyZmFjZSBJUHJvcHMge1xuICBkYXRhOiBJU3R1ZGVudDtcbiAgaXNFbmdsaXNoOiBib29sZWFuO1xuICBjaGFuZ2VDdXJyZW50OiAodXBkYXRlOiBRdWVyeVN0YXRlKSA9PiB2b2lkO1xufVxuXG5leHBvcnQgZGVmYXVsdCAoKHByb3BzOiBJUHJvcHMpID0+IHtcbiAgY29uc3QgW2lzU3VjY2Vzcywgc2V0U3VjY2Vzc10gPSB1c2VTdGF0ZTxib29sZWFuPihudWxsKTtcblxuICB1c2VFZmZlY3QoKCkgPT4ge1xuICAgIChhc3luYyAoKSA9PiB7XG4gICAgICBjb25zdCBkYXRhOiBJUmVzcCA9IGF3YWl0IHF1ZXJ5QXBpKFxuICAgICAgICBwcm9wcy5kYXRhLnN0dWRlbnRfaWQsXG4gICAgICAgIHByb3BzLmlzRW5nbGlzaCxcbiAgICAgICk7XG4gICAgICBzZXRTdWNjZXNzKGRhdGEgPyBkYXRhLmFwcGxpZWQgOiBmYWxzZSk7XG4gICAgfSkoKTtcbiAgfSwgW10pO1xuXG4gIHJldHVybiAoXG4gICAgPGRpdiBzdHlsZT17eyBkaXNwbGF5OiBgJHtpc1N1Y2Nlc3MgIT09IG51bGwgPyAnZmxleCcgOiAnbm9uZSd9YCB9fT5cbiAgICAgIDxpbWcgc3JjPXtpc1N1Y2Nlc3MgPyBTdWNjZXNzSW1hZ2UgOiBGYWlsdXJlSW1hZ2V9IC8+XG4gICAgICA8aDE+e2lzU3VjY2VzcyA/ICflt7LnlLPoq4snIDogJ+acqueUs+iriyd9PC9oMT5cbiAgICAgIDxhXG4gICAgICAgIG9uQ2xpY2s9eygpID0+IHByb3BzLmNoYW5nZUN1cnJlbnQoUXVlcnlTdGF0ZS5JTlBVVCl9XG4gICAgICAgIHN0eWxlPXtpc1N1Y2Nlc3MgPyB7IGxlZnQ6ICc3OHB4JyB9IDoge319XG4gICAgICA+XG4gICAgICAgIOi/lOWbnlxuICAgICAgPC9hPlxuICAgICAge1xuICAgICAgICBpc1N1Y2Nlc3MgPyAoXG4gICAgICAgICAgPGFcbiAgICAgICAgICAgIG9uQ2xpY2s9eygpID0+IHByb3BzLmNoYW5nZUN1cnJlbnQoUXVlcnlTdGF0ZS5SRU5BTUUpfVxuICAgICAgICAgICAgc3R5bGU9e3sgcmlnaHQ6ICc3MXB4JyB9fVxuICAgICAgICAgID5cbiAgICAgICAgICAgIOS/ruaUueWnk+WQjVxuICAgICAgICAgIDwvYT5cbiAgICAgICAgKSA6IChcbiAgICAgICAgICA8PjwvPlxuICAgICAgICApXG4gICAgICB9XG4gICAgICA8c3R5bGUganN4PntgXG4gICAgICAgIGRpdiB7XG4gICAgICAgICAgd2lkdGg6IDQ1NXB4O1xuICAgICAgICAgIGhlaWdodDogNTEwcHg7XG4gICAgICAgICAgYm94LXNoYWRvdzogM3B4IDNweCAxMHB4IDBcbiAgICAgICAgICAgICR7aXNTdWNjZXNzID8gJ3JnYmEoNTEsIDE4OCwgNjAsIDAuMjkpJyA6ICdyZ2JhKDIyMSwgMzYsIDM2LCAwLjQ1KSd9O1xuICAgICAgICAgIGJvcmRlcjogc29saWQgNnB4ICR7aXNTdWNjZXNzID8gJyMzM2JjM2MnIDogJyNkZDI0MjQnfTtcbiAgICAgICAgICBib3JkZXItcmFkaXVzOiA0MHB4O1xuICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICAgICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgICAgfVxuICAgICAgICBoMSB7XG4gICAgICAgICAgLXdlYmtpdC10ZXh0LXN0cm9rZTogMC40cHggIzMzYmMzYztcbiAgICAgICAgICBmb250LWZhbWlseTogRWR3YXJkaWFuU2NyaXB0SVRDO1xuICAgICAgICAgIGZvbnQtc2l6ZTogNDVweDtcbiAgICAgICAgICBjb2xvcjogJHtpc1N1Y2Nlc3MgPyAnIzMzYmMzYycgOiAnI2RkMjQyNCd9O1xuICAgICAgICB9XG4gICAgICAgIGEge1xuICAgICAgICAgIGZvbnQtZmFtaWx5OiBFZHdhcmRpYW5TY3JpcHRJVEM7XG4gICAgICAgICAgZm9udC1zaXplOiAzNXB4O1xuICAgICAgICAgIGNvbG9yOiAjNjc2NDY0O1xuICAgICAgICAgIGJvcmRlci1ib3R0b206IDJweCBzb2xpZCAjNjc2NDY0O1xuICAgICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgICAgICBib3R0b206IDM2cHg7XG4gICAgICAgIH1cbiAgICAgIGB9PC9zdHlsZT5cbiAgICA8L2Rpdj5cbiAgKTtcbn0pIGFzIFJlYWN0LkZDPElQcm9wcz47XG4iXX0= */\n/*@ sourceURL=/home/leewei/Desktop/digital-certificate-ncku/components/queryFinal.tsx */")));
+  }, "div.__jsx-style-dynamic-selector{width:455px;height:510px;box-shadow:3px 3px 10px 0 ".concat(isSuccess ? 'rgba(51, 188, 60, 0.29)' : 'rgba(221, 36, 36, 0.45)', ";border:solid 6px ").concat(isSuccess ? '#33bc3c' : '#dd2424', ";border-radius:40px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;position:relative;}h1.__jsx-style-dynamic-selector{-webkit-text-stroke:0.4px #33bc3c;font-family:EdwardianScriptITC;font-size:45px;color:").concat(isSuccess ? '#33bc3c' : '#dd2424', ";}a.__jsx-style-dynamic-selector{font-family:EdwardianScriptITC;font-size:35px;color:#676464;border-bottom:2px solid #676464;position:absolute;bottom:36px;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2xlZXdlaS9EZXNrdG9wL2RpZ2l0YWwtY2VydGlmaWNhdGUtbmNrdS9jb21wb25lbnRzL3F1ZXJ5RmluYWwudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQTZDa0IsQUFHdUIsQUFhc0IsQUFNSCxZQWxCbEIsYUFFaUIsTUFpQmYsR0FOZ0IsWUFPakIsY0FDa0IsS0FQakIsZUFYK0IsQUFZWCxZQU9qQixrQkFDTixLQVBkLE9BUUEsSUFwQnFCLG1CQUNOLDBFQUNVLG1HQUNKLDZGQUNHLDhFQUNKLGtCQUNwQiIsImZpbGUiOiIvaG9tZS9sZWV3ZWkvRGVza3RvcC9kaWdpdGFsLWNlcnRpZmljYXRlLW5ja3UvY29tcG9uZW50cy9xdWVyeUZpbmFsLnRzeCIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCwgeyB1c2VTdGF0ZSwgdXNlRWZmZWN0IH0gZnJvbSAncmVhY3QnO1xuaW1wb3J0IHsgUXVlcnlTdGF0ZSwgSVN0dWRlbnQsIElSZXNwIH0gZnJvbSAnLi4vY29uc3RhbnQnO1xuaW1wb3J0IFN1Y2Nlc3NJbWFnZSBmcm9tICcuLi9zdGF0aWMvc3VjY2Vzcy5wbmcnO1xuaW1wb3J0IEZhaWx1cmVJbWFnZSBmcm9tICcuLi9zdGF0aWMvZmFpbHVyZS5wbmcnO1xuaW1wb3J0IHsgcXVlcnlBcGkgfSBmcm9tICcuLi91dGlscyc7XG5cbmludGVyZmFjZSBJUHJvcHMge1xuICBkYXRhOiBJU3R1ZGVudDtcbiAgaXNFbmdsaXNoOiBib29sZWFuO1xuICBjaGFuZ2VDdXJyZW50OiAodXBkYXRlOiBRdWVyeVN0YXRlKSA9PiB2b2lkO1xufVxuXG5leHBvcnQgZGVmYXVsdCAoKHByb3BzOiBJUHJvcHMpID0+IHtcbiAgY29uc3QgW2lzU3VjY2Vzcywgc2V0U3VjY2Vzc10gPSB1c2VTdGF0ZTxib29sZWFuPihudWxsKTtcblxuICB1c2VFZmZlY3QoKCkgPT4ge1xuICAgIChhc3luYyAoKSA9PiB7XG4gICAgICBjb25zdCBkYXRhOiBJUmVzcCA9IGF3YWl0IHF1ZXJ5QXBpKFxuICAgICAgICBwcm9wcy5kYXRhLnN0dWRlbnRfaWQsXG4gICAgICAgIHByb3BzLmlzRW5nbGlzaCxcbiAgICAgICk7XG4gICAgICBzZXRTdWNjZXNzKGRhdGEgPyBkYXRhLmFwcGxpZWQgOiBmYWxzZSk7XG4gICAgfSkoKTtcbiAgfSwgW10pO1xuXG4gIHJldHVybiAoXG4gICAgPGRpdiBzdHlsZT17eyBkaXNwbGF5OiBgJHtpc1N1Y2Nlc3MgIT09IG51bGwgPyAnZmxleCcgOiAnbm9uZSd9YCB9fT5cbiAgICAgIDxpbWcgc3JjPXtpc1N1Y2Nlc3MgPyBTdWNjZXNzSW1hZ2UgOiBGYWlsdXJlSW1hZ2V9IC8+XG4gICAgICA8aDE+e2lzU3VjY2VzcyA/ICflt7LnlLPoq4snIDogJ+acqueUs+iriyd9PC9oMT5cbiAgICAgIDxhXG4gICAgICAgIG9uQ2xpY2s9eygpID0+IHByb3BzLmNoYW5nZUN1cnJlbnQoUXVlcnlTdGF0ZS5JTlBVVCl9XG4gICAgICAgIHN0eWxlPXtpc1N1Y2Nlc3MgPyB7IGxlZnQ6ICc3OHB4JyB9IDoge319XG4gICAgICA+XG4gICAgICAgIOi/lOWbnlxuICAgICAgPC9hPlxuICAgICAge2lzU3VjY2VzcyA/IChcbiAgICAgICAgPGFcbiAgICAgICAgICBvbkNsaWNrPXsoKSA9PiBwcm9wcy5jaGFuZ2VDdXJyZW50KFF1ZXJ5U3RhdGUuUkVOQU1FKX1cbiAgICAgICAgICBzdHlsZT17eyByaWdodDogJzcxcHgnIH19XG4gICAgICAgID5cbiAgICAgICAgICDkv67mlLnlp5PlkI1cbiAgICAgICAgPC9hPlxuICAgICAgKSA6IChcbiAgICAgICAgPD48Lz5cbiAgICAgICl9XG4gICAgICA8c3R5bGUganN4PntgXG4gICAgICAgIGRpdiB7XG4gICAgICAgICAgd2lkdGg6IDQ1NXB4O1xuICAgICAgICAgIGhlaWdodDogNTEwcHg7XG4gICAgICAgICAgYm94LXNoYWRvdzogM3B4IDNweCAxMHB4IDBcbiAgICAgICAgICAgICR7aXNTdWNjZXNzID8gJ3JnYmEoNTEsIDE4OCwgNjAsIDAuMjkpJyA6ICdyZ2JhKDIyMSwgMzYsIDM2LCAwLjQ1KSd9O1xuICAgICAgICAgIGJvcmRlcjogc29saWQgNnB4ICR7aXNTdWNjZXNzID8gJyMzM2JjM2MnIDogJyNkZDI0MjQnfTtcbiAgICAgICAgICBib3JkZXItcmFkaXVzOiA0MHB4O1xuICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICAgICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgICAgfVxuICAgICAgICBoMSB7XG4gICAgICAgICAgLXdlYmtpdC10ZXh0LXN0cm9rZTogMC40cHggIzMzYmMzYztcbiAgICAgICAgICBmb250LWZhbWlseTogRWR3YXJkaWFuU2NyaXB0SVRDO1xuICAgICAgICAgIGZvbnQtc2l6ZTogNDVweDtcbiAgICAgICAgICBjb2xvcjogJHtpc1N1Y2Nlc3MgPyAnIzMzYmMzYycgOiAnI2RkMjQyNCd9O1xuICAgICAgICB9XG4gICAgICAgIGEge1xuICAgICAgICAgIGZvbnQtZmFtaWx5OiBFZHdhcmRpYW5TY3JpcHRJVEM7XG4gICAgICAgICAgZm9udC1zaXplOiAzNXB4O1xuICAgICAgICAgIGNvbG9yOiAjNjc2NDY0O1xuICAgICAgICAgIGJvcmRlci1ib3R0b206IDJweCBzb2xpZCAjNjc2NDY0O1xuICAgICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgICAgICBib3R0b206IDM2cHg7XG4gICAgICAgIH1cbiAgICAgIGB9PC9zdHlsZT5cbiAgICA8L2Rpdj5cbiAgKTtcbn0pIGFzIFJlYWN0LkZDPElQcm9wcz47XG4iXX0= */\n/*@ sourceURL=/home/leewei/Desktop/digital-certificate-ncku/components/queryFinal.tsx */")));
 });
 
 /***/ }),
@@ -4290,7 +4290,7 @@ module.exports = function (NAME, wrapper, methods, common, IS_MAP, IS_WEAK) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var core = module.exports = { version: '2.6.9' };
+var core = module.exports = { version: '2.6.11' };
 if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 
 
@@ -7426,7 +7426,7 @@ module.exports = Function.prototype.bind || implementation;
 "use strict";
 
 
-/* eslint complexity: [2, 17], max-statements: [2, 33] */
+/* eslint complexity: [2, 18], max-statements: [2, 33] */
 module.exports = function hasSymbols() {
 	if (typeof Symbol !== 'function' || typeof Object.getOwnPropertySymbols !== 'function') { return false; }
 	if (typeof Symbol.iterator === 'symbol') { return true; }
@@ -12002,7 +12002,7 @@ module.exports = (__webpack_require__(/*! dll-reference dll_01f9a3fa864a7b7414d8
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v16.9.0
+/** @license React v16.12.0
  * react-is.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -12024,16 +12024,15 @@ Object.defineProperty(exports, '__esModule', { value: true });
 // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
 // nor polyfill, then a plain number is used for performance.
 var hasSymbol = typeof Symbol === 'function' && Symbol.for;
-
 var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for('react.element') : 0xeac7;
 var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for('react.portal') : 0xeaca;
 var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for('react.fragment') : 0xeacb;
 var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for('react.strict_mode') : 0xeacc;
 var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for('react.profiler') : 0xead2;
 var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for('react.provider') : 0xeacd;
-var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace;
-// TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
+var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
 // (unstable) APIs that have been removed. Can we remove the symbols?
+
 var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for('react.async_mode') : 0xeacf;
 var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for('react.concurrent_mode') : 0xeacf;
 var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for('react.forward_ref') : 0xead0;
@@ -12043,11 +12042,11 @@ var REACT_MEMO_TYPE = hasSymbol ? Symbol.for('react.memo') : 0xead3;
 var REACT_LAZY_TYPE = hasSymbol ? Symbol.for('react.lazy') : 0xead4;
 var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for('react.fundamental') : 0xead5;
 var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for('react.responder') : 0xead6;
+var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for('react.scope') : 0xead7;
 
 function isValidElementType(type) {
-  return typeof type === 'string' || typeof type === 'function' ||
-  // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
-  type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE);
+  return typeof type === 'string' || typeof type === 'function' || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
+  type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE);
 }
 
 /**
@@ -12063,12 +12062,11 @@ function isValidElementType(type) {
  * paths. Removing the logging code for production environments will keep the
  * same logic and follow the same code paths.
  */
-
-var lowPriorityWarning = function () {};
+var lowPriorityWarningWithoutStack = function () {};
 
 {
   var printWarning = function (format) {
-    for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+    for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
       args[_key - 1] = arguments[_key];
     }
 
@@ -12076,9 +12074,11 @@ var lowPriorityWarning = function () {};
     var message = 'Warning: ' + format.replace(/%s/g, function () {
       return args[argIndex++];
     });
+
     if (typeof console !== 'undefined') {
       console.warn(message);
     }
+
     try {
       // --- Welcome to debugging React ---
       // This error was thrown as a convenience so that you can use this stack
@@ -12087,25 +12087,27 @@ var lowPriorityWarning = function () {};
     } catch (x) {}
   };
 
-  lowPriorityWarning = function (condition, format) {
+  lowPriorityWarningWithoutStack = function (condition, format) {
     if (format === undefined) {
-      throw new Error('`lowPriorityWarning(condition, format, ...args)` requires a warning ' + 'message argument');
+      throw new Error('`lowPriorityWarningWithoutStack(condition, format, ...args)` requires a warning ' + 'message argument');
     }
+
     if (!condition) {
-      for (var _len2 = arguments.length, args = Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {
+      for (var _len2 = arguments.length, args = new Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {
         args[_key2 - 2] = arguments[_key2];
       }
 
-      printWarning.apply(undefined, [format].concat(args));
+      printWarning.apply(void 0, [format].concat(args));
     }
   };
 }
 
-var lowPriorityWarning$1 = lowPriorityWarning;
+var lowPriorityWarningWithoutStack$1 = lowPriorityWarningWithoutStack;
 
 function typeOf(object) {
   if (typeof object === 'object' && object !== null) {
     var $$typeof = object.$$typeof;
+
     switch ($$typeof) {
       case REACT_ELEMENT_TYPE:
         var type = object.type;
@@ -12118,29 +12120,32 @@ function typeOf(object) {
           case REACT_STRICT_MODE_TYPE:
           case REACT_SUSPENSE_TYPE:
             return type;
+
           default:
             var $$typeofType = type && type.$$typeof;
 
             switch ($$typeofType) {
               case REACT_CONTEXT_TYPE:
               case REACT_FORWARD_REF_TYPE:
+              case REACT_LAZY_TYPE:
+              case REACT_MEMO_TYPE:
               case REACT_PROVIDER_TYPE:
                 return $$typeofType;
+
               default:
                 return $$typeof;
             }
+
         }
-      case REACT_LAZY_TYPE:
-      case REACT_MEMO_TYPE:
+
       case REACT_PORTAL_TYPE:
         return $$typeof;
     }
   }
 
   return undefined;
-}
+} // AsyncMode is deprecated along with isAsyncMode
 
-// AsyncMode is deprecated along with isAsyncMode
 var AsyncMode = REACT_ASYNC_MODE_TYPE;
 var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
 var ContextConsumer = REACT_CONTEXT_TYPE;
@@ -12154,17 +12159,16 @@ var Portal = REACT_PORTAL_TYPE;
 var Profiler = REACT_PROFILER_TYPE;
 var StrictMode = REACT_STRICT_MODE_TYPE;
 var Suspense = REACT_SUSPENSE_TYPE;
+var hasWarnedAboutDeprecatedIsAsyncMode = false; // AsyncMode should be deprecated
 
-var hasWarnedAboutDeprecatedIsAsyncMode = false;
-
-// AsyncMode should be deprecated
 function isAsyncMode(object) {
   {
     if (!hasWarnedAboutDeprecatedIsAsyncMode) {
       hasWarnedAboutDeprecatedIsAsyncMode = true;
-      lowPriorityWarning$1(false, 'The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 17+. Update your code to use ' + 'ReactIs.isConcurrentMode() instead. It has the exact same API.');
+      lowPriorityWarningWithoutStack$1(false, 'The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 17+. Update your code to use ' + 'ReactIs.isConcurrentMode() instead. It has the exact same API.');
     }
   }
+
   return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
 }
 function isConcurrentMode(object) {
@@ -18535,7 +18539,7 @@ function getRelativePath(path) {
 
 /***/ }),
 
-/***/ 1:
+/***/ 2:
 /*!***********************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fquery&absolutePagePath=%2Fhome%2Fleewei%2FDesktop%2Fdigital-certificate-ncku%2Fpages%2Fquery.tsx ***!
   \***********************************************************************************************************************************************/
@@ -18558,5 +18562,5 @@ module.exports = dll_01f9a3fa864a7b7414d8;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=query.js.map
