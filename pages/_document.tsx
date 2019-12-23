@@ -16,7 +16,8 @@ export default class MyDocument extends Document {
           <NextScript />
           <style jsx global>{`
             html,
-            body {
+            body,
+            __next {
               margin: 0;
               font-size: 16px;
               font-weight: normal;
