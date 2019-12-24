@@ -84,8 +84,8 @@ export default ((props: IProps) => {
       )}
       <style jsx>{`
         .ready {
-          min-width: 800px;
-          min-height: 600px;
+          width: 800px;
+          ${isLoad ? 'height: 600px;' : ''}
           border-radius: 20px;
           border: solid 6px rgba(112, 112, 112, 0.16);
           display: flex;

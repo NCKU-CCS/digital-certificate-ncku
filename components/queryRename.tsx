@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Loading from './loading';
 import { QueryState, IStudent, IResp } from '../constant';
 import { renameApi } from '../utils';
 
@@ -8,6 +9,7 @@ interface IProps {
 }
 
 export default ((props: IProps) => {
+  const [isLoad, setLoad] = useState(false);
   const [newName, setNewName] = useState<string>('');
 
   const handleNewName = (event: React.FormEvent<HTMLInputElement>) => {
@@ -17,6 +19,7 @@ export default ((props: IProps) => {
 
   const handleSubmit = async (event: React.SyntheticEvent) => {
     event.preventDefault();
+    setLoad(true);
     const data: IResp = await renameApi(props.data.student_id, newName);
     if (null !== data && data.applied) {
       props.changeCurrent(QueryState.END);
@@ -24,36 +27,44 @@ export default ((props: IProps) => {
       alert(data.error_msg);
       props.changeCurrent(QueryState.INPUT);
     }
+    setLoad(false);
   };
 
   return (
     <form className="center column" onSubmit={handleSubmit}>
-      <span className="title">欲更改的中英文姓名</span>
-      <input
-        type="text"
-        id="input-chinese"
-        placeholder="中文"
-        onChange={handleNewName}
-      />
-      <input
-        type="text"
-        id="input-english"
-        placeholder="英文 - 此欄位暫不開放"
-        disabled
-      />
+      {isLoad ? (
+        <div id="load">
+          <Loading />
+        </div>
+      ) : (
+        <React.Fragment>
+          <span className="title">欲更改的中英文姓名</span>
+          <input
+            type="text"
+            id="input-chinese"
+            placeholder="中文"
+            onChange={handleNewName}
+          />
+          <input
+            type="text"
+            id="input-english"
+            placeholder="英文 - 此欄位暫不開放"
+            disabled
+          />
 
-      <div className="center row" style={{ marginTop: '46px' }}>
-        <button style={{ marginRight: '60px' }} type="submit">
-          <span>確認 CONFIRM</span>
-        </button>
-        <button
-          onClick={() => props.changeCurrent(QueryState.INPUT)}
-          type="button"
-        >
-          <span>返回</span>
-        </button>
-      </div>
-
+          <div className="center row" style={{ marginTop: '46px' }}>
+            <button style={{ marginRight: '60px' }} type="submit">
+              <span>確認 CONFIRM</span>
+            </button>
+            <button
+              onClick={() => props.changeCurrent(QueryState.INPUT)}
+              type="button"
+            >
+              <span>返回</span>
+            </button>
+          </div>
+        </React.Fragment>
+      )}
       <style jsx>{`
         .center {
           display: flex;
@@ -107,6 +118,18 @@ export default ((props: IProps) => {
           letter-spacing: 0.05px;
           text-align: center;
           color: rgba(247, 247, 247, 0.92);
+        }
+        #load {
+          width: 800px;
+          height: 600px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
         }
       `}</style>
     </form>
