@@ -58,7 +58,13 @@ export default ((props: IProps) => {
           <span>
             畢業系所：{props.data.graduate_univ + props.data.graduate_dept}
           </span>
-          <span>其他資訊：{props.data.minor_d_major}</span>
+          <span>其他資訊：</span>
+          {props.data.minor_d_major.map((item, id) => (
+            <span key={id} style={{ margin: '0' }}>
+              {'　'}
+              {item}
+            </span>
+          ))}
           <span>
             申請證書：
             {`${props.isEnglish ? '英文' : '中文'}證書 / ${

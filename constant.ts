@@ -30,7 +30,7 @@ export interface IStudent {
   graduate_colg: string;
   graduate_dept: string;
   degree: string;
-  minor_d_major: string;
+  minor_d_major: string[];
   e_graduate_univ: string;
   e_graduate_colg: string;
   e_graduate_dept: string;
