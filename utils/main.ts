@@ -1,5 +1,5 @@
 import { mainInstance, nckuInstance } from './config';
-import runtimeEnv from '../runtimeEnv';
+import runtimeEnv from './runtimeEnv';
 import { IStudent, IResp } from '../constant';
 
 /**
