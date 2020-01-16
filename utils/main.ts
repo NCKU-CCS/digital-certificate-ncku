@@ -38,6 +38,9 @@ const gradinfoApi = async (studentID: string): Promise<IStudent> => {
   const data = await mainInstance
     .get<IStudent>('/students/gradinfo/', {
       params: { ID: studentID },
+      xsrfCookieName: 'XSRF-TOKEN',
+      xsrfHeaderName: 'X-XSRF-TOKEN',
+      withCredentials: true,
     })
     .then(resp => resp.data)
     .catch(() => null);
