@@ -41,7 +41,7 @@ const gradinfoApi = async (studentID: string): Promise<IStudent> => {
     })
     .then(resp => resp.data)
     .catch(() => null);
-  return data.student_id ? data : null;
+  return data && data.student_id ? data : null;
 };
 
 /**
