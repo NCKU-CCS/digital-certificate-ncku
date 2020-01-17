@@ -1,5 +1,5 @@
-import { mainInstance, nckuInstance } from './config';
-import runtimeEnv from '../runtimeEnv';
+import { mainInstance } from './config';
+import runtimeEnv from './runtimeEnv';
 import { IStudent, IResp } from '../constant';
 
 /**
@@ -123,31 +123,6 @@ const renameApi = async (
 };
 
 /**
- * @global
- *  @host MAIN_HOST
- *  @method GET
- * Translate cardId into studentId from NCKU_HOST/ncku/queryno.php.
- * If it is not necessary, this function can be deleted
- * @function cardToStudentID()
- * @param {string} studentID
- */
-const cardToStudentID = async (cardID: string) => {
-  const re = /[A-Z]{1}[0-9]{8}/i;
-  let studentID: string = cardID;
-
-  if (!cardID.match(re)) {
-    studentID = await nckuInstance
-      .get('/ncku/queryno.php', {
-        params: { octin: cardID },
-      })
-      .then(resp => resp.data)
-      .catch();
-  }
-
-  return studentID;
-};
-
-/**
  * @function getRelativePath()
  * @param {string} path
  * resolve path for assets and links
@@ -168,6 +143,5 @@ export {
   reissueApi,
   gradinfoApi,
   renameApi,
-  cardToStudentID,
   getRelativePath,
 };

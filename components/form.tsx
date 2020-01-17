@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import BgImage from '../static/laptop-from-above.png';
 import { IStudent } from '../constant';
 import { gradinfoApi } from '../utils';
@@ -13,6 +13,17 @@ export default ((props: IProps) => {
   const alertMessage = '學生資料錯誤，請重新輸入';
   const [isAlert, setAlert] = useState(false);
   const [userInput, setInput] = useState('');
+  const [token, setToken] = useState('');
+
+  useEffect(() => {
+    (async () => {
+      const tokenInit = await fetch('/api/token', {
+        method: 'GET',
+        mode: 'same-origin',
+      }).then(resp => resp.text());
+      setToken(tokenInit);
+    })();
+  }, []);
 
   const handleSubmit = async (event: React.SyntheticEvent) => {
     event.preventDefault();
@@ -72,6 +83,7 @@ export default ((props: IProps) => {
             style={props.isEnglish ? { backgroundColor: '#707070' } : {}}
           />
         </div>
+        <input type="hidden" name="csrf" id="csrf" value={token} />
       </form>
 
       <style jsx>{`
