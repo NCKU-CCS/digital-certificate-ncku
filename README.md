@@ -5,6 +5,7 @@ Digital certificate web for School.
 #### pre-requirement
 
 [yarn](https://yarnpkg.com/lang/en/)
+[pm2](https://pm2.keymetrics.io/)
 
 #### Environment
 
@@ -25,6 +26,14 @@ Run frontend at `localhost:3000` with hot mode
 
 ```
 $ yarn dev
+```
+
+### Production
+
+Run frontend with process manager
+
+```
+$ yarn deploy
 ```
 
 ### Export static HTML file
