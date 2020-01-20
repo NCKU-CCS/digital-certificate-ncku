@@ -1,7 +1,7 @@
 {
   "apps": [
     {
-      "name": "dcert-frontend",
+      "name": "dcert-frontend-ncku",
       "script": "yarn",
       "args": "start"
     }
