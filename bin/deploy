@@ -4,9 +4,10 @@ BRANCH=$(git rev-parse --abbrev-ref HEAD);
 if [[ "$BRANCH" != "master" ]]; then
   echo "Not this branch(now: $BRANCH)";
   git checkout master;
-  git fetch origin && git pull origin master;
-  yarn run build;
 fi
+
+git fetch origin && git pull origin master;
+yarn run build;
 
 pm2 show dcert-ncku
 INIT=$?
