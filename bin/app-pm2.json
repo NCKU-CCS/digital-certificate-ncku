@@ -1,0 +1,9 @@
+{
+  "apps": [
+    {
+      "name": "dcert-frontend",
+      "script": "yarn",
+      "args": "start"
+    }
+  ]
+}

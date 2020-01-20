@@ -1,0 +1,20 @@
+#!/bin/bash
+
+BRANCH=$(git rev-parse --abbrev-ref HEAD);
+if [[ "$BRANCH" != "master" ]]; then
+  echo "Not this branch(now: $BRANCH)";
+  git checkout master;
+  git fetch origin && git pull origin master;
+  yarn run build;
+fi
+
+pm2 show dcert-frontend
+INIT=$?
+
+if [[ $INIT -eq 0 ]]; then
+  echo "Instance had been built."
+  pm2 delete dcert-frontend
+else
+  echo "Instance haven't been built."
+fi
+pm2 start bin/app-pm2.json
