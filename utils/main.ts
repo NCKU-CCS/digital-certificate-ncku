@@ -13,15 +13,20 @@ import { IStudent, IResp } from '../constant';
  * @returns {Promise<IResp>}
  */
 const queryApi = async (studentID: string, isEng: boolean): Promise<IResp> => {
-  const data = await mainInstance
-    .get('/students/query/', {
-      params: {
-        ID: studentID,
-        type: isEng ? 'English' : 'Chinese',
-      },
-    })
-    .then(resp => resp.data)
-    .catch(() => null);
+  const token = await fetch('/api/token').then(resp => resp.text());
+  const data = await fetch(
+    `${runtimeEnv.MAIN_HOST}/students/query/?ID=${studentID}&type=${
+      isEng ? 'English' : 'Chinese'
+    }`,
+    {
+      mode: 'cors',
+      method: 'GET',
+      credentials: 'include',
+      headers: { Authorization: `jwt ${token}` },
+    },
+  )
+    .then(resp => resp.json())
+    .catch();
   return data;
 };
 
@@ -35,15 +40,18 @@ const queryApi = async (studentID: string, isEng: boolean): Promise<IResp> => {
  * @returns {Promise<IStudent>}
  */
 const gradinfoApi = async (studentID: string): Promise<IStudent> => {
-  const data = await mainInstance
-    .get<IStudent>('/students/gradinfo/', {
-      params: { ID: studentID },
-      xsrfCookieName: 'XSRF-TOKEN',
-      xsrfHeaderName: 'X-XSRF-TOKEN',
-      withCredentials: true,
-    })
-    .then(resp => resp.data)
-    .catch(() => null);
+  const token = await fetch('/api/token').then(resp => resp.text());
+  const data = await fetch(
+    `${runtimeEnv.MAIN_HOST}/students/gradinfo/?ID=${studentID}`,
+    {
+      mode: 'cors',
+      method: 'GET',
+      credentials: 'include',
+      headers: { Authorization: `jwt ${token}` },
+    },
+  )
+    .then(resp => resp.json())
+    .catch();
   return data && data.student_id ? data : null;
 };
 
@@ -110,15 +118,18 @@ const renameApi = async (
   studentID: string,
   newName: string,
 ): Promise<IResp> => {
-  const data = await mainInstance
-    .get('/students/rename/', {
-      params: {
-        ID: studentID,
-        name: newName,
-      },
-    })
-    .then(resp => resp.data)
-    .catch(() => null);
+  const token = await fetch('/api/token').then(resp => resp.text());
+  const data = await fetch(
+    `${runtimeEnv.MAIN_HOST}/students/rename/?ID=${studentID}&name=${newName}`,
+    {
+      mode: 'cors',
+      method: 'GET',
+      credentials: 'include',
+      headers: { Authorization: `jwt ${token}` },
+    },
+  )
+    .then(resp => resp.json())
+    .catch();
   return data;
 };
 
