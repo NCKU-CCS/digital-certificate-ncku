@@ -1,0 +1,21 @@
+#!/bin/bash
+
+BRANCH=$(git rev-parse --abbrev-ref HEAD);
+if [[ "$BRANCH" != "master" ]]; then
+  echo "Not this branch(now: $BRANCH)";
+  git checkout master;
+fi
+
+git fetch origin && git pull origin master;
+yarn run build;
+
+pm2 show dcert-ncku
+INIT=$?
+
+if [[ $INIT -eq 0 ]]; then
+  echo "Instance had been built."
+  pm2 delete dcert-ncku
+else
+  echo "Instance haven't been built."
+fi
+pm2 start bin/app-pm2.json

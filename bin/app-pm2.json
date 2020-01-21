@@ -1,0 +1,9 @@
+{
+  "apps": [
+    {
+      "name": "dcert-ncku",
+      "script": "yarn",
+      "args": "start"
+    }
+  ]
+}
