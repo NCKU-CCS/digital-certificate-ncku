@@ -33,7 +33,7 @@ $ yarn dev
 Run frontend with process manager
 
 ```
-$ yarn deploy
+$ bash bin/deploy
 ```
 
 ### Export static HTML file
