@@ -8,7 +8,8 @@
     "start": "NODE_ENV=production node server.js",
     "lint": "tslint -c tslint.json -p tsconfig.json",
     "export": "next build && next export",
-    "deploy:github": "NODE_ENV=production DEPLOY_ENV=github yarn export && touch out/.nojekyll && gh-pages -t -d out"
+    "deploy:github": "NODE_ENV=production DEPLOY_ENV=github yarn export && touch out/.nojekyll && gh-pages -t -d out",
+    "deploy": "bash bin/deploy"
   },
   "dependencies": {
     "axios": "^0.19.0",
