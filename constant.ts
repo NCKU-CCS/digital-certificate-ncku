@@ -36,6 +36,7 @@ export interface IStudent {
   e_graduate_dept: string;
   e_degree: string;
   e_cert_num: string;
+  chinese_name_CNS: string;
 }
 
 export interface IResp {

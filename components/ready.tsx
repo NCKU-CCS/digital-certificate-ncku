@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Loading from './loading';
+import FontImage from './fontImage';
 import { IStudent, IResp, IndexState, ReissueState } from '../constant';
 import { issueApi, reissueApi } from '../utils';
 
@@ -44,6 +45,15 @@ export default ((props: IProps) => {
     }
   };
 
+  const getFontImages = (cnsString: string) => {
+    const splitString = cnsString.split(',');
+    return splitString
+      .map(str => str.split('-'))
+      .map((element, id) => (
+        <FontImage key={id} page={element[0]} number={element[1]} />
+      ));
+  };
+
   return (
     <div className="ready">
       {isLoad ? (
@@ -53,7 +63,7 @@ export default ((props: IProps) => {
       ) : (
         <React.Fragment>
           <h1>資料確認</h1>
-          <span>學生姓名：{props.data.chinese_name}</span>
+          <span>學生姓名：{getFontImages(props.data.chinese_name_CNS)}</span>
           <span>出生日期：{props.data.birth_date}</span>
           <span>
             畢業系所：{props.data.graduate_univ + props.data.graduate_dept}
